@@ -12,7 +12,6 @@ jobs:
     name: Build my project ✨
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
         unityVersion:
           - 2019.3.7f1
