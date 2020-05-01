@@ -68,8 +68,8 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: Library
-          key: Library
+          path: WebGlLibrary
+          key: WebGlLibrary
 
       # Build
       - name: Build project
@@ -84,7 +84,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages
-          FOLDER: build/GameDev-WebGl 
+          FOLDER: build 
       # - name: Commit changes
       #   run: |
       #     echo ${{ github.ref }}
