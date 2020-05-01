@@ -46,7 +46,7 @@ jobs:
         with:
           name: Build
           path: docs
-  build:
+  github_pages:
     name: Build and deploy to github pages
     runs-on: ubuntu-latest
     strategy:
