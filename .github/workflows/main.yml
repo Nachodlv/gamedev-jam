@@ -1,4 +1,4 @@
-name: Unity Actions
+name: Unity builder
 
 on:
   pull_request: {}
@@ -11,7 +11,7 @@ env:
 
 jobs:
   build:
-    name: Builder
+    name: Windows, Mac and Linux builds
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,7 +21,6 @@ jobs:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - WebGL # WebGL.
     steps:
       # Checkout
       - name: Checkout repository
@@ -47,3 +46,37 @@ jobs:
         with:
           name: Build
           path: docs
+  build:
+    name: Build and deploy to github pages
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        unityVersion:
+          - 2019.3.7f1
+        targetPlatform:
+          - WebGL # WebGL.
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+    
+      # Cache
+      - uses: actions/cache@v1.1.0
+        with:
+          path: Library
+          key: Library
+
+      # Build
+      - name: Build project
+        uses: webbertakken/unity-builder@v0.10
+        with:
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+
+     - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build # The folder the action should deploy.
