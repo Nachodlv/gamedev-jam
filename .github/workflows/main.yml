@@ -11,7 +11,7 @@ env:
 
 jobs:
   builds:
-    name: Windows, Mac and Linux builds
+    name: ${{ matrix.targetPlatform }} build
     runs-on: ubuntu-latest
     strategy:
       matrix:
