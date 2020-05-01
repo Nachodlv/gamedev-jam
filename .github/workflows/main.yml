@@ -12,6 +12,7 @@ env:
 jobs:
   builds:
     name: ${{ matrix.targetPlatform }} build
+    needs: github_pages
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -80,4 +81,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          FOLDER: .
