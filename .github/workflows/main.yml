@@ -40,12 +40,14 @@ jobs:
         with:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildsPath: build
+          buildName: GameDev-${{ matrix.targetPlatform }}
 
       # Output 
       - uses: actions/upload-artifact@v1
         with:
           name: Build
-          path: docs
+          path: build
 
   github_pages:
     name: Build and deploy to github pages
@@ -75,11 +77,22 @@ jobs:
         with:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildsPath: .
-          buildName: . 
+          buildsPath: build
+          buildName: GameDev-WebGl 
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs
+          BRANCH: master
+          FOLDER: build
+      - name: Commit changes
+        run: |
+          echo ${{ github.ref }}
+          git add /build/GameDev-WebGl/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "ci: Automated build push" -a | exit 0
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
