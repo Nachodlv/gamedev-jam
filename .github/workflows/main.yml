@@ -23,9 +23,6 @@ jobs:
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
           - WebGL # WebGL.
     steps:
-      - name: Return license
-        uses: webbertakken/unity-return-license@v1
-        if: always()
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v2
