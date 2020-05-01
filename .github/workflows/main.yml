@@ -84,7 +84,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages
-          FOLDER: build /WebGL/GameDev-WebGl
+          FOLDER: build/WebGL/GameDev-WebGl
       # - name: Commit changes
       #   run: |
       #     echo ${{ github.ref }}
