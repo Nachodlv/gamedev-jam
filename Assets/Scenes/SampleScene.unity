@@ -415,7 +415,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1648233516}
   ceilingCheck: {fileID: 397536356}
   crouchDisableCollider: {fileID: 0}
-  maxJumps: 1
+  maxJumps: 2
 --- !u!114 &304995641
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ namespace DefaultNamespace
 		private CharacterController _characterController;
 		private bool _touchingRightWall;
 		private bool _touchingLeftWall;
-		private bool _canGrabWall = true;
 		private Rigidbody2D _rigidBody2D;
 		private Collider2D[] _colliders;
 		private float _timeGrabbingWall;

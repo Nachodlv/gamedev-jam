@@ -25,10 +25,11 @@ public class CharacterController : MonoBehaviour
 	private SpriteRenderer _spriteRenderer;
 	private bool _facingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 _velocity = Vector3.zero;
-	private bool _mWasCrouching;
+	private bool _wasCrouching;
 	private int _currentJumps;
+	private bool _justJump;
 	private Collider2D[] _colliders;
-	
+
 	private void Awake()
 	{
 		_myRigidBody2D = GetComponent<Rigidbody2D>();
@@ -38,9 +39,12 @@ public class CharacterController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		bool wasGrounded = Grounded;
-		Grounded = false;
-
+		if(Grounded) return;
+		if (_justJump)
+		{
+			_justJump = false;
+			return;
+		}
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		var size = Physics2D.OverlapCircleNonAlloc(groundCheck.position, GroundedRadius, _colliders, whatIsGround);
@@ -48,13 +52,11 @@ public class CharacterController : MonoBehaviour
 		{
 			if (_colliders[i].gameObject == gameObject) continue;
 			Grounded = true;
-			if (wasGrounded) continue;
 			OnLandEvent?.Invoke();
 			_currentJumps = 0;
 		}
 	}
-
-
+	
 	public void Move(float move, bool crouch)
 	{
 		// If crouching, check to see if the character can stand up
@@ -74,9 +76,9 @@ public class CharacterController : MonoBehaviour
 			// If crouching
 			if (crouch)
 			{
-				if (!_mWasCrouching)
+				if (!_wasCrouching)
 				{
-					_mWasCrouching = true;
+					_wasCrouching = true;
 					OnCrouchEvent?.Invoke(true);
 				}
 
@@ -92,9 +94,9 @@ public class CharacterController : MonoBehaviour
 				if (crouchDisableCollider != null)
 					crouchDisableCollider.enabled = true;
 
-				if (_mWasCrouching)
+				if (_wasCrouching)
 				{
-					_mWasCrouching = false;
+					_wasCrouching = false;
 					OnCrouchEvent?.Invoke(false);
 				}
 			}
@@ -128,7 +130,7 @@ public class CharacterController : MonoBehaviour
 	public void JumpWithOptions(bool ignoreMaximumJumps, float angle, float force)
 	{
 		if (!ignoreMaximumJumps && _currentJumps >= maxJumps) return;
-		
+		_justJump = true;	
 		Grounded = false;
 		var velocity = _myRigidBody2D.velocity;
 		velocity.y = velocity.y < 0 ? 0 : velocity.y;
