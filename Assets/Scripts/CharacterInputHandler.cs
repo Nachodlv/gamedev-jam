@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController), typeof(WallJumper))]
 public class CharacterInputHandler : MonoBehaviour
 {
+	[SerializeField] private float moveSpeed = 1f;
+	
 	private CharacterController _characterController;
 	private WallJumper _wallJumper;
 	private float _movement;
@@ -23,7 +25,7 @@ public class CharacterInputHandler : MonoBehaviour
 
 	private void Update()
 	{
-		_movement = _controller.Player.Move.ReadValue<float>();
+		_movement = _controller.Player.Move.ReadValue<float>() * moveSpeed;
 	}
 
 	private void FixedUpdate()
