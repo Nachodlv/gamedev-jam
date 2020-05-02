@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
    	[SerializeField] private float jumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float crouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;	// How much to smooth out the movement
-	[SerializeField] private bool airControl = false;							// Whether or not a player can steer while jumping;
+	[SerializeField] private bool airControl;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask whatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform groundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform ceilingCheck;							// A position marking where to check for ceilings
@@ -22,7 +22,7 @@ public class CharacterController : MonoBehaviour
 	private Rigidbody2D _myRigidBody2D;
 	private bool _facingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 _velocity = Vector3.zero;
-	private bool _mWasCrouching = false;
+	private bool _mWasCrouching;
 
 	
 	private void Awake()
