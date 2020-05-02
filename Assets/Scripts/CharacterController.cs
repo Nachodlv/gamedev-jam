@@ -12,7 +12,8 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private Transform ceilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D crouchDisableCollider;				// A collider that will be disabled when crouching
 	[SerializeField] private int maxJumps = 1;
-	
+
+	public event Action OnJumpEvent;
 	public event Action OnLandEvent;
 	public event Action<bool> OnCrouchEvent;
 	public bool Grounded { get; private set; }
@@ -129,6 +130,7 @@ public class CharacterController : MonoBehaviour
 		_myRigidBody2D.velocity = velocity;
 		_myRigidBody2D.AddForce(new Vector2(0f, jumpForce));
 		_currentJumps ++;
+		OnJumpEvent?.Invoke();
 	}
 
 
