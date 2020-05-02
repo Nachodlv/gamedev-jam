@@ -120,7 +120,12 @@ public class CharacterController : MonoBehaviour
 		
 	}
 
-	public void Jump(bool ignoreMaximumJumps = false, float angle = 0)
+	public void Jump()
+	{
+		JumpWithOptions(false, 0, jumpForce);
+	}
+
+	public void JumpWithOptions(bool ignoreMaximumJumps, float angle, float force)
 	{
 		if (!ignoreMaximumJumps && _currentJumps >= maxJumps) return;
 		
@@ -128,7 +133,9 @@ public class CharacterController : MonoBehaviour
 		var velocity = _myRigidBody2D.velocity;
 		velocity.y = velocity.y < 0 ? 0 : velocity.y;
 		_myRigidBody2D.velocity = velocity;
-		_myRigidBody2D.AddForce(new Vector2(0f, jumpForce));
+		var jumpDirection = new Vector2(0f, force);
+		jumpDirection = Quaternion.Euler(0, 0, angle) * jumpDirection;
+		_myRigidBody2D.AddForce(jumpDirection);
 		_currentJumps ++;
 		OnJumpEvent?.Invoke();
 	}
