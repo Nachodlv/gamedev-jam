@@ -43,6 +43,12 @@ public class CharacterController : MonoBehaviour
 	{
 		if(Grounded) return;
 		
+		if (_justJump)
+		{
+			_justJump = false;
+			return;
+		}
+		
 		var size = Physics2D.OverlapCircleNonAlloc(groundCheck.position, GroundedRadius, _colliders, whatIsGround);
 		for (var i = 0; i < size; i++)
 		{

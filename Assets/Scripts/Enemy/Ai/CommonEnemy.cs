@@ -15,6 +15,7 @@ namespace Enemy.Ai
 		[SerializeField] private Animator animator;
 		[SerializeField] private SpriteRenderer spriteRenderer;
 		[SerializeField] private float visionRange = 5f;
+		[SerializeField] private EnemyWeapon enemyWeapon;
 
 		public Stats Stats => stats;
 		public Animator Animator => animator;
@@ -26,7 +27,7 @@ namespace Enemy.Ai
 
 		private void Awake()
 		{
-			_raycastLayer =~ LayerMask.GetMask($"Enemy");
+			_raycastLayer = ~ LayerMask.GetMask($"Enemy");
 			RigidBody = GetComponent<Rigidbody2D>();
 			var player = FindObjectOfType<APlayer>().transform;
 			_distanceDetector = gameObject.AddComponent<DistanceDetector>();
@@ -34,16 +35,23 @@ namespace Enemy.Ai
 			_distanceDetector.targetTag = "Player";
 
 			_stateMachine = new StateMachine();
-			var enemyMover = new EnemyMover(spriteRenderer, RigidBody, stats.Speed);
+			var enemyMover = new Mover(spriteRenderer, RigidBody, stats.Speed);
 			var idleState = new IdleState(leftPosition, rightPosition, this, enemyMover);
-			var startAttackingState = new StartAttackingState(animator, player, enemyMover);
+			var startAttackingState =
+				new PlayAnimationState(animator, player, enemyMover, "startAttacking", "Prepare to attack");
+			var attackState = new AttackState(enemyWeapon, animator);
+			var stopAttackingState =
+				new PlayAnimationState(animator, player, enemyMover, "stopAttacking", "Prepare to attack");
 
 			_stateMachine.AddTransition(idleState, startAttackingState, PlayerInsideRange);
-			_stateMachine.AddTransition(startAttackingState, idleState, PlayerOutsideRange);
+			_stateMachine.AddTransition(startAttackingState, attackState, FinishPlayingAnimation(startAttackingState));
+			_stateMachine.AddTransition(attackState, stopAttackingState, PlayerOutsideRange);
+			_stateMachine.AddTransition(stopAttackingState, idleState, FinishPlayingAnimation(stopAttackingState));
 
 			_stateMachine.SetState(idleState);
 
 			bool PlayerOutsideRange() => !PlayerInsideRange();
+			Func<bool> FinishPlayingAnimation(PlayAnimationState state) => () => state.Finished;
 		}
 
 		private bool PlayerInsideRange()

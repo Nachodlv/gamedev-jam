@@ -2,7 +2,7 @@
 
 namespace Enemy.Ai
 {
-	public class EnemyMover
+	public class Mover
 	{
 		private readonly Rigidbody2D _rigidBody2D;
 		private readonly SpriteRenderer _spriteRenderer;
@@ -11,7 +11,7 @@ namespace Enemy.Ai
 		private Vector2 _velocity;
 		private bool _facingRight;
 
-		public EnemyMover(SpriteRenderer spriteRenderer, Rigidbody2D rigidBody2D, float speed, float smoothing = 0.1f)
+		public Mover(SpriteRenderer spriteRenderer, Rigidbody2D rigidBody2D, float speed, float smoothing = 0.1f)
 		{
 			_rigidBody2D = rigidBody2D;
 			_speed = speed;

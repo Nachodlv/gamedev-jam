@@ -13,15 +13,15 @@ namespace Enemy.Ai.States
 		private readonly Animator _animator;
 		private readonly Rigidbody2D _rigidBody2D;
 		private Vector2 _velocity;
-		private readonly EnemyMover _enemyMover;
+		private readonly Mover _mover;
 
-		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemy commonEnemy, EnemyMover enemyMover)
+		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemy commonEnemy, Mover mover)
 		{
 			_leftPosition = leftPosition.position.x;
 			_rightPosition = rightPosition.position.x;
 			_animator = commonEnemy.Animator;
 			_rigidBody2D = commonEnemy.RigidBody;
-			_enemyMover = enemyMover;
+			_mover = mover;
 		}
 
 		public void Tick()
@@ -38,7 +38,7 @@ namespace Enemy.Ai.States
 		
 		public void FixedTick()
 		{
-			_enemyMover.Move(_goingRight? new Vector2(1, 0) : new Vector2(-1, 0));
+			_mover.Move(_goingRight? new Vector2(1, 0) : new Vector2(-1, 0));
 		}
 
 		public void OnEnter()
