@@ -54,7 +54,6 @@ namespace DefaultNamespace
 			
 			if (!_touchingRightWall && rightTrigger)
 			{
-				Debug.Log("Touching wall");
 				OnTouchingWall?.Invoke(true, true);
 				return;
 			}
@@ -75,7 +74,6 @@ namespace DefaultNamespace
 		public void Jump()
 		{
 			_characterController.JumpWithOptions(true, _touchingRightWall ? 45 : -45, wallJump);
-			Debug.Log("Wall Jump");
 		}
 
 		public bool CanWallJump()
