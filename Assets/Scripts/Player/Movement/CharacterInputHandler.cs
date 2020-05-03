@@ -7,7 +7,7 @@ namespace Player.Movement
 	[RequireComponent(typeof(CharacterController), typeof(WallJumper))]
 	public class CharacterInputHandler : MonoBehaviour
 	{
-		[SerializeField] private Player player;
+		[SerializeField] private APlayer aPlayer;
 	
 		private CharacterController _characterController;
 		private WallJumper _wallJumper;
@@ -29,7 +29,7 @@ namespace Player.Movement
 
 		private void Update()
 		{
-			_movement = _controller.Player.Move.ReadValue<float>() * player.Stats.Speed;
+			_movement = _controller.Player.Move.ReadValue<float>() * aPlayer.Stats.Speed;
 		}
 
 		private void FixedUpdate()

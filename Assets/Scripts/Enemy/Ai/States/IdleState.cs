@@ -15,13 +15,13 @@ namespace Enemy.Ai.States
 		private Vector2 _velocity;
 		private readonly EnemyMover _enemyMover;
 
-		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemy commonEnemy)
+		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemy commonEnemy, EnemyMover enemyMover)
 		{
 			_leftPosition = leftPosition.position.x;
 			_rightPosition = rightPosition.position.x;
 			_animator = commonEnemy.Animator;
 			_rigidBody2D = commonEnemy.RigidBody;
-			_enemyMover = new EnemyMover(commonEnemy.RigidBody, commonEnemy.Stats.Speed);
+			_enemyMover = enemyMover;
 		}
 
 		public void Tick()
@@ -48,6 +48,7 @@ namespace Enemy.Ai.States
 
 		public void OnExit()
 		{
+			_rigidBody2D.velocity = Vector2.zero;
 			_animator.SetBool(IdleBool, false);
 		}
 	}

@@ -1,0 +1,518 @@
+fileFormatVersion: 2
+guid: 5d4a8b7fad30e194fb06a68b9606acec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4866059206305789019
+    second: Small red enemy dying_0
+  - first:
+      213: 462998606740472676
+    second: Small red enemy dying_1
+  - first:
+      213: -9005687721568604579
+    second: Small red enemy dying_2
+  - first:
+      213: 4149468505684919860
+    second: Small red enemy dying_3
+  - first:
+      213: 5302045397833181897
+    second: Small red enemy dying_4
+  - first:
+      213: -280012313476541541
+    second: Small red enemy dying_5
+  - first:
+      213: -2179178582153398088
+    second: Small red enemy dying_6
+  - first:
+      213: 8620743819961688491
+    second: Small red enemy dying_7
+  - first:
+      213: -1073494743609485148
+    second: Small red enemy dying_8
+  - first:
+      213: 8889831619129383700
+    second: Small red enemy dying_9
+  - first:
+      213: 8856410800468700318
+    second: Small red enemy dying_10
+  - first:
+      213: -6349579869803709222
+    second: Small red enemy dying_11
+  - first:
+      213: 1974347324352245480
+    second: Small red enemy dying_12
+  - first:
+      213: -4322766508329148531
+    second: Small red enemy dying_13
+  - first:
+      213: 2512792427507603850
+    second: Small red enemy dying_14
+  - first:
+      213: -6869570570451583631
+    second: Small red enemy dying_15
+  - first:
+      213: 7175157723708805820
+    second: Small red enemy dying_16
+  - first:
+      213: 175746508551333387
+    second: Small red enemy dying_17
+  - first:
+      213: -5772313357394825126
+    second: Small red enemy dying_18
+  - first:
+      213: -3444590728885028516
+    second: Small red enemy dying_19
+  - first:
+      213: 1427066691026075458
+    second: Small red enemy dying_20
+  - first:
+      213: -7416423890081239187
+    second: Small red enemy dying_21
+  - first:
+      213: 2227215525690566694
+    second: Small red enemy dying_22
+  - first:
+      213: 405486172650722254
+    second: Small red enemy dying_23
+  - first:
+      213: -5764610901144968249
+    second: Small red enemy dying_24
+  - first:
+      213: 8843804129231533646
+    second: Small red enemy dying_25
+  - first:
+      213: 7339484665940202091
+    second: Small red enemy dying_26
+  - first:
+      213: -8530643249131071823
+    second: Small red enemy dying_27
+  - first:
+      213: 2243032117730007392
+    second: Small red enemy dying_28
+  - first:
+      213: -9138645159511402405
+    second: Small red enemy dying_29
+  - first:
+      213: -7674283580474125965
+    second: Small red enemy dying_30
+  - first:
+      213: 2870545473425144665
+    second: Small red enemy dying_31
+  - first:
+      213: 6691429220102072162
+    second: Small red enemy dying_32
+  - first:
+      213: 4377192172743983795
+    second: Small red enemy dying_33
+  - first:
+      213: -3691971180333435123
+    second: Small red enemy dying_34
+  - first:
+      213: -2218942298123526140
+    second: Small red enemy dying_35
+  - first:
+      213: 4267730127711840217
+    second: Small red enemy dying_36
+  - first:
+      213: 2498718478913766790
+    second: Small red enemy dying_37
+  - first:
+      213: -4901892488494006494
+    second: Small red enemy dying_38
+  - first:
+      213: 5699217511017755069
+    second: Small red enemy dying_39
+  - first:
+      213: 7689116731418499915
+    second: Small red enemy dying_40
+  - first:
+      213: -5431628963899885728
+    second: Small red enemy dying_41
+  - first:
+      213: -3150207862188124863
+    second: Small red enemy dying_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Small red enemy dying_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 339
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abcf10fee8487cb0800000000000000
+      internalID: -4866059206305789019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 339
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463444e97c6ec6600800000000000000
+      internalID: 462998606740472676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 339
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e6ecd3bbe550380800000000000000
+      internalID: -9005687721568604579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 339
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43645000f9fd59930800000000000000
+      internalID: 4149468505684919860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_4
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 239
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca67d8a236a49940800000000000000
+      internalID: 5302045397833181897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 239
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93de72d8423d1cf0800000000000000
+      internalID: -280012313476541541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_6
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 239
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b87b9410a002c1e0800000000000000
+      internalID: -2179178582153398088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_7
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 239
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1e57064d803a770800000000000000
+      internalID: 8620743819961688491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 139
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a858e2e73e2a11f0800000000000000
+      internalID: -1073494743609485148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 139
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b1e3bd1c60f5b70800000000000000
+      internalID: 8889831619129383700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_10
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 135
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9caed223ba48ea70800000000000000
+      internalID: 8856410800468700318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 34
+        width: 66
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcf06bffb2c1e7a0800000000000000
+      internalID: -6349579869803709222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Small red enemy dying_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 34
+        width: 72
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee22435e6a466b10800000000000000
+      internalID: 1974347324352245480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

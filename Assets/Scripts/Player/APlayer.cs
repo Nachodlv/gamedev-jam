@@ -2,7 +2,7 @@
 
 namespace Player
 {
-	public class Player : MonoBehaviour
+	public class APlayer : MonoBehaviour
 	{
 		[SerializeField] private Stats stats;
 

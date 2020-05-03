@@ -42,13 +42,7 @@ public class CharacterController : MonoBehaviour
 	private void FixedUpdate()
 	{
 		if(Grounded) return;
-		if (_justJump)
-		{
-			_justJump = false;
-			return;
-		}
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+		
 		var size = Physics2D.OverlapCircleNonAlloc(groundCheck.position, GroundedRadius, _colliders, whatIsGround);
 		for (var i = 0; i < size; i++)
 		{
