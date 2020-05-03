@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController : MonoBehaviour
 {
    	[SerializeField] private float jumpForce = 400f;							// Amount of force added when the player jumps.
@@ -12,6 +13,7 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private Transform ceilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D crouchDisableCollider;				// A collider that will be disabled when crouching
 	[SerializeField] private int maxJumps = 1;
+	[SerializeField] private SpriteRenderer spriteRenderer;
 
 	public event Action OnJumpEvent;
 	public event Action OnLandEvent;
@@ -25,7 +27,6 @@ public class CharacterController : MonoBehaviour
 
 	private bool _facingRight = true;
 	private Rigidbody2D _myRigidBody2D;
-	private SpriteRenderer _spriteRenderer;
 	private Vector3 _velocity = Vector3.zero;
 	private bool _wasCrouching;
 	private int _currentJumps;
@@ -36,7 +37,6 @@ public class CharacterController : MonoBehaviour
 	{
 		_myRigidBody2D = GetComponent<Rigidbody2D>();
 		_colliders = new Collider2D[5];
-		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	private void FixedUpdate()
@@ -154,7 +154,7 @@ public class CharacterController : MonoBehaviour
 		// Vector3 theScale = transform.localScale;
 		// theScale.x *= -1;
 		// transform.localScale = theScale;
-		_spriteRenderer.flipX = !_facingRight;
+		spriteRenderer.flipX = !_facingRight;
 		OnFlip?.Invoke();
 	}
 }

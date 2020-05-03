@@ -7,11 +7,11 @@ namespace Enemy.Ai
 	[RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
 	public class CommonEnemy: MonoBehaviour
 	{
-		[SerializeField] private EnemyStats stats;
+		[SerializeField] private Stats stats;
 		[SerializeField] private Transform leftPosition;
 		[SerializeField] private Transform rightPosition;
 		
-		public EnemyStats Stats => stats;
+		public Stats Stats => stats;
 		public Animator Animator { get; private set; }
 		public Rigidbody2D RigidBody { get; private set; }
 		
