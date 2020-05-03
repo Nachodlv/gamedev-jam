@@ -11,6 +11,8 @@ namespace DefaultNamespace
 
 		private static readonly int JumpTrigger = Animator.StringToHash("jump");
 		private static readonly int GroundTrigger = Animator.StringToHash("ground");
+		private static readonly int WallBool = Animator.StringToHash("grabWall");
+		private static readonly int Speed = Animator.StringToHash("speed");
 
 		private Animator _animator;
 
@@ -19,6 +21,12 @@ namespace DefaultNamespace
 			_animator = GetComponent<Animator>();
 			characterController.OnJumpEvent += Jump;
 			characterController.OnLandEvent += Land;
+			wallJumper.OnTouchingWall += GrabWall;
+		}
+
+		private void Update()
+		{
+			_animator.SetFloat(Speed, characterController.Grounded ? Mathf.Abs(characterController.Velocity.x) : 0);
 		}
 
 		private void Jump()
@@ -30,6 +38,10 @@ namespace DefaultNamespace
 		{
 			_animator.SetTrigger(GroundTrigger);
 		}
-		
+
+		private void GrabWall(bool isGrabbed, bool isRight)
+		{
+			_animator.SetBool(WallBool, isGrabbed);
+		}
 	}
 }

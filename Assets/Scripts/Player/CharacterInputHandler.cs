@@ -13,6 +13,7 @@ public class CharacterInputHandler : MonoBehaviour
 	private bool _jump;
 	private bool _crouch;
 	private InputActionController _controller;
+	private bool _isGrabbingWall;
 
 	private void Awake()
 	{
@@ -21,6 +22,7 @@ public class CharacterInputHandler : MonoBehaviour
 		_controller = new InputActionController();
 		_controller.Player.Jump.performed += ctx => Jump();
 		_controller.Player.Crouch.performed += ctx => Crouch();
+		_wallJumper.OnTouchingWall += (grabbing, right) => WallGrabbed(grabbing);
 	}
 
 	private void Update()
@@ -30,13 +32,13 @@ public class CharacterInputHandler : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		_characterController.Move(_movement, _crouch);
 		if (_jump)
 		{
 			if(_wallJumper.CanWallJump()) _wallJumper.Jump();
 			else _characterController.Jump();
 			_jump = false;
 		}
+		_characterController.Move(_movement, _crouch, !_isGrabbingWall);
 		_movement = 0;
 		_crouch = false;
 	}
@@ -59,6 +61,11 @@ public class CharacterInputHandler : MonoBehaviour
 	public void OnDisable()
 	{
 		_controller.Disable();
+	}
+
+	private void WallGrabbed(bool isGrabbing)
+	{
+		_isGrabbingWall = isGrabbing;
 	}
 
 }

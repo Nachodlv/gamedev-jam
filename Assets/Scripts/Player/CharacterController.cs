@@ -16,14 +16,16 @@ public class CharacterController : MonoBehaviour
 	public event Action OnJumpEvent;
 	public event Action OnLandEvent;
 	public event Action<bool> OnCrouchEvent;
+	public event Action OnFlip;
 	public bool Grounded { get; private set; }
+	public Vector3 Velocity => _myRigidBody2D.velocity;
 
 	private const float GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private const float CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 
+	private bool _facingRight = true;
 	private Rigidbody2D _myRigidBody2D;
 	private SpriteRenderer _spriteRenderer;
-	private bool _facingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 _velocity = Vector3.zero;
 	private bool _wasCrouching;
 	private int _currentJumps;
@@ -57,7 +59,7 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 	
-	public void Move(float move, bool crouch)
+	public void Move(float move, bool crouch, bool canFlip )
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -107,13 +109,13 @@ public class CharacterController : MonoBehaviour
 			_myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, movementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !_facingRight)
+			if (move > 0 && !_facingRight && canFlip)
 			{
 				// ... flip the player.
 				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && _facingRight)
+			else if (move < 0 && _facingRight && canFlip)
 			{
 				// ... flip the player.
 				Flip();
@@ -143,7 +145,7 @@ public class CharacterController : MonoBehaviour
 	}
 
 
-	private void Flip()
+	public void Flip()
 	{
 		// Switch the way the player is labelled as facing.
 		_facingRight = !_facingRight;
@@ -153,5 +155,6 @@ public class CharacterController : MonoBehaviour
 		// theScale.x *= -1;
 		// transform.localScale = theScale;
 		_spriteRenderer.flipX = !_facingRight;
+		OnFlip?.Invoke();
 	}
 }

@@ -15,7 +15,7 @@ namespace DefaultNamespace
 		public delegate void TouchingWall(bool isTouching, bool isRight);
 		public event TouchingWall OnTouchingWall;
 
-		private const float TriggerRadius = 0.2f;
+		private const float TriggerRadius = 0.1f;
 
 		private CharacterController _characterController;
 		private bool _touchingRightWall;
@@ -32,6 +32,7 @@ namespace DefaultNamespace
 			_colliders = new Collider2D[5];
 			OnTouchingWall += WallTouched;
 			_characterController.OnLandEvent += OnLand;
+			// _characterController.OnFlip += OnFlip;
 		}
 
 		private void Update()
@@ -67,7 +68,6 @@ namespace DefaultNamespace
 			if (!rightTrigger && !leftTrigger && (_touchingLeftWall || _touchingRightWall))
 			{
 				OnTouchingWall?.Invoke(false, false);
-				Debug.Log("Stop touching wall");
 			}
 		}
 
@@ -109,6 +109,13 @@ namespace DefaultNamespace
 		{
 			_timeGrabbingWall = 0;
 			_previousCollider = null;
+			OnTouchingWall?.Invoke(false, false);
+		}
+
+		private void OnFlip()
+		{
+			OnTouchingWall?.Invoke(false, false);
+			_timeGrabbingWall = maximumTimeGrabbingWall;
 		}
 	}
 }

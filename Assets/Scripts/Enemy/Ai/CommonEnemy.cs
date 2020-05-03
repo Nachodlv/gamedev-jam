@@ -14,6 +14,7 @@ namespace Enemy.Ai
 		public EnemyStats Stats => stats;
 		public Animator Animator { get; private set; }
 		public Rigidbody2D RigidBody { get; private set; }
+		
 		private StateMachine _stateMachine;
 		private void Awake()
 		{
