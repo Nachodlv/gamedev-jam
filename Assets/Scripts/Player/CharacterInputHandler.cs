@@ -1,16 +1,18 @@
 ﻿using DefaultNamespace;
 using Input;
+using Player.Attack;
 using UnityEngine;
 
-namespace Player.Movement
+namespace Player
 {
-	[RequireComponent(typeof(CharacterController), typeof(WallJumper))]
+	[RequireComponent(typeof(CharacterController), typeof(WallJumper), typeof(PlayerAttacker))]
 	public class CharacterInputHandler : MonoBehaviour
 	{
 		[SerializeField] private APlayer aPlayer;
 	
 		private CharacterController _characterController;
 		private WallJumper _wallJumper;
+		private PlayerAttacker _playerAttacker;
 		private float _movement;
 		private bool _jump;
 		private bool _crouch;
@@ -22,8 +24,11 @@ namespace Player.Movement
 			_characterController = GetComponent<CharacterController>();
 			_wallJumper = GetComponent<WallJumper>();
 			_controller = new InputActionController();
+			_playerAttacker = GetComponent<PlayerAttacker>();
 			_controller.Player.Jump.performed += ctx => Jump();
 			_controller.Player.Crouch.performed += ctx => Crouch();
+			_controller.Player.Fire.performed += ctx => Attack();
+
 			_wallJumper.OnTouchingWall += (grabbing, right) => WallGrabbed(grabbing);
 		}
 
@@ -39,10 +44,16 @@ namespace Player.Movement
 				if(_wallJumper.CanWallJump()) _wallJumper.Jump();
 				else _characterController.Jump();
 				_jump = false;
+				_playerAttacker.HideSword();
 			}
 			_characterController.Move(_movement, _crouch, !_isGrabbingWall);
 			_movement = 0;
 			_crouch = false;
+		}
+
+		private void Attack()
+		{
+			if(!_isGrabbingWall) _playerAttacker.Attack();
 		}
 
 		private void Jump()

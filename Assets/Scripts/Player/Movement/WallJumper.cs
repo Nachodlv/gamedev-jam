@@ -55,13 +55,13 @@ namespace DefaultNamespace
 			
 			if (!_touchingRightWall && rightTrigger)
 			{
-				OnTouchingWall?.Invoke(true, true);
+				OnTouchingWall?.Invoke(true, _characterController.FacingRight);
 				return;
 			}
 
 			if (!_touchingLeftWall && leftTrigger)
 			{
-				OnTouchingWall?.Invoke(true, false);
+				OnTouchingWall?.Invoke(true,  !_characterController.FacingRight);
 				return;
 			}
 

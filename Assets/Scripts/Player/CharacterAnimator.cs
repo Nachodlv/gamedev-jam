@@ -1,18 +1,21 @@
-﻿using System;
+﻿using DefaultNamespace;
+using Player.Attack;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Player
 {
 	[RequireComponent(typeof(Animator))]
-	public class CharacterMovementAnimator : MonoBehaviour
+	public class CharacterAnimator : MonoBehaviour
 	{
 		[SerializeField] private CharacterController characterController;
 		[SerializeField] private WallJumper wallJumper;
+		[SerializeField] private PlayerAttacker playerAttacker;
 
 		private static readonly int JumpTrigger = Animator.StringToHash("jump");
 		private static readonly int GroundTrigger = Animator.StringToHash("ground");
 		private static readonly int WallBool = Animator.StringToHash("grabWall");
 		private static readonly int Speed = Animator.StringToHash("speed");
+		private static readonly int AttackTrigger = Animator.StringToHash("attack");
 
 		private Animator _animator;
 
@@ -22,6 +25,7 @@ namespace DefaultNamespace
 			characterController.OnJumpEvent += Jump;
 			characterController.OnLandEvent += Land;
 			wallJumper.OnTouchingWall += GrabWall;
+			playerAttacker.OnAttack += Attack;
 		}
 
 		private void Update()
@@ -42,6 +46,11 @@ namespace DefaultNamespace
 		private void GrabWall(bool isGrabbed, bool isRight)
 		{
 			_animator.SetBool(WallBool, isGrabbed);
+		}
+
+		private void Attack()
+		{
+			_animator.SetTrigger(AttackTrigger);
 		}
 	}
 }

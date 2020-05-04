@@ -7,6 +7,7 @@ namespace Enemy
 	{
 		[SerializeField] private Bullet bulletPrefab;
 		[SerializeField] private float timeBetweenShoots;
+		[SerializeField] private Transform shootingPoint;
 
 		private float _lastShoot;
 		private Transform _bulletAnchor;
@@ -19,8 +20,7 @@ namespace Enemy
 		public void Shoot()
 		{
 			_lastShoot = Time.time;
-			var myTransform = transform;
-			Instantiate(bulletPrefab, myTransform.position, Quaternion.identity, _bulletAnchor);
+			Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity, _bulletAnchor);
 		}
 
 		public bool CanShoot()
