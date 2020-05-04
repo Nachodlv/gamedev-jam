@@ -15,7 +15,7 @@ namespace DefaultNamespace
 		public delegate void TouchingWall(bool isTouching, bool isRight);
 		public event TouchingWall OnTouchingWall;
 
-		private const float TriggerRadius = 0.2f;
+		private const float TriggerRadius = 0.1f;
 
 		private CharacterController _characterController;
 		private bool _touchingRightWall;
@@ -32,6 +32,7 @@ namespace DefaultNamespace
 			_colliders = new Collider2D[5];
 			OnTouchingWall += WallTouched;
 			_characterController.OnLandEvent += OnLand;
+			// _characterController.OnFlip += OnFlip;
 		}
 
 		private void Update()
@@ -54,28 +55,25 @@ namespace DefaultNamespace
 			
 			if (!_touchingRightWall && rightTrigger)
 			{
-				Debug.Log("Touching wall");
-				OnTouchingWall?.Invoke(true, true);
+				OnTouchingWall?.Invoke(true, _characterController.FacingRight);
 				return;
 			}
 
 			if (!_touchingLeftWall && leftTrigger)
 			{
-				OnTouchingWall?.Invoke(true, false);
+				OnTouchingWall?.Invoke(true,  !_characterController.FacingRight);
 				return;
 			}
 
 			if (!rightTrigger && !leftTrigger && (_touchingLeftWall || _touchingRightWall))
 			{
 				OnTouchingWall?.Invoke(false, false);
-				Debug.Log("Stop touching wall");
 			}
 		}
 
 		public void Jump()
 		{
 			_characterController.JumpWithOptions(true, _touchingRightWall ? 45 : -45, wallJump);
-			Debug.Log("Wall Jump");
 		}
 
 		public bool CanWallJump()
@@ -111,6 +109,13 @@ namespace DefaultNamespace
 		{
 			_timeGrabbingWall = 0;
 			_previousCollider = null;
+			OnTouchingWall?.Invoke(false, false);
+		}
+
+		private void OnFlip()
+		{
+			OnTouchingWall?.Invoke(false, false);
+			_timeGrabbingWall = maximumTimeGrabbingWall;
 		}
 	}
 }

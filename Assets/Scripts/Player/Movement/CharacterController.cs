@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController : MonoBehaviour
 {
    	[SerializeField] private float jumpForce = 400f;							// Amount of force added when the player jumps.
@@ -12,18 +13,20 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private Transform ceilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D crouchDisableCollider;				// A collider that will be disabled when crouching
 	[SerializeField] private int maxJumps = 1;
+	[SerializeField] private SpriteRenderer spriteRenderer;
 
 	public event Action OnJumpEvent;
 	public event Action OnLandEvent;
 	public event Action<bool> OnCrouchEvent;
+	public event Action OnFlip;
 	public bool Grounded { get; private set; }
+	public Vector3 Velocity => _myRigidBody2D.velocity;
+	public bool FacingRight { get; private set; } = true;
 
 	private const float GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private const float CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 
 	private Rigidbody2D _myRigidBody2D;
-	private SpriteRenderer _spriteRenderer;
-	private bool _facingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 _velocity = Vector3.zero;
 	private bool _wasCrouching;
 	private int _currentJumps;
@@ -34,19 +37,18 @@ public class CharacterController : MonoBehaviour
 	{
 		_myRigidBody2D = GetComponent<Rigidbody2D>();
 		_colliders = new Collider2D[5];
-		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	private void FixedUpdate()
 	{
 		if(Grounded) return;
+		
 		if (_justJump)
 		{
 			_justJump = false;
 			return;
 		}
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+		
 		var size = Physics2D.OverlapCircleNonAlloc(groundCheck.position, GroundedRadius, _colliders, whatIsGround);
 		for (var i = 0; i < size; i++)
 		{
@@ -57,7 +59,7 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 	
-	public void Move(float move, bool crouch)
+	public void Move(float move, bool crouch, bool canFlip )
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -107,13 +109,13 @@ public class CharacterController : MonoBehaviour
 			_myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, movementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !_facingRight)
+			if (move > 0 && !FacingRight && canFlip)
 			{
 				// ... flip the player.
 				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && _facingRight)
+			else if (move < 0 && FacingRight && canFlip)
 			{
 				// ... flip the player.
 				Flip();
@@ -143,15 +145,16 @@ public class CharacterController : MonoBehaviour
 	}
 
 
-	private void Flip()
+	public void Flip()
 	{
 		// Switch the way the player is labelled as facing.
-		_facingRight = !_facingRight;
+		FacingRight = !FacingRight;
 
 		// Multiply the player's x local scale by -1.
-		// Vector3 theScale = transform.localScale;
-		// theScale.x *= -1;
-		// transform.localScale = theScale;
-		_spriteRenderer.flipX = !_facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+		// spriteRenderer.flipX = !_facingRight;
+		OnFlip?.Invoke();
 	}
 }
