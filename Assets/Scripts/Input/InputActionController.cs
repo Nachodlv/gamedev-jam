@@ -284,6 +284,17 @@ namespace Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""56d66de0-01ce-4fd5-9187-81df59d41ddf"",
+                    ""path"": ""<WebGLGamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""4ecb9deb-11d1-4696-8021-7f119714a60e"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
