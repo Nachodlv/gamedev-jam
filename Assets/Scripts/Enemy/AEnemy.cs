@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-	public class AEnemy: MonoBehaviour, IHasStats
+	public class AEnemy: MonoBehaviour, IHaveStats
 	{
 		public Stats Stats { get; }
 		

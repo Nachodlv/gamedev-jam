@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Player
 {
-	public class APlayer : MonoBehaviour, IHasStats
+	public class APlayer : MonoBehaviour, IHaveStats
 	{
 		[SerializeField] private Stats stats;
 

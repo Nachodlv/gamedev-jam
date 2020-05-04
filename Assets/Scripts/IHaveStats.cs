@@ -1,6 +1,6 @@
 ﻿namespace DefaultNamespace
 {
-	public interface IHasStats
+	public interface IHaveStats
 	{
 		 Stats Stats { get; }
 	}
