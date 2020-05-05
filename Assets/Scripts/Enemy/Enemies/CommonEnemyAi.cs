@@ -7,7 +7,7 @@ using Utils;
 namespace Enemy.Ai
 {
 	[RequireComponent(typeof(Rigidbody2D))]
-	public class CommonEnemy : Enemy
+	public class CommonEnemyAi : EnemyAi
 	{
 		[SerializeField] private Transform leftPosition;
 		[SerializeField] private Transform rightPosition;

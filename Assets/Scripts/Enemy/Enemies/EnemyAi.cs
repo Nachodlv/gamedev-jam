@@ -5,7 +5,7 @@ using Utils;
 
 namespace Enemy.Ai
 {
-	public abstract class Enemy: MonoBehaviour
+	public abstract class EnemyAi: MonoBehaviour
 	{
 		[SerializeField] private Stats stats;
 		[SerializeField] private Animator animator;

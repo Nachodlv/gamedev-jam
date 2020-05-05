@@ -3,9 +3,15 @@ using UnityEngine;
 
 namespace Enemy
 {
-	public class AEnemy: MonoBehaviour, IHaveStats
+	public class AEnemy: DamageReceiver, IHaveStats
 	{
-		public Stats Stats { get; }
-		
+		[SerializeField] private Stats stats;
+		public Stats Stats => stats;
+
+		protected override void DealDamage(float damage)
+		{
+			stats.Health -= damage;
+		}
+
 	}
 }

@@ -1,4 +1,5 @@
-﻿﻿using DefaultNamespace;
+using System;
+using DefaultNamespace;
 using Player.Attack;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ namespace Player
 		[SerializeField] private WallJumper wallJumper;
 		[SerializeField] private PlayerAttacker playerAttacker;
 
+		public event Action OnAttackAnimation;
+		
 		private static readonly int JumpTrigger = Animator.StringToHash("jump");
 		private static readonly int GroundTrigger = Animator.StringToHash("ground");
 		private static readonly int WallBool = Animator.StringToHash("grabWall");
@@ -51,6 +54,11 @@ namespace Player
 		private void Attack()
 		{
 			_animator.SetTrigger(AttackTrigger);
+		}
+
+		private void MakeAttack()
+		{
+			OnAttackAnimation?.Invoke();
 		}
 	}
 }

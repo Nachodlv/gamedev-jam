@@ -44,7 +44,6 @@ namespace Player
 				if(_wallJumper.CanWallJump()) _wallJumper.Jump();
 				else _characterController.Jump();
 				_jump = false;
-				_playerAttacker.HideSword();
 			}
 			_characterController.Move(_movement, _crouch, !_isGrabbingWall);
 			_movement = 0;

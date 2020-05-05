@@ -15,12 +15,12 @@ namespace Enemy.Ai.States
 		private Vector2 _velocity;
 		private readonly Mover _mover;
 
-		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemy commonEnemy, Mover mover)
+		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemyAi commonEnemyAi, Mover mover)
 		{
 			_leftPosition = leftPosition.position.x;
 			_rightPosition = rightPosition.position.x;
-			_animator = commonEnemy.Animator;
-			_rigidBody2D = commonEnemy.RigidBody;
+			_animator = commonEnemyAi.Animator;
+			_rigidBody2D = commonEnemyAi.RigidBody;
 			_mover = mover;
 		}
 
