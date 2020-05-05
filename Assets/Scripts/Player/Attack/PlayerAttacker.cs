@@ -4,9 +4,10 @@ using UnityEngine;
 namespace Player.Attack
 {
 	[RequireComponent(typeof(CapsuleCollider2D))]
-	public class PlayerAttacker: MonoBehaviour
+	public class PlayerAttacker : MonoBehaviour
 	{
 		[SerializeField] private Sword sword;
+		[SerializeField] private CharacterController characterController;
 		
 		public event Action OnAttack;
 
@@ -27,10 +28,18 @@ namespace Player.Attack
 				_swordDisplayed = true;
 				return;
 			}
-			var hit = Physics2D.BoxCast(transform.position, Vector2.one * sword.Range, 0, Vector2.zero);
+
+			
+			// var hitDirection = (characterController.FacingRight ? 1 : -1) * Vector2.right;
+			var bounds = _collider.bounds.size;
+			bounds.x = sword.Range * (characterController.FacingRight ? 1 : -1);
+			var center = transform.position;
+			center.x += _collider.bounds.size.x * (characterController.FacingRight ? 1 : -1);
+			var hit = Physics2D.BoxCast(center,
+				Vector2.one * sword.Range, 0, Vector2.zero);
 			if (hit.collider != null)
 			{
-				Debug.Log("I hit something!");
+				Debug.Log("I hit something! " + hit.collider.name);
 			}
 		}
 
@@ -42,7 +51,11 @@ namespace Player.Attack
 		private void OnDrawGizmos()
 		{
 			var myTransform = transform;
-			Gizmos.DrawCube(myTransform.right.x * (myTransform.position + _collider.bounds.extents), Vector3.one * sword.Range);
+			var center = myTransform.position;
+			center.x += _collider.bounds.size.x * (characterController.FacingRight ? 1 : -1);
+
+			Gizmos.DrawCube(center,
+				Vector3.one * sword.Range);
 		}
 	}
 }

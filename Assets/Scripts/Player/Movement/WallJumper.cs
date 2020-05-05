@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
 
 namespace DefaultNamespace
 {
@@ -23,7 +24,7 @@ namespace DefaultNamespace
 		private Rigidbody2D _rigidBody2D;
 		private Collider2D[] _colliders;
 		private float _timeGrabbingWall;
-		private Collider2D _previousCollider;
+		private float _previousCollider;
 
 		private void Awake()
 		{
@@ -73,6 +74,7 @@ namespace DefaultNamespace
 
 		public void Jump()
 		{
+			_timeGrabbingWall = 0;
 			_characterController.JumpWithOptions(true, _touchingRightWall ? 45 : -45, wallJump);
 		}
 
@@ -80,8 +82,10 @@ namespace DefaultNamespace
 		{
 			if ((!_touchingLeftWall && !_touchingRightWall) || _timeGrabbingWall > maximumTimeGrabbingWall)
 				return false;
-			if (_colliders[0] == _previousCollider) return false;
-			_previousCollider = _colliders[0];
+			var y = transform.position.x;
+
+			if (Math.Abs(y - _previousCollider) < 0.5f) return false;
+			_previousCollider = y;
 			return true;
 		}
 
@@ -108,7 +112,7 @@ namespace DefaultNamespace
 		private void OnLand()
 		{
 			_timeGrabbingWall = 0;
-			_previousCollider = null;
+			_previousCollider = float.MaxValue;
 			OnTouchingWall?.Invoke(false, false);
 		}
 
