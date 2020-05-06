@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8320878988238889451}
   - component: {fileID: 4134731876692258622}
   - component: {fileID: 1253244177033159630}
-  m_Layer: 0
+  - component: {fileID: 6041079436929165713}
+  m_Layer: 11
   m_Name: Red cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,8 +119,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4aa9e8d4fc249a89fc163ee8fe92ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   damage: 2
+  timeToLive: 4
+--- !u!58 &6041079436929165713
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798518200487775037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
 --- !u!1 &5877847920777271961
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266651043053546270}
   - component: {fileID: 4547585646316713509}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

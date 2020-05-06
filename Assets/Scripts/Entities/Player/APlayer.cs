@@ -29,7 +29,7 @@ namespace Entities.Player
 
 		private IEnumerator WaitForAnimationToEnd()
 		{
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.2f);
 			OnDie?.Invoke();
 			_dead = false;
 			stats.ResetHealth();

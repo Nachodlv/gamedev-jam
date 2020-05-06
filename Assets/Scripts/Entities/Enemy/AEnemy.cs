@@ -1,4 +1,5 @@
-﻿using DefaultNamespace;
+﻿using System;
+using DefaultNamespace;
 using UnityEngine;
 
 namespace Enemy
@@ -12,6 +13,5 @@ namespace Enemy
 		{
 			stats.CurrentHealth = instantKill? 0 : stats.CurrentHealth - damage;
 		}
-
 	}
 }
