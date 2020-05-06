@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-	public class EnemyWeapon: MonoBehaviour
+	public class EnemyWeapon : MonoBehaviour
 	{
 		[SerializeField] private Bullet bulletPrefab;
 		[SerializeField] private float timeBetweenShoots;
@@ -17,10 +17,11 @@ namespace Enemy
 			_bulletAnchor = new GameObject("Bullet anchor").transform;
 		}
 
-		public void Shoot()
+		public void Shoot(bool isRight)
 		{
 			_lastShoot = Time.time;
-			Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity, _bulletAnchor);
+			var rotation = Quaternion.AngleAxis(isRight ? 0 : 180, Vector3.forward);
+			Instantiate(bulletPrefab, shootingPoint.position, rotation, _bulletAnchor);
 		}
 
 		public bool CanShoot()

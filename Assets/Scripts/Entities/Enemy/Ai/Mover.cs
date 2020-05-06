@@ -9,7 +9,7 @@ namespace Enemy.Ai
 		private readonly float _smoothing;
 		private readonly float _speed;
 		private Vector2 _velocity;
-		private bool _facingRight;
+		public bool FacingRight { get; private set; }
 
 		public Mover(SpriteRenderer spriteRenderer, Rigidbody2D rigidBody2D, float speed, float smoothing = 0.1f)
 		{
@@ -28,14 +28,14 @@ namespace Enemy.Ai
 
 		public void Flip(Vector2 direction)
 		{
-			if (direction.x > 0 && !_facingRight)
+			if (direction.x > 0 && !FacingRight)
 			{
 				_spriteRenderer.flipX = true;
-				_facingRight = true;
-			} else if (direction.x < 0 && _facingRight)
+				FacingRight = true;
+			} else if (direction.x < 0 && FacingRight)
 			{
 				_spriteRenderer.flipX = false;
-				_facingRight = false;
+				FacingRight = false;
 			}
 		}
 	}

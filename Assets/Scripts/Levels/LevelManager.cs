@@ -40,13 +40,13 @@ namespace Levels
 			if (_currentLevel >= levels.Length - 1) _currentLevel = 0;
 			else _currentLevel++;
 			LoadCurrentLevel();
+			SceneManager.UnloadSceneAsync(PreviousLevel.index);
 		}
 		
 		private void LoadCurrentLevel()
 		{
 			levelTransition.SetTrigger(FadeIn);
 			var loadSceneAsync = SceneManager.LoadSceneAsync(Currentlevel.index, LoadSceneMode.Additive);
-			SceneManager.UnloadSceneAsync(PreviousLevel.index);
 			loadSceneAsync.completed += operation =>
 			{
 				player.transform.position = Currentlevel.playerPosition;

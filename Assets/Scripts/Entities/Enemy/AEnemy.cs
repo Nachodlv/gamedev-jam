@@ -10,7 +10,7 @@ namespace Enemy
 
 		protected override void DealDamage(float damage, bool instantKill)
 		{
-			stats.Health = instantKill? 0 : stats.Health - damage;
+			stats.CurrentHealth = instantKill? 0 : stats.CurrentHealth - damage;
 		}
 
 	}

@@ -19,7 +19,7 @@ namespace Enemy.Ai
 			var idleState = new IdleState(leftPosition, rightPosition, this, enemyMover);
 			var startAttackingState =
 				new PlayAnimationState(Animator, Player, enemyMover, "startAttacking", "Prepare to attack");
-			var attackState = new AttackState(enemyWeapon, Animator);
+			var attackState = new AttackState(enemyWeapon, Animator, enemyMover, Player);
 			var stopAttackingState =
 				new PlayAnimationState(Animator, Player, enemyMover, "stopAttacking", "Prepare to attack");
 

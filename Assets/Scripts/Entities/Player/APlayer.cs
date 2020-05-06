@@ -19,8 +19,8 @@ namespace Entities.Player
 		protected override void DealDamage(float damage, bool instantKill)
 		{
 			if(_dead) return;
-			stats.Health = instantKill ? 0 : stats.Health - damage;
-			if (stats.Health <= 0)
+			stats.CurrentHealth = instantKill ? 0 : stats.CurrentHealth - damage;
+			if (stats.CurrentHealth <= 0)
 			{
 				_dead = true;
 				StartCoroutine(WaitForAnimationToEnd());
@@ -32,6 +32,7 @@ namespace Entities.Player
 			yield return new WaitForSeconds(0.5f);
 			OnDie?.Invoke();
 			_dead = false;
+			stats.ResetHealth();
 		}
 	}
 }

@@ -4,29 +4,23 @@ using UnityEngine;
 
 namespace Enemy.Ai.States
 {
-	public class PlayAnimationState : IState
+	public class PlayAnimationState : MoverState
 	{
 		public bool Finished { get; private set; }
 
-		private readonly Animator _animator;
-		private readonly Transform _player;
-		private readonly Mover _mover;
 		private float _remainingTime;
 		private readonly int _animationTrigger;
 		private readonly string _stateName;
 		private bool _hasRemainingTime;
 
 		public PlayAnimationState(Animator animator, Transform player, Mover mover, string animationTrigger,
-			string stateName)
+			string stateName): base(mover, animator, player)
 		{
-			_animator = animator;
-			_mover = mover;
-			_player = player;
 			_animationTrigger = Animator.StringToHash(animationTrigger);
 			_stateName = stateName;
 		}
 
-		public void Tick()
+		public override void Tick()
 		{
 			if (!_hasRemainingTime)
 			{
@@ -37,32 +31,29 @@ namespace Enemy.Ai.States
 			if (_remainingTime <= 0) Finished = true;
 		}
 
-		public void FixedTick()
+		public override void FixedTick()
 		{
 		}
 
-		public void OnEnter()
+		public override void OnEnter()
 		{
 			LookAtTarget();
-			_animator.SetTrigger(_animationTrigger);
+			Animator.SetTrigger(_animationTrigger);
 		}
 
-		public void OnExit()
+		public override void OnExit()
 		{
 			_remainingTime = 0;
 			Finished = false;
 			_hasRemainingTime = false;
 		}
 
-		private void LookAtTarget()
-		{
-			_mover.Flip(_player.position.x < _animator.transform.position.x ? new Vector2(-1, 0) : new Vector2(1, 0));
-		}
+		
 
 		private void GetRemainingTime()
 		{
-			var clips = _animator.GetCurrentAnimatorClipInfo(0).ToList();
-			clips.AddRange(_animator.GetNextAnimatorClipInfo(0));
+			var clips = Animator.GetCurrentAnimatorClipInfo(0).ToList();
+			clips.AddRange(Animator.GetNextAnimatorClipInfo(0));
 			foreach (var animatorClipInfo in clips)
 			{
 				if (animatorClipInfo.clip.name == _stateName)
