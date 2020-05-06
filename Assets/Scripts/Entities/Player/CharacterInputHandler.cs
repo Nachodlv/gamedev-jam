@@ -1,5 +1,6 @@
 ﻿﻿using DefaultNamespace;
-using Input;
+ using Entities.Player;
+ using Input;
 using Player.Attack;
 using UnityEngine;
 

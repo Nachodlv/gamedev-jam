@@ -15,13 +15,13 @@ namespace DefaultNamespace
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 		}
 
-		public void ReceiveDamage(float damage, Vector3 positionAttacker)
+		public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false)
 		{
-			DealDamage(damage);
+			DealDamage(damage, instantKill);
 			var direction = (transform.position - positionAttacker).normalized;
 			_rigidbody2D.AddForce(direction * forceAppliedOnHit);
 		}
 
-		protected abstract void DealDamage(float damage);
+		protected abstract void DealDamage(float damage, bool instantKill);
 	}
 }

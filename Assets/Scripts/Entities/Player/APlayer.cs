@@ -1,12 +1,37 @@
-﻿using DefaultNamespace;
+﻿using System;
+using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 
-namespace Player
+namespace Entities.Player
 {
-	public class APlayer : MonoBehaviour, IHaveStats
+	public class APlayer : DamageReceiver, IHaveStats
 	{
 		[SerializeField] private Stats stats;
 
+		public event Action OnDie;
+
+		private bool _dead;
+		
 		public Stats Stats => stats;
+		
+		
+		protected override void DealDamage(float damage, bool instantKill)
+		{
+			if(_dead) return;
+			stats.Health = instantKill ? 0 : stats.Health - damage;
+			if (stats.Health <= 0)
+			{
+				_dead = true;
+				StartCoroutine(WaitForAnimationToEnd());
+			}
+		}
+
+		private IEnumerator WaitForAnimationToEnd()
+		{
+			yield return new WaitForSeconds(0.5f);
+			OnDie?.Invoke();
+			_dead = false;
+		}
 	}
 }

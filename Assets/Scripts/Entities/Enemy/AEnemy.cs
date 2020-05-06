@@ -8,9 +8,9 @@ namespace Enemy
 		[SerializeField] private Stats stats;
 		public Stats Stats => stats;
 
-		protected override void DealDamage(float damage)
+		protected override void DealDamage(float damage, bool instantKill)
 		{
-			stats.Health -= damage;
+			stats.Health = instantKill? 0 : stats.Health - damage;
 		}
 
 	}

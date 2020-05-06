@@ -1183,6 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1546048122}
+  player: {fileID: 1414586194}
 --- !u!4 &1546048124
 Transform:
   m_ObjectHideFlags: 0
@@ -1572,6 +1573,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: stats.Health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: forceAppliedOnHit
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341847, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
