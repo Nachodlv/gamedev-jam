@@ -25,6 +25,7 @@ namespace Enemy.Ai.States
 			if (!_hasRemainingTime)
 			{
 				GetRemainingTime();
+				_hasRemainingTime = true;
 				return;	
 			}
 			_remainingTime -= Time.deltaTime;

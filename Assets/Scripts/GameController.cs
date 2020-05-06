@@ -12,7 +12,7 @@ namespace DefaultNamespace
 
 		private void Awake()
 		{
-			player.OnDie += FinishLevel;
+			player.OnDie += () => levelManager.ResetLevel();
 		}
 
 		public void FinishLevel()

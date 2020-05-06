@@ -30,13 +30,21 @@ namespace Enemy.Ai
 		{
 			if (direction.x > 0 && !FacingRight)
 			{
-				_spriteRenderer.flipX = true;
+				FlipTransform();
 				FacingRight = true;
 			} else if (direction.x < 0 && FacingRight)
 			{
-				_spriteRenderer.flipX = false;
+				FlipTransform();
 				FacingRight = false;
 			}
+		}
+
+		private void FlipTransform()
+		{
+			var transform = _spriteRenderer.transform;
+			var theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
 		}
 	}
 }

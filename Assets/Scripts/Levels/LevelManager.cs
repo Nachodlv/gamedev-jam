@@ -42,6 +42,12 @@ namespace Levels
 			LoadCurrentLevel();
 			SceneManager.UnloadSceneAsync(PreviousLevel.index);
 		}
+
+		public void ResetLevel()
+		{
+			SceneManager.UnloadSceneAsync(PreviousLevel.index);
+			LoadCurrentLevel();
+		}
 		
 		private void LoadCurrentLevel()
 		{
@@ -49,9 +55,12 @@ namespace Levels
 			var loadSceneAsync = SceneManager.LoadSceneAsync(Currentlevel.index, LoadSceneMode.Additive);
 			loadSceneAsync.completed += operation =>
 			{
+				// SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(Currentlevel.index));
 				player.transform.position = Currentlevel.playerPosition;
 				levelTransition.SetTrigger(FadeOut);
 			};
 		}
+		
+		
 	}
 }

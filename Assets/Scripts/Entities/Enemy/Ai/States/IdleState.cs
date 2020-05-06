@@ -14,6 +14,7 @@ namespace Enemy.Ai.States
 		private readonly Rigidbody2D _rigidBody2D;
 		private Vector2 _velocity;
 		private readonly Mover _mover;
+		private static readonly int Speed = Animator.StringToHash("speed");
 
 		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemyAi commonEnemyAi, Mover mover)
 		{
@@ -34,6 +35,7 @@ namespace Enemy.Ai.States
 			{
 				if (_leftPosition > _rigidBody2D.position.x) _goingRight = true;
 			}
+			SetAnimatorVelocity();
 		}
 		
 		public void FixedTick()
@@ -49,7 +51,13 @@ namespace Enemy.Ai.States
 		public void OnExit()
 		{
 			_rigidBody2D.velocity = Vector2.zero;
+			SetAnimatorVelocity();
 			_animator.SetBool(IdleBool, false);
+		}
+
+		private void SetAnimatorVelocity()
+		{
+			_animator.SetFloat(Speed, Mathf.Abs(_rigidBody2D.velocity.magnitude));
 		}
 	}
 }

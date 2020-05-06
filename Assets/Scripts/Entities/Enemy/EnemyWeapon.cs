@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
@@ -12,7 +13,7 @@ namespace Enemy
 		private float _lastShoot;
 		private Transform _bulletAnchor;
 
-		private void Awake()
+		private void Start()
 		{
 			_bulletAnchor = new GameObject("Bullet anchor").transform;
 		}
@@ -27,6 +28,11 @@ namespace Enemy
 		public bool CanShoot()
 		{
 			return Time.time - _lastShoot > timeBetweenShoots;
+		}
+
+		private void OnDestroy()
+		{
+			Destroy(_bulletAnchor.gameObject);
 		}
 	}
 }
