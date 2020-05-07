@@ -1,12 +1,11 @@
-﻿﻿using System;
- using Entities.Player;
- using Player;
+﻿using Enemy;
+using Entities.Player;
 using UnityEngine;
 using Utils;
 
-namespace Enemy.Ai
+namespace Entities.Enemy.Enemies
 {
-	public abstract class EnemyAi: MonoBehaviour
+	public abstract class EnemyAi: MonoBehaviour, IPausable
 	{
 		[SerializeField] private Stats stats;
 		[SerializeField] private Animator animator;
@@ -20,8 +19,10 @@ namespace Enemy.Ai
 		public Rigidbody2D RigidBody { get; private set; }
 
 		protected StateMachine StateMachine;
-		private DistanceDetector _distanceDetector;
 		protected Transform Player;
+
+		private DistanceDetector _distanceDetector;
+		private bool _paused;
 		private void Awake()
 		{
 			RigidBody = GetComponent<Rigidbody2D>();
@@ -36,12 +37,12 @@ namespace Enemy.Ai
 
 		private void Update()
 		{
-			StateMachine.Tick();
+			if(!_paused) StateMachine.Tick();
 		}
 
 		private void FixedUpdate()
 		{
-			StateMachine.FixedTick();
+			if(!_paused) StateMachine.FixedTick();
 		}
 		
 		protected bool PlayerInsideRange()
@@ -57,5 +58,18 @@ namespace Enemy.Ai
 		}
 		
 		protected abstract void SetUpStates();
+		
+		public void Pause()
+		{
+			_paused = true;
+			Animator.speed = 0;
+			RigidBody.velocity = Vector2.zero;
+		}
+
+		public void UnPause()
+		{
+			_paused = false;
+			Animator.speed = 1;
+		}
 	}
 }

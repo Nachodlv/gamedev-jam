@@ -1,5 +1,4 @@
-﻿using System;
-using Entities.Player;
+﻿using Entities.Player;
 using Levels;
 using UnityEngine;
 
@@ -12,12 +11,18 @@ namespace DefaultNamespace
 
 		private void Awake()
 		{
-			player.OnDie += () => levelManager.ResetLevel();
+			player.OnDie += ResetLevel;
 		}
 
 		public void FinishLevel()
 		{
 			levelManager.FinishLevel();
 		}
+
+		private void ResetLevel()
+		{
+			levelManager.ResetLevel();
+		}
+		
 	}
 }

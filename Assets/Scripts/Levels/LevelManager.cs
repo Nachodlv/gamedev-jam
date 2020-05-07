@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using Cinemachine;
+using Entities;
 using Entities.Player;
 using Player;
 using UnityEngine;
@@ -7,17 +9,9 @@ using UnityEngine.SceneManagement;
 
 namespace Levels
 {
-	[Serializable]
-	public class LevelConfiguration
-	{
-		public int index;
-		public string name;
-		public float time;
-		public Vector2 playerPosition;
-	}
 	public class LevelManager : MonoBehaviour
 	{
-		[SerializeField] private LevelConfiguration[] levels;
+		[SerializeField] private LevelSettings[] levels;
 		[SerializeField] private APlayer player;
 		[SerializeField] private Animator levelTransition;
 		
@@ -26,8 +20,8 @@ namespace Levels
 		private static readonly int FadeIn = Animator.StringToHash("fadeIn");
 		private static readonly int FadeOut = Animator.StringToHash("fadeOut");
 
-		private LevelConfiguration Currentlevel => levels[_currentLevel];
-		private LevelConfiguration PreviousLevel => levels[_previousLevel];
+		private LevelSettings Currentlevel => levels[_currentLevel];
+		private LevelSettings PreviousLevel => levels[_previousLevel];
 		
 		private void Awake()
 		{
@@ -58,7 +52,13 @@ namespace Levels
 				// SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(Currentlevel.index));
 				player.transform.position = Currentlevel.playerPosition;
 				levelTransition.SetTrigger(FadeOut);
+				SetUpPlayer();
 			};
+		}
+
+		private void SetUpPlayer()
+		{
+			player.TimeStopAbility.Pausables = FindObjectsOfType<MonoBehaviour>().OfType<IPausable>().ToArray();
 		}
 		
 		

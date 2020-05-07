@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Fire",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "51b47bd0-041a-47be-9d93-6bebcd76dff1",
                     "expectedControlType": "Button",
@@ -41,6 +41,14 @@
                     "name": "Crouch",
                     "type": "Button",
                     "id": "9f4227f5-9fe6-464e-a6c5-05372cb9258e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TimeStop",
+                    "type": "Button",
+                    "id": "0cd27f93-0082-4cf8-84c6-52dc63f4f990",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -114,7 +122,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "WASD",
+                    "name": "WD [Keyboard]",
                     "id": "d0e1782b-b307-4419-9887-7ed174873122",
                     "path": "1DAxis",
                     "interactions": "",
@@ -147,7 +155,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Arrows",
+                    "name": "Arrows [Keyboard]",
                     "id": "ccf490bf-c6ec-475f-9fe9-2b4d2614c096",
                     "path": "1DAxis",
                     "interactions": "",
@@ -219,7 +227,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -230,7 +238,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -241,7 +249,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -252,7 +260,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -263,7 +271,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -274,18 +282,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4ecb9deb-11d1-4696-8021-7f119714a60e",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -317,7 +314,18 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b42357c7-da6b-42c8-bcbe-6d11a06afae7",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -363,6 +371,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bf9f80d-c202-453d-a687-fa1adff7fe63",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TimeStop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

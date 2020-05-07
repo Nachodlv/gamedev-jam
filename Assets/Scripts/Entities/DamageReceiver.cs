@@ -10,7 +10,7 @@ namespace DefaultNamespace
 		
 		private Rigidbody2D _rigidbody2D;
 
-		private void Awake()
+		protected virtual void Awake()
 		{
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 		}

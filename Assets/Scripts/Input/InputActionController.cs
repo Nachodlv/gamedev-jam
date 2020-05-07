@@ -37,7 +37,7 @@ namespace Input
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""51b47bd0-041a-47be-9d93-6bebcd76dff1"",
                     ""expectedControlType"": ""Button"",
@@ -56,6 +56,14 @@ namespace Input
                     ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""9f4227f5-9fe6-464e-a6c5-05372cb9258e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""TimeStop"",
+                    ""type"": ""Button"",
+                    ""id"": ""0cd27f93-0082-4cf8-84c6-52dc63f4f990"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -129,7 +137,7 @@ namespace Input
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""WASD"",
+                    ""name"": ""WD [Keyboard]"",
                     ""id"": ""d0e1782b-b307-4419-9887-7ed174873122"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -162,7 +170,7 @@ namespace Input
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Arrows"",
+                    ""name"": ""Arrows [Keyboard]"",
                     ""id"": ""ccf490bf-c6ec-475f-9fe9-2b4d2614c096"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -234,7 +242,7 @@ namespace Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -245,7 +253,7 @@ namespace Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -256,7 +264,7 @@ namespace Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -267,7 +275,7 @@ namespace Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -278,7 +286,7 @@ namespace Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -289,18 +297,7 @@ namespace Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4ecb9deb-11d1-4696-8021-7f119714a60e"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -332,7 +329,18 @@ namespace Input
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b42357c7-da6b-42c8-bcbe-6d11a06afae7"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -378,6 +386,17 @@ namespace Input
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8bf9f80d-c202-453d-a687-fa1adff7fe63"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""TimeStop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -957,9 +976,10 @@ namespace Input
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-            m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+            m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+            m_Player_TimeStop = m_Player.FindAction("TimeStop", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1023,18 +1043,20 @@ namespace Input
         private IPlayerActions m_PlayerActionsCallbackInterface;
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
-        private readonly InputAction m_Player_Fire;
+        private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Crouch;
+        private readonly InputAction m_Player_TimeStop;
         public struct PlayerActions
         {
             private @InputActionController m_Wrapper;
             public PlayerActions(@InputActionController wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
-            public InputAction @Fire => m_Wrapper.m_Player_Fire;
+            public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+            public InputAction @TimeStop => m_Wrapper.m_Player_TimeStop;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1050,15 +1072,18 @@ namespace Input
                     @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                     @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                     @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                    @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                    @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                    @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                    @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                    @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                    @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                     @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                     @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                     @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                     @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
                     @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
                     @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                    @TimeStop.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTimeStop;
+                    @TimeStop.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTimeStop;
+                    @TimeStop.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTimeStop;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -1069,15 +1094,18 @@ namespace Input
                     @Look.started += instance.OnLook;
                     @Look.performed += instance.OnLook;
                     @Look.canceled += instance.OnLook;
-                    @Fire.started += instance.OnFire;
-                    @Fire.performed += instance.OnFire;
-                    @Fire.canceled += instance.OnFire;
+                    @Attack.started += instance.OnAttack;
+                    @Attack.performed += instance.OnAttack;
+                    @Attack.canceled += instance.OnAttack;
                     @Jump.started += instance.OnJump;
                     @Jump.performed += instance.OnJump;
                     @Jump.canceled += instance.OnJump;
                     @Crouch.started += instance.OnCrouch;
                     @Crouch.performed += instance.OnCrouch;
                     @Crouch.canceled += instance.OnCrouch;
+                    @TimeStop.started += instance.OnTimeStop;
+                    @TimeStop.performed += instance.OnTimeStop;
+                    @TimeStop.canceled += instance.OnTimeStop;
                 }
             }
         }
@@ -1236,9 +1264,10 @@ namespace Input
         {
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
-            void OnFire(InputAction.CallbackContext context);
+            void OnAttack(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnCrouch(InputAction.CallbackContext context);
+            void OnTimeStop(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

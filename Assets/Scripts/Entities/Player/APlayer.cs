@@ -5,17 +5,23 @@ using UnityEngine;
 
 namespace Entities.Player
 {
+	[RequireComponent(typeof(TimeStopAbility))]
 	public class APlayer : DamageReceiver, IHaveStats
 	{
 		[SerializeField] private Stats stats;
 
 		public event Action OnDie;
+		public Stats Stats => stats;
+		public TimeStopAbility TimeStopAbility { get; private set; }
 
 		private bool _dead;
-		
-		public Stats Stats => stats;
-		
-		
+
+		protected override void Awake()
+		{
+			base.Awake();
+			TimeStopAbility = GetComponent<TimeStopAbility>();
+		}
+
 		protected override void DealDamage(float damage, bool instantKill)
 		{
 			if(_dead) return;

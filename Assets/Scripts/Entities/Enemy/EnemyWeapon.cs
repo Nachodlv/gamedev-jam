@@ -32,7 +32,7 @@ namespace Enemy
 
 		private void OnDestroy()
 		{
-			Destroy(_bulletAnchor.gameObject);
+			if(_bulletAnchor != null) Destroy(_bulletAnchor.gameObject);
 		}
 	}
 }

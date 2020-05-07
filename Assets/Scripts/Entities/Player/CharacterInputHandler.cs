@@ -28,8 +28,9 @@ namespace Player
 			_playerAttacker = GetComponent<PlayerAttacker>();
 			_controller.Player.Jump.performed += ctx => Jump();
 			_controller.Player.Crouch.performed += ctx => Crouch();
-			_controller.Player.Fire.performed += ctx => Attack();
-
+			_controller.Player.Attack.performed += ctx => Attack();
+			_controller.Player.TimeStop.performed += ctx => TimeStopAbility();
+			
 			_wallJumper.OnTouchingWall += (grabbing, right) => WallGrabbed(grabbing);
 		}
 
@@ -79,6 +80,11 @@ namespace Player
 		private void WallGrabbed(bool isGrabbing)
 		{
 			_isGrabbingWall = isGrabbing;
+		}
+
+		private void TimeStopAbility()
+		{
+			aPlayer.TimeStopAbility.Pause();
 		}
 
 	}

@@ -2,12 +2,13 @@
 using System.Collections;
 using DefaultNamespace;
 using Enemy.Ai;
+using Entities;
 using UnityEngine;
 
 namespace Enemy
 {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
-	public class Bullet: MonoBehaviour
+	public class Bullet: MonoBehaviour, IPausable
 	{
 		[SerializeField] private float speed;
 		[SerializeField] private float damage;
@@ -19,6 +20,7 @@ namespace Enemy
 		private Func<IEnumerator> _destroyOnTimeOut;
 		private WaitForSeconds _timeToLive;
 		private Coroutine _destroyCoroutine;
+		private bool _paused;
 		
 		private void Awake()
 		{
@@ -34,7 +36,7 @@ namespace Enemy
 
 		private void FixedUpdate()
 		{
-			_mover.Move(transform.right);
+			if(!_paused) _mover.Move(transform.right);
 		}
 
 		private void OnCollisionEnter2D(Collision2D other)
@@ -49,7 +51,12 @@ namespace Enemy
 
 		private IEnumerator DestroyOnTimeOut()
 		{
-			yield return _timeToLive;
+			var timePassed = 0f;
+			while (timePassed < timeToLive)
+			{
+				if(!_paused) timePassed += Time.deltaTime;
+				yield return null;
+			}
 			DestroyBullet();
 		}
 
@@ -57,6 +64,17 @@ namespace Enemy
 		{
 			StopCoroutine(_destroyCoroutine);
 			Destroy(gameObject);
+		}
+
+		public void Pause()
+		{
+			_paused = true;
+			_rigidBody2D.velocity = Vector2.zero;
+		}
+
+		public void UnPause()
+		{
+			_paused = false;
 		}
 	}
 }
