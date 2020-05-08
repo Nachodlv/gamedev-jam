@@ -1,5 +1,6 @@
 using System;
 using DefaultNamespace;
+using Entities.Player;
 using Player.Attack;
 using UnityEngine;
 
@@ -11,7 +12,8 @@ namespace Player
 		[SerializeField] private CharacterController characterController;
 		[SerializeField] private WallJumper wallJumper;
 		[SerializeField] private PlayerAttacker playerAttacker;
-
+		[SerializeField] private DashAbility dashAbility;
+		
 		public event Action OnAttackAnimation;
 		
 		private static readonly int JumpTrigger = Animator.StringToHash("jump");
@@ -21,6 +23,7 @@ namespace Player
 		private static readonly int AttackTrigger = Animator.StringToHash("attack");
 
 		private Animator _animator;
+		private static readonly int DashTrigger = Animator.StringToHash("dash");
 
 		private void Awake()
 		{
@@ -29,6 +32,7 @@ namespace Player
 			characterController.OnLandEvent += Land;
 			wallJumper.OnTouchingWall += GrabWall;
 			playerAttacker.OnAttack += Attack;
+			dashAbility.OnDash += Dash;
 		}
 
 		private void Update()
@@ -59,6 +63,16 @@ namespace Player
 		private void MakeAttack()
 		{
 			OnAttackAnimation?.Invoke();
+		}
+
+		private void Dash()
+		{
+			_animator.SetTrigger(DashTrigger);
+		}
+
+		private void MakeDash()
+		{
+			dashAbility.MakeDash();
 		}
 	}
 }

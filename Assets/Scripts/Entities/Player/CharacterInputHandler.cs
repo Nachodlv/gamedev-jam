@@ -1,16 +1,23 @@
-﻿﻿using DefaultNamespace;
+﻿﻿using System;
+ using DefaultNamespace;
+ using Enemy.Ai;
  using Entities.Player;
  using Input;
 using Player.Attack;
 using UnityEngine;
+ using Utils;
 
-namespace Player
+ namespace Player
 {
-	[RequireComponent(typeof(CharacterController), typeof(WallJumper), typeof(PlayerAttacker))]
+	[RequireComponent(
+		typeof(CharacterController), 
+		typeof(WallJumper), 
+		typeof(PlayerAttacker))]
 	public class CharacterInputHandler : MonoBehaviour
 	{
 		[SerializeField] private APlayer aPlayer;
-	
+		[SerializeField] private float timeForDoublePress = 0.4f;
+		
 		private CharacterController _characterController;
 		private WallJumper _wallJumper;
 		private PlayerAttacker _playerAttacker;
@@ -19,6 +26,8 @@ namespace Player
 		private bool _crouch;
 		private InputActionController _controller;
 		private bool _isGrabbingWall;
+		private float _lastTimePressed;
+		private AxisDetection _axisDetection;
 
 		private void Awake()
 		{
@@ -32,11 +41,13 @@ namespace Player
 			_controller.Player.TimeStop.performed += ctx => TimeStopAbility();
 			
 			_wallJumper.OnTouchingWall += (grabbing, right) => WallGrabbed(grabbing);
+			
+			_axisDetection = new AxisDetection(Move, Dash, timeForDoublePress);
 		}
 
 		private void Update()
 		{
-			_movement = _controller.Player.Move.ReadValue<float>() * aPlayer.Stats.Speed;
+			_axisDetection.Update(_controller.Player.Move.ReadValue<float>());
 		}
 
 		private void FixedUpdate()
@@ -87,5 +98,15 @@ namespace Player
 			aPlayer.TimeStopAbility.Pause();
 		}
 
+		private void Dash(float axis)
+		{
+			aPlayer.DashAbility.Dash();
+			Move(axis);
+		}
+
+		private void Move(float axis)
+		{
+			_movement = axis * aPlayer.Stats.Speed;
+		}
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Entities.Player
 {
-	[RequireComponent(typeof(TimeStopAbility))]
+	[RequireComponent(typeof(TimeStopAbility), typeof(DashAbility))]
 	public class APlayer : DamageReceiver, IHaveStats
 	{
 		[SerializeField] private Stats stats;
@@ -13,6 +13,7 @@ namespace Entities.Player
 		public event Action OnDie;
 		public Stats Stats => stats;
 		public TimeStopAbility TimeStopAbility { get; private set; }
+		public DashAbility DashAbility { get; private set; }
 
 		private bool _dead;
 
@@ -20,6 +21,7 @@ namespace Entities.Player
 		{
 			base.Awake();
 			TimeStopAbility = GetComponent<TimeStopAbility>();
+			DashAbility = GetComponent<DashAbility>();
 		}
 
 		protected override void DealDamage(float damage, bool instantKill)
