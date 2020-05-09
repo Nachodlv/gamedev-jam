@@ -39,15 +39,17 @@ using UnityEngine;
 			_controller.Player.Crouch.performed += ctx => Crouch();
 			_controller.Player.Attack.performed += ctx => Attack();
 			_controller.Player.TimeStop.performed += ctx => TimeStopAbility();
+			_controller.Player.Dash.performed += ctx => Dash();
 			
 			_wallJumper.OnTouchingWall += (grabbing, right) => WallGrabbed(grabbing);
 			
-			_axisDetection = new AxisDetection(Move, Dash, timeForDoublePress);
+			// _axisDetection = new AxisDetection(Move, Dash, timeForDoublePress);
 		}
 
 		private void Update()
 		{
-			_axisDetection.Update(_controller.Player.Move.ReadValue<float>());
+			// _axisDetection.Update(_controller.Player.Move.ReadValue<float>());
+			_movement = _controller.Player.Move.ReadValue<float>() * aPlayer.Stats.Speed;
 		}
 
 		private void FixedUpdate()
@@ -98,10 +100,9 @@ using UnityEngine;
 			aPlayer.TimeStopAbility.Pause();
 		}
 
-		private void Dash(float axis)
+		private void Dash()
 		{
 			aPlayer.DashAbility.Dash();
-			Move(axis);
 		}
 
 		private void Move(float axis)

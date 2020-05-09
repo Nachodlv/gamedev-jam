@@ -1224,6 +1224,11 @@ PrefabInstance:
       propertyPath: maximumTimeGrabbingWall
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341853, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: maxVelocity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341855, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: animator

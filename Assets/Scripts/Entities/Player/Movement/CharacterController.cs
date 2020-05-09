@@ -14,7 +14,8 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private Collider2D crouchDisableCollider;				// A collider that will be disabled when crouching
 	[SerializeField] private int maxJumps = 1;
 	[SerializeField] private SpriteRenderer spriteRenderer;
-
+	[SerializeField] private float maxVelocity = 5f;
+	
 	public event Action OnJumpEvent;
 	public event Action OnLandEvent;
 	public event Action<bool> OnCrouchEvent;
@@ -104,9 +105,12 @@ public class CharacterController : MonoBehaviour
 			}
 
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, _myRigidBody2D.velocity.y);
+			var velocity = _myRigidBody2D.velocity;
+			Vector3 targetVelocity = new Vector2(move * 10f, velocity.y);
 			// And then smoothing it out and applying it to the character
-			_myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, movementSmoothing);
+			var newVelocity = Vector3.SmoothDamp(velocity, targetVelocity, ref _velocity, movementSmoothing);
+			newVelocity.y = newVelocity.y > maxVelocity ? maxVelocity : newVelocity.y;
+			_myRigidBody2D.velocity = newVelocity;
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !FacingRight && canFlip)
