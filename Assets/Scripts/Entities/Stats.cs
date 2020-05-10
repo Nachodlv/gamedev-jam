@@ -4,29 +4,17 @@ using UnityEngine;
 [Serializable]
 public class Stats
 {
-	[SerializeField] private float Health;
-	public float Speed;
+	[SerializeField] private float health;
+	[SerializeField] private float speed;
+	public float Speed => speed;
 
-	public float CurrentHealth
+	public float Health
 	{
-		get
-		{
-			if (!_initialized)
-			{
-				_currentHealth = Health;
-				_initialized = true;
-			}
-
-			return _currentHealth;
-		}
-		set => _currentHealth = value;
+		get => health;
+		set => health = value;
 	}
 
 	private float _currentHealth;
 	private bool _initialized;
 	
-	public void ResetHealth()
-	{
-		CurrentHealth = Health;
-	}
 }

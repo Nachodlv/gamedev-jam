@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using DefaultNamespace;
+using UI;
 using UnityEngine;
 
 namespace Entities.Player
@@ -9,7 +10,8 @@ namespace Entities.Player
 	public class APlayer : DamageReceiver, IHaveStats
 	{
 		[SerializeField] private Stats stats;
-
+		[SerializeField] private HealthDisplayer healthDiplayer;
+		
 		public event Action OnDie;
 		public Stats Stats => stats;
 		public TimeStopAbility TimeStopAbility { get; private set; }
@@ -24,15 +26,28 @@ namespace Entities.Player
 			DashAbility = GetComponent<DashAbility>();
 		}
 
-		protected override void DealDamage(float damage, bool instantKill)
+		private void Update()
 		{
-			if(_dead) return;
-			stats.CurrentHealth = instantKill ? 0 : stats.CurrentHealth - damage;
-			if (stats.CurrentHealth <= 0)
+			if (_dead) return;
+			stats.Health -= Time.deltaTime;
+			healthDiplayer.UpdateHealth(stats.Health);
+			if (stats.Health <= 0)
 			{
 				_dead = true;
 				StartCoroutine(WaitForAnimationToEnd());
 			}
+		}
+
+		public void StartLevel(float time)
+		{
+			stats.Health = time;
+			healthDiplayer.SetUpMaxHealth(time);
+		}
+
+		protected override void DealDamage(float damage, bool instantKill)
+		{
+			if(_dead) return;
+			stats.Health = instantKill ? 0 : stats.Health - damage;
 		}
 
 		private IEnumerator WaitForAnimationToEnd()
@@ -45,7 +60,6 @@ namespace Entities.Player
 		private void ResetPlayer()
 		{
 			_dead = false;
-			stats.ResetHealth();
 			TimeStopAbility.UnPause();
 		}
 	}

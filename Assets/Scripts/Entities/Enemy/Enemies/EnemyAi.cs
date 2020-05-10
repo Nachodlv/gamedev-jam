@@ -5,16 +5,16 @@ using Utils;
 
 namespace Entities.Enemy.Enemies
 {
+	[RequireComponent(typeof(AEnemy))]
 	public abstract class EnemyAi: MonoBehaviour, IPausable
 	{
-		[SerializeField] private Stats stats;
 		[SerializeField] private Animator animator;
 		[SerializeField] protected SpriteRenderer spriteRenderer;
 		[SerializeField] protected float visionRange = 5f;
 		[SerializeField] protected EnemyWeapon enemyWeapon;
 		[SerializeField] private LayerMask ignoredLayers;
 		
-		public Stats Stats => stats;
+		public Stats Stats => _enemy.Stats;
 		public Animator Animator => animator;
 		public Rigidbody2D RigidBody { get; private set; }
 
@@ -23,8 +23,10 @@ namespace Entities.Enemy.Enemies
 
 		private DistanceDetector _distanceDetector;
 		private bool _paused;
+		private AEnemy _enemy;
 		private void Awake()
 		{
+			_enemy = GetComponent<AEnemy>();
 			RigidBody = GetComponent<Rigidbody2D>();
 			Player = FindObjectOfType<APlayer>().transform;
 			_distanceDetector = gameObject.AddComponent<DistanceDetector>();

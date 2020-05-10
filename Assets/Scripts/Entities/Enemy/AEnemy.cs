@@ -1,10 +1,7 @@
-﻿using System;
-using DefaultNamespace;
-using Enemy.Ai;
-using Entities;
+﻿using DefaultNamespace;
 using UnityEngine;
 
-namespace Enemy
+namespace Entities.Enemy
 {
 	public class AEnemy: DamageReceiver, IHaveStats
 	{
@@ -13,8 +10,8 @@ namespace Enemy
 		
 		protected override void DealDamage(float damage, bool instantKill)
 		{
-			stats.CurrentHealth = instantKill? 0 : stats.CurrentHealth - damage;
-			if(stats.CurrentHealth <= 0) Die();
+			stats.Health = instantKill? 0 : stats.Health - damage;
+			if(stats.Health <= 0) Die();
 		}
 		
 

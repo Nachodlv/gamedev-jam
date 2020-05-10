@@ -49,16 +49,15 @@ namespace Levels
 			var loadSceneAsync = SceneManager.LoadSceneAsync(Currentlevel.index, LoadSceneMode.Additive);
 			loadSceneAsync.completed += operation =>
 			{
-				// SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(Currentlevel.index));
-				player.GetComponent<Rigidbody2D>().position = Currentlevel.playerPosition;
-				levelTransition.SetTrigger(FadeOut);
 				SetUpPlayer();
+				levelTransition.SetTrigger(FadeOut);
 			};
 		}
 
 		private void SetUpPlayer()
 		{
-			player.TimeStopAbility.Pausables = FindObjectsOfType<MonoBehaviour>().OfType<IPausable>().ToArray();
+			player.GetComponent<Rigidbody2D>().position = Currentlevel.playerPosition;
+			player.StartLevel(Currentlevel.time);
 		}
 		
 		
