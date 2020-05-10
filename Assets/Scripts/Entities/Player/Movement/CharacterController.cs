@@ -42,8 +42,8 @@ public class CharacterController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if(Grounded) return;
-		
+		// if(Grounded) return;
+		var wasGrounded = Grounded;
 		if (_justJump)
 		{
 			_justJump = false;
@@ -54,10 +54,17 @@ public class CharacterController : MonoBehaviour
 		for (var i = 0; i < size; i++)
 		{
 			if (_colliders[i].gameObject == gameObject) continue;
+			
 			Grounded = true;
-			OnLandEvent?.Invoke();
 			_currentJumps = 0;
+			if (!wasGrounded)
+			{
+				OnLandEvent?.Invoke();
+			}
+			return;
 		}
+
+		Grounded = false;
 	}
 	
 	public void Move(float move, bool crouch, bool canFlip )

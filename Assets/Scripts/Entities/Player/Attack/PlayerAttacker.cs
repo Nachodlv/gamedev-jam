@@ -12,7 +12,8 @@ namespace Player.Attack
 		[SerializeField] private float timeBetweenAttacks = 1f;
 		[SerializeField] private CharacterAnimator animator;
 		
-		public event Action OnAttack;
+		public event Action OnStartAttack;
+		public event Action OnMakeAttack;
 
 		private bool _swordDisplayed;
 		private CapsuleCollider2D _collider;
@@ -30,11 +31,12 @@ namespace Player.Attack
 		{
 			if (!CanAttack()) return;
 			_lastAttack = Time.time;
-			OnAttack?.Invoke();
+			OnStartAttack?.Invoke();
 		}
 
 		private void MakeAttack()
 		{
+			OnMakeAttack?.Invoke();
 			var myPosition = transform.position;
 			var center = myPosition;
 			center.x += (_collider.bounds.extents.x + sword.Range) * (characterController.FacingRight ? 1 : -1);

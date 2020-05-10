@@ -355,6 +355,17 @@ namespace Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""51870c64-dbf1-4e34-a8c5-51ee89ff8f83"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""20736279-3bec-4aef-9d4b-3279b05885d5"",
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
@@ -400,7 +411,7 @@ namespace Input
                 {
                     ""name"": """",
                     ""id"": ""8bf9f80d-c202-453d-a687-fa1adff7fe63"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",

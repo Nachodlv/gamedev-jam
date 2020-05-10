@@ -31,7 +31,7 @@ namespace Player
 			characterController.OnJumpEvent += Jump;
 			characterController.OnLandEvent += Land;
 			wallJumper.OnTouchingWall += GrabWall;
-			playerAttacker.OnAttack += Attack;
+			playerAttacker.OnStartAttack += StartAttack;
 			dashAbility.OnDash += Dash;
 		}
 
@@ -55,7 +55,7 @@ namespace Player
 			_animator.SetBool(WallBool, isGrabbed);
 		}
 
-		private void Attack()
+		private void StartAttack()
 		{
 			_animator.SetTrigger(AttackTrigger);
 		}

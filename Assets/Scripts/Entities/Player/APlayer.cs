@@ -39,8 +39,14 @@ namespace Entities.Player
 		{
 			yield return new WaitForSeconds(0.2f);
 			OnDie?.Invoke();
+			ResetPlayer();
+		}
+
+		private void ResetPlayer()
+		{
 			_dead = false;
 			stats.ResetHealth();
+			TimeStopAbility.UnPause();
 		}
 	}
 }
