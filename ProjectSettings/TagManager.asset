@@ -47,6 +47,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3826160825
     locked: 0
+  - name: Sword
+    uniqueID: 3584763613
+    locked: 0
   - name: Player
     uniqueID: 2991379169
     locked: 0
