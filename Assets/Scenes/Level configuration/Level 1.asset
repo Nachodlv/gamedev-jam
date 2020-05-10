@@ -15,4 +15,4 @@ MonoBehaviour:
   index: 2
   levelName: Level 1
   time: 100
-  playerPosition: {x: -2.8, y: 0.1}
+  playerPosition: {x: 102, y: 21}
