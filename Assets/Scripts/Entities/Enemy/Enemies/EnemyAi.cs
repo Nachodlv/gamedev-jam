@@ -69,7 +69,7 @@ namespace Entities.Enemy.Enemies
 		public void UnPause()
 		{
 			_paused = false;
-			Animator.speed = 1;
+			if(Animator != null) Animator.speed = 1;
 		}
 	}
 }

@@ -39,7 +39,7 @@ namespace Levels
 
 		public void ResetLevel()
 		{
-			SceneManager.UnloadSceneAsync(PreviousLevel.index);
+			SceneManager.UnloadSceneAsync(Currentlevel.index);
 			LoadCurrentLevel();
 		}
 		
@@ -50,7 +50,7 @@ namespace Levels
 			loadSceneAsync.completed += operation =>
 			{
 				// SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(Currentlevel.index));
-				player.transform.position = Currentlevel.playerPosition;
+				player.GetComponent<Rigidbody2D>().position = Currentlevel.playerPosition;
 				levelTransition.SetTrigger(FadeOut);
 				SetUpPlayer();
 			};

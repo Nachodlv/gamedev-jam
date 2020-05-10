@@ -1,4 +1,5 @@
-﻿using Entities.Player;
+﻿using Cinemachine;
+using Entities.Player;
 using Levels;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace DefaultNamespace
 	{
 		[SerializeField] private LevelManager levelManager;
 		[SerializeField] private APlayer player;
-
+		
 		private void Awake()
 		{
 			player.OnDie += ResetLevel;
