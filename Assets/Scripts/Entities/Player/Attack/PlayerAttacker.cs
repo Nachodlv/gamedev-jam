@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player.Attack
 {
-	[RequireComponent(typeof(CapsuleCollider2D))]
+	[RequireComponent(typeof(BoxCollider2D))]
 	public class PlayerAttacker : MonoBehaviour
 	{
 		[SerializeField] private Sword sword;
@@ -16,13 +16,13 @@ namespace Player.Attack
 		public event Action OnMakeAttack;
 
 		private bool _swordDisplayed;
-		private CapsuleCollider2D _collider;
+		private BoxCollider2D _collider;
 		private RaycastHit2D[] _hits;
 		private float _lastAttack;
 
 		private void Awake()
 		{
-			_collider = GetComponent<CapsuleCollider2D>();
+			_collider = GetComponent<BoxCollider2D>();
 			_hits = new RaycastHit2D[5];
 			animator.OnAttackAnimation += MakeAttack;
 		}
