@@ -17,6 +17,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521008, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: instantKill
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521008, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521009, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: m_Offset.y
@@ -49,6 +59,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
       propertyPath: stats.health
       value: 10
       objectReference: {fileID: 0}
@@ -56,6 +71,26 @@ PrefabInstance:
         type: 3}
       propertyPath: stats.speed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 4647160907227181340}
+    - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: timeBetweenBlinks
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: spriteRenderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 4647160907227181340}
+    - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: invincibleTime
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521015, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
@@ -166,3 +201,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9144d83c2cac5574587952d127068b17, type: 3}
+--- !u!212 &4647160907227181340 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5234703491314297971, guid: 9144d83c2cac5574587952d127068b17,
+    type: 3}
+  m_PrefabInstance: {fileID: 638226015714450799}
+  m_PrefabAsset: {fileID: 0}

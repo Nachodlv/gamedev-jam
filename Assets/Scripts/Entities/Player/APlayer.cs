@@ -40,6 +40,7 @@ namespace Entities.Player
 
 		public void StartLevel(float time)
 		{
+			_dead = false;
 			stats.Health = time;
 			healthDiplayer.SetUpMaxHealth(time);
 		}
@@ -59,7 +60,6 @@ namespace Entities.Player
 
 		private void ResetPlayer()
 		{
-			_dead = false;
 			TimeStopAbility.UnPause();
 		}
 	}

@@ -1303,6 +1303,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1212632467 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4364613027442308414, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4364613027146077413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1414586194 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
@@ -1324,6 +1330,12 @@ GameObject:
 --- !u!4 &1507830014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4364613026574781501, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4364613027146077413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1507830015 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4364613026574781502, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
     type: 3}
   m_PrefabInstance: {fileID: 4364613027146077413}
   m_PrefabAsset: {fileID: 0}
@@ -1637,6 +1649,12 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 0
+--- !u!212 &1793220708 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4364613026518756595, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4364613027146077413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888874494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
       propertyPath: stats.Health
       value: 3
       objectReference: {fileID: 0}
@@ -2058,6 +2081,36 @@ PrefabInstance:
         type: 3}
       propertyPath: stats.health
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1507830015}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: timeBetweenBlinks
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: spriteRenderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1507830015}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: spriteRenderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1212632467}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: spriteRenderers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1793220708}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: invincibleTime
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341847, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
