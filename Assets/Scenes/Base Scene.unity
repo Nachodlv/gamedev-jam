@@ -436,7 +436,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 3840
-  damage: 4
+  damage: 10
   timeBetweenDashes: 3
 --- !u!1 &504961145
 GameObject:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68685c9e17ba44dd9700bfc322ba2716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabbingDistance: 10
+  grabbingDistance: 5
 --- !u!1 &513048210
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +491,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 513048212}
-  - component: {fileID: 513048211}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -499,19 +498,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &513048211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513048210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8df236e08c4d0b8773252aed7249fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 304995636}
 --- !u!4 &513048212
 Transform:
   m_ObjectHideFlags: 0
@@ -637,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 193.02, y: 20.74, z: -10}
+  m_LocalPosition: {x: -2.1, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 513048212}
@@ -1374,7 +1360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028900996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 193.02, y: 20.74, z: -10}
+  m_LocalPosition: {x: -2.1, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 775412946}
@@ -1462,6 +1448,7 @@ GameObject:
   - component: {fileID: 1546048124}
   - component: {fileID: 1546048123}
   - component: {fileID: 1546048122}
+  - component: {fileID: 1546048125}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1517,6 +1504,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1546048125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546048121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11bc93a6c3542f9b2c8161c6dd7d501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batteryPool:
+    quantity: 5
+    prefab: {fileID: 6823529748232891007, guid: 5c2e96079d5b6954b84f9ae1de3e6a51,
+      type: 3}
 --- !u!1 &1572965681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,12 +2088,12 @@ PrefabInstance:
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 193.02
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.74
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}

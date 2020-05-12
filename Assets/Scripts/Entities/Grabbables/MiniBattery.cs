@@ -6,11 +6,18 @@ namespace Entities.Grabbables
 	public class MiniBattery: Grabbable
 	{
 		[SerializeField] private float healthQuantity;
+
+		public float HealthQuantity
+		{
+			set => healthQuantity = value;
+		}
+		
+
 		protected override void Grabbed(Grabber grabber)
 		{
-			var player = grabber.GetComponent<APlayer>();
+			var player = grabber.GetComponentInParent<APlayer>();
 			if (player == null) return;
-			player.Stats.Health += healthQuantity;
+			player.UpdateHealth(player.Stats.Health + healthQuantity);
 		}
 	}
 }

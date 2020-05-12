@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 2
   levelName: Level 1
-  time: 100
-  playerPosition: {x: 102, y: 21}
+  time: 50
+  playerPosition: {x: -2, y: 0.5}

@@ -1,4 +1,5 @@
-﻿using DefaultNamespace;
+﻿using System;
+using DefaultNamespace;
 using UnityEngine;
 
 namespace Entities.Enemy
@@ -7,6 +8,7 @@ namespace Entities.Enemy
 	{
 		[SerializeField] private Stats stats;
 		public Stats Stats => stats;
+		public event Action OnDie;
 		
 		protected override void DealDamage(float damage, bool instantKill)
 		{
@@ -17,6 +19,7 @@ namespace Entities.Enemy
 
 		private void Die()
 		{
+			OnDie?.Invoke();
 			gameObject.SetActive(false);
 		}
 	}

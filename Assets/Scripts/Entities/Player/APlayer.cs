@@ -29,8 +29,7 @@ namespace Entities.Player
 		private void Update()
 		{
 			if (_dead) return;
-			stats.Health -= Time.deltaTime;
-			healthDiplayer.UpdateHealth(stats.Health);
+			UpdateHealth(stats.Health - Time.deltaTime);
 			if (stats.Health <= 0)
 			{
 				_dead = true;
@@ -43,6 +42,12 @@ namespace Entities.Player
 			_dead = false;
 			stats.Health = time;
 			healthDiplayer.SetUpMaxHealth(time);
+		}
+
+		public void UpdateHealth(float newHealth)
+		{
+			stats.Health = newHealth;
+			healthDiplayer.UpdateHealth(stats.Health);
 		}
 
 		protected override void DealDamage(float damage, bool instantKill)
