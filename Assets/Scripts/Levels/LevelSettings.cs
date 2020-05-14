@@ -9,5 +9,6 @@ namespace Levels
 		public string levelName;
 		public float time;
 		public Vector2 playerPosition;
+		public Sprite[] backgrounds;
 	}
 }

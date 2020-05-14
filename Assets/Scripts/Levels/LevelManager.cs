@@ -14,6 +14,8 @@ namespace Levels
 		[SerializeField] private LevelSettings[] levels;
 		[SerializeField] private APlayer player;
 		[SerializeField] private Animator levelTransition;
+
+		public event Action<LevelSettings> OnLevelChange;
 		
 		private int _currentLevel;
 		private int _previousLevel;
@@ -51,6 +53,7 @@ namespace Levels
 			{
 				SetUpPlayer();
 				levelTransition.SetTrigger(FadeOut);
+				OnLevelChange?.Invoke(Currentlevel);
 			};
 		}
 
