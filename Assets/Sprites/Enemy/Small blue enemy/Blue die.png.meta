@@ -1,0 +1,542 @@
+fileFormatVersion: 2
+guid: 3e43171325fcbd64da0f8a5c3e262374
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5779128458143598437
+    second: Blue die_0
+  - first:
+      213: -7908261563785608809
+    second: Blue die_1
+  - first:
+      213: 360828929236427506
+    second: Blue die_2
+  - first:
+      213: 2186811816770874095
+    second: Blue die_3
+  - first:
+      213: -5798884205900437679
+    second: Blue die_4
+  - first:
+      213: -8202019194638465093
+    second: Blue die_5
+  - first:
+      213: -440455616016079291
+    second: Blue die_6
+  - first:
+      213: 4196190421356338236
+    second: Blue die_7
+  - first:
+      213: 115267509723001332
+    second: Blue die_8
+  - first:
+      213: -2466240357055763425
+    second: Blue die_9
+  - first:
+      213: 6092791522707897978
+    second: Blue die_10
+  - first:
+      213: 3325573207702667714
+    second: Blue die_11
+  - first:
+      213: 1102429874332679359
+    second: Blue die_12
+  - first:
+      213: -2250023461301853357
+    second: Blue die_13
+  - first:
+      213: -2551669138908905203
+    second: Blue die_14
+  - first:
+      213: -243103490732462803
+    second: Blue die_15
+  - first:
+      213: 1867977227293524139
+    second: Blue die_16
+  - first:
+      213: -2495955644319792320
+    second: Blue die_17
+  - first:
+      213: 298046621044315289
+    second: Blue die_18
+  - first:
+      213: -5312330580583637737
+    second: Blue die_19
+  - first:
+      213: 1234615248919302310
+    second: Blue die_20
+  - first:
+      213: -7824259348682995546
+    second: Blue die_21
+  - first:
+      213: -8913128588695441399
+    second: Blue die_22
+  - first:
+      213: -6215999230391980096
+    second: Blue die_23
+  - first:
+      213: -5096075015621233418
+    second: Blue die_24
+  - first:
+      213: -5974624527780806664
+    second: Blue die_25
+  - first:
+      213: -4380992850296192992
+    second: Blue die_26
+  - first:
+      213: -8745905315488384244
+    second: Blue die_27
+  - first:
+      213: -942704699764121129
+    second: Blue die_28
+  - first:
+      213: -8945915224147205478
+    second: Blue die_29
+  - first:
+      213: 7010300086338512916
+    second: Blue die_30
+  - first:
+      213: 2033656841532934311
+    second: Blue die_31
+  - first:
+      213: 3871896269520533001
+    second: Blue die_32
+  - first:
+      213: -5454948156352503192
+    second: Blue die_33
+  - first:
+      213: -3980757080831580557
+    second: Blue die_34
+  - first:
+      213: 4494389284775088680
+    second: Blue die_35
+  - first:
+      213: -8940262910275769460
+    second: Blue die_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blue die_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98fff459496ccfa0800000000000000
+      internalID: -5779128458143598437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7910fabe106304290800000000000000
+      internalID: -7908261563785608809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f262d7dffbe10500800000000000000
+      internalID: 360828929236427506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea2149d2cd195e10800000000000000
+      internalID: 2186811816770874095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_4
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1576eadd989368fa0800000000000000
+      internalID: -5798884205900437679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_5
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb783a6aff29c2e80800000000000000
+      internalID: -8202019194638465093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_6
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546290c63ff23e9f0800000000000000
+      internalID: -440455616016079291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_7
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c57d2b4fcdb3a30800000000000000
+      internalID: 4196190421356338236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_8
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 40
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1fe2b7033899100800000000000000
+      internalID: 115267509723001332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_9
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 40
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c65f2467726cdd0800000000000000
+      internalID: -2466240357055763425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_10
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 40
+        width: 61
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ef381eb91fd8450800000000000000
+      internalID: 6092791522707897978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_11
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 41
+        width: 66
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c18ca7763fc62e20800000000000000
+      internalID: 3325573207702667714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_12
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 41
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcb069312e9c4f00800000000000000
+      internalID: 1102429874332679359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_13
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 42
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353eec4459f46c0e0800000000000000
+      internalID: -2250023461301853357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue die_14
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 42
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01020fff66a69cd0800000000000000
+      internalID: -2551669138908905203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

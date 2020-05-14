@@ -14,19 +14,21 @@ namespace Entities.Enemy.Enemies
 		[SerializeField] protected EnemyWeapon enemyWeapon;
 		[SerializeField] private LayerMask ignoredLayers;
 		
-		public Stats Stats => _enemy.Stats;
 		public Animator Animator => animator;
 		public Rigidbody2D RigidBody { get; private set; }
+		protected Stats Stats => _enemy.Stats;
 
 		protected StateMachine StateMachine;
 		protected Transform Player;
-
+		protected bool Dead;
+		
 		private DistanceDetector _distanceDetector;
 		private bool _paused;
 		private AEnemy _enemy;
 		private void Awake()
 		{
 			_enemy = GetComponent<AEnemy>();
+			_enemy.OnDie += OnDie;
 			RigidBody = GetComponent<Rigidbody2D>();
 			Player = FindObjectOfType<APlayer>().transform;
 			_distanceDetector = gameObject.AddComponent<DistanceDetector>();
@@ -72,6 +74,11 @@ namespace Entities.Enemy.Enemies
 		{
 			_paused = false;
 			if(Animator != null) Animator.speed = 1;
+		}
+
+		private void OnDie()
+		{
+			Dead = true;
 		}
 	}
 }

@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.6364403
       objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521010, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: dieAnimationLength
+      value: 0.57
+      objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521013, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: m_Name
@@ -187,7 +192,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8e05007796f88844f8728ebc3efe0bc2, type: 2}
+      objectReference: {fileID: 9100000, guid: dd37167bf427a274db69fe16625bd465, type: 2}
     - target: {fileID: 5234703491314297971, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: m_Sprite

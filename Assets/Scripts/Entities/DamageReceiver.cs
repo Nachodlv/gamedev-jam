@@ -28,14 +28,17 @@ namespace DefaultNamespace
 		public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false)
 		{
 			if (_invincible) return;
+			var die = DealDamage(damage, instantKill);
+
+			if (die) return;
+			
 			_blinkCoroutine = StartCoroutine(_blinkFunction());
 
-			DealDamage(damage, instantKill);
 			var direction = (transform.position - positionAttacker).normalized;
 			_rigidbody2D.AddForce(direction * forceAppliedOnHit);
 		}
 
-		protected abstract void DealDamage(float damage, bool instantKill);
+		protected abstract bool DealDamage(float damage, bool instantKill);
 
 		private IEnumerator StartBlinking()
 		{

@@ -9,18 +9,20 @@ namespace Entities.Enemy
 		[SerializeField] private Stats stats;
 		public Stats Stats => stats;
 		public event Action OnDie;
-		
-		protected override void DealDamage(float damage, bool instantKill)
+
+		protected override bool DealDamage(float damage, bool instantKill)
 		{
 			stats.Health = instantKill? 0 : stats.Health - damage;
-			if(stats.Health <= 0) Die();
+			if (stats.Health > 0) return false;
+			
+			Die();
+			return true;
+
 		}
 		
-
 		private void Die()
 		{
 			OnDie?.Invoke();
-			gameObject.SetActive(false);
 		}
 	}
 }

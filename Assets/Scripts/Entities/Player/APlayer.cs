@@ -50,10 +50,11 @@ namespace Entities.Player
 			healthDiplayer.UpdateHealth(stats.Health);
 		}
 
-		protected override void DealDamage(float damage, bool instantKill)
+		protected override bool DealDamage(float damage, bool instantKill)
 		{
-			if(_dead) return;
+			if(_dead) return true;
 			stats.Health = instantKill ? 0 : stats.Health - damage;
+			return stats.Health <= 0;
 		}
 
 		private IEnumerator WaitForAnimationToEnd()
