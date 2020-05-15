@@ -1619,6 +1619,7 @@ MonoBehaviour:
     quantity: 5
     prefab: {fileID: 6823529748232891007, guid: 5c2e96079d5b6954b84f9ae1de3e6a51,
       type: 3}
+  levelManager: {fileID: 1546048122}
 --- !u!1 &1572965681
 GameObject:
   m_ObjectHideFlags: 0

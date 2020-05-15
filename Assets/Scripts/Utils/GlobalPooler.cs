@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entities.Grabbables;
+using Levels;
 using UnityEngine;
 
 namespace Utils
@@ -20,6 +21,7 @@ namespace Utils
 	public class GlobalPooler : MonoBehaviour
 	{
 		[SerializeField] private Pool batteryPool;
+		[SerializeField] private LevelManager levelManager;
 
 		public MiniBattery NextMiniBattery => _miniBattteryPooler.GetNextObject();
 		public static GlobalPooler Instance;
@@ -38,6 +40,7 @@ namespace Utils
 				return;
 			}
 			_miniBattteryPooler = CreatePool<MiniBattery>(batteryPool);
+			levelManager.OnLevelChange += (settings) => DeactivatePools();
 		}
 
 		private ObjectPooler<T> CreatePool<T>(Pool pool) where T : Pooleable
@@ -46,6 +49,11 @@ namespace Utils
 			objectPooler.InstantiateObjects(pool.quantity, pool.prefab.GetComponent<T>(),
 				$"Pool of {pool.prefab.name}");
 			return objectPooler;
+		}
+
+		private void DeactivatePools()
+		{
+			_miniBattteryPooler.DeactivatePooleables();
 		}
 	}
 }
