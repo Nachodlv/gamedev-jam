@@ -18,6 +18,7 @@ namespace DefaultNamespace
 		private Func<IEnumerator> _blinkFunction;
 		private Coroutine _blinkCoroutine;
 		private bool _invincible;
+		private bool dead;
 
 		protected virtual void Awake()
 		{
@@ -28,10 +29,9 @@ namespace DefaultNamespace
 
 		public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false)
 		{
-			if (_invincible) return;
-			var die = DealDamage(damage, instantKill);
-
-			if (die) return;
+			if (_invincible || dead) return;
+			dead = DealDamage(damage, instantKill);
+			if (dead) return;
 			
 			_blinkCoroutine = StartCoroutine(_blinkFunction());
 
