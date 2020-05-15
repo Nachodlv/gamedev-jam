@@ -1,4 +1,5 @@
-﻿﻿using UnityEngine;
+﻿﻿using Entities.Enemy.Enemies;
+ using UnityEngine;
 using UnityEngine.Rendering;
 
 namespace Enemy.Ai.States
@@ -15,18 +16,28 @@ namespace Enemy.Ai.States
 		private Vector2 _velocity;
 		private readonly Mover _mover;
 		private static readonly int Speed = Animator.StringToHash("speed");
+		private bool _move;
 
-		public IdleState(Transform leftPosition, Transform rightPosition, CommonEnemyAi commonEnemyAi, Mover mover)
+		public IdleState(Transform leftPosition, Transform rightPosition, EnemyAi enemyAi, Mover mover)
 		{
 			_leftPosition = leftPosition.position.x;
 			_rightPosition = rightPosition.position.x;
-			_animator = commonEnemyAi.Animator;
-			_rigidBody2D = commonEnemyAi.RigidBody;
+			_animator = enemyAi.Animator;
+			_rigidBody2D = enemyAi.RigidBody;
 			_mover = mover;
+			_move = true;
+		}
+
+		public IdleState(EnemyAi enemyAi)
+		{
+			_animator = enemyAi.Animator;
+			_rigidBody2D = enemyAi.RigidBody;
+			_move = false;
 		}
 
 		public void Tick()
 		{
+			if (!_move) return;
 			if (_goingRight)
 			{
 				if (_rightPosition < _rigidBody2D.position.x) _goingRight = false;
@@ -40,6 +51,8 @@ namespace Enemy.Ai.States
 		
 		public void FixedTick()
 		{
+			if (!_move) return;
+
 			_mover.Move(_goingRight? new Vector2(1, 0) : new Vector2(-1, 0));
 		}
 
@@ -51,7 +64,7 @@ namespace Enemy.Ai.States
 		public void OnExit()
 		{
 			_rigidBody2D.velocity = Vector2.zero;
-			SetAnimatorVelocity();
+			if(_move) SetAnimatorVelocity();
 			_animator.SetBool(IdleBool, false);
 		}
 

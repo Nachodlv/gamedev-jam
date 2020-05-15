@@ -1,4 +1,7 @@
-﻿using Enemy;
+﻿using System;
+using Enemy;
+using Enemy.Ai;
+using Enemy.Ai.States;
 using Entities.Player;
 using UnityEngine;
 using Utils;
@@ -16,18 +19,24 @@ namespace Entities.Enemy.Enemies
 		
 		public Animator Animator => animator;
 		public Rigidbody2D RigidBody { get; private set; }
-		protected Stats Stats => _enemy.Stats;
+		protected Mover Mover { get; private set; }
+		private Stats Stats => _enemy.Stats;
 
+		
 		protected StateMachine StateMachine;
 		protected Transform Player;
-		protected bool Dead;
 		
 		private DistanceDetector _distanceDetector;
 		private bool _paused;
 		private AEnemy _enemy;
+		private bool _deadTriggered;
+		private bool _dead;
+
 		private void Awake()
 		{
 			_enemy = GetComponent<AEnemy>();
+			Mover = new Mover(spriteRenderer, RigidBody, Stats.Speed);
+
 			_enemy.OnDie += OnDie;
 			RigidBody = GetComponent<Rigidbody2D>();
 			Player = FindObjectOfType<APlayer>().transform;
@@ -61,6 +70,15 @@ namespace Entities.Enemy.Enemies
 			return hitTransform.gameObject == colliders[0].gameObject;
 		}
 		
+		protected Func<bool> FinishPlayingAnimation(PlayAnimationState state) => () => state.Finished;
+		
+		protected bool EnemyDie()
+		{
+			if (!_dead || _deadTriggered) return false;
+			_deadTriggered = true;
+			return true;
+		}
+		
 		protected abstract void SetUpStates();
 		
 		public void Pause()
@@ -78,7 +96,7 @@ namespace Entities.Enemy.Enemies
 
 		private void OnDie()
 		{
-			Dead = true;
+			_dead = true;
 		}
 	}
 }
