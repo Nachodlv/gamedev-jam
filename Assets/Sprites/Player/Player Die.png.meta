@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 760ae0cc72c50dd44b56b2f4eb57cc15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3206611270293930764
+    second: Player Die_0
+  - first:
+      213: 7624673480335905736
+    second: Player Die_1
+  - first:
+      213: 8508286240829084084
+    second: Player Die_2
+  - first:
+      213: 3633201711320163250
+    second: Player Die_3
+  - first:
+      213: 7899187486668407838
+    second: Player Die_4
+  - first:
+      213: -5886743529331656756
+    second: Player Die_5
+  - first:
+      213: -2717720470286293060
+    second: Player Die_6
+  - first:
+      213: -8820250686738543188
+    second: Player Die_7
+  - first:
+      213: -3475990929255619091
+    second: Player Die_8
+  - first:
+      213: -8305125252219492692
+    second: Player Die_9
+  - first:
+      213: 5844097618986669078
+    second: Player Die_10
+  - first:
+      213: -4496406954462872637
+    second: Player Die_11
+  - first:
+      213: -153830876236549827
+    second: Player Die_12
+  - first:
+      213: -8032395937240639826
+    second: Player Die_13
+  - first:
+      213: -2071245836029608310
+    second: Player Die_14
+  - first:
+      213: 35467388756342267
+    second: Player Die_15
+  - first:
+      213: 1040622663317988448
+    second: Player Die_16
+  - first:
+      213: -8703866877175757674
+    second: Player Die_17
+  - first:
+      213: 7577622681951785741
+    second: Player Die_18
+  - first:
+      213: 9085887665518949381
+    second: Player Die_19
+  - first:
+      213: -7436480968795638578
+    second: Player Die_20
+  - first:
+      213: -1112601210469748858
+    second: Player Die_21
+  - first:
+      213: 6700032150556687759
+    second: Player Die_22
+  - first:
+      213: -4274868495396038291
+    second: Player Die_23
+  - first:
+      213: 7357592739265826769
+    second: Player Die_24
+  - first:
+      213: -1505466471155096150
+    second: Player Die_25
+  - first:
+      213: 886456988560938218
+    second: Player Die_26
+  - first:
+      213: -6311250975787387223
+    second: Player Die_27
+  - first:
+      213: -751401587927309669
+    second: Player Die_28
+  - first:
+      213: 9062111765972294343
+    second: Player Die_29
+  - first:
+      213: 3547636529885490332
+    second: Player Die_30
+  - first:
+      213: -3370944610824472096
+    second: Player Die_31
+  - first:
+      213: 3999849773833148995
+    second: Player Die_32
+  - first:
+      213: 1720387216886846242
+    second: Player Die_33
+  - first:
+      213: 2257170153352643710
+    second: Player Die_34
+  - first:
+      213: -2257492575188806808
+    second: Player Die_35
+  - first:
+      213: 4930416560418892282
+    second: Player Die_36
+  - first:
+      213: -833205290882654750
+    second: Player Die_37
+  - first:
+      213: 2887243164619200532
+    second: Player Die_38
+  - first:
+      213: -6098377664376482838
+    second: Player Die_39
+  - first:
+      213: 2470800028090421053
+    second: Player Die_40
+  - first:
+      213: 1606135211139788112
+    second: Player Die_41
+  - first:
+      213: 6640472214610988250
+    second: Player Die_42
+  - first:
+      213: -2660781010255008644
+    second: Player Die_43
+  - first:
+      213: -7966249023830283861
+    second: Player Die_44
+  - first:
+      213: -5506620230040629078
+    second: Player Die_45
+  - first:
+      213: 4153554063976037670
+    second: Player Die_46
+  - first:
+      213: -6384244671524850319
+    second: Player Die_47
+  - first:
+      213: 3922311892845349548
+    second: Player Die_48
+  - first:
+      213: -6584432385772047816
+    second: Player Die_49
+  - first:
+      213: -3229789283739707032
+    second: Player Die_50
+  - first:
+      213: 7278412798691374253
+    second: Player Die_51
+  - first:
+      213: -8456550262932405994
+    second: Player Die_52
+  - first:
+      213: -1248227207481941380
+    second: Player Die_53
+  - first:
+      213: -2798274047245909733
+    second: Player Die_54
+  - first:
+      213: 1600119838440540602
+    second: Player Die_55
+  - first:
+      213: 9037169885213524297
+    second: Player Die_56
+  - first:
+      213: 6111093872953228605
+    second: Player Die_0
+  - first:
+      213: -6177856911541001031
+    second: Player Die_1
+  - first:
+      213: 2963005897243292095
+    second: Player Die_2
+  - first:
+      213: -743403006795938713
+    second: Player Die_3
+  - first:
+      213: 1801045194902194136
+    second: Player Die_4
+  - first:
+      213: 5746898028513588229
+    second: Player Die_5
+  - first:
+      213: -3550215699066287613
+    second: Player Die_6
+  - first:
+      213: 7454670462990784930
+    second: Player Die_7
+  - first:
+      213: -2295435934569602543
+    second: Player Die_8
+  - first:
+      213: 5111885293861623950
+    second: Player Die_9
+  - first:
+      213: 2889168707844814240
+    second: Player Die_10
+  - first:
+      213: -3096304870546494805
+    second: Player Die_11
+  - first:
+      213: -3410421315623448299
+    second: Player Die_12
+  - first:
+      213: -6692790641250145171
+    second: Player Die_13
+  - first:
+      213: -1903352017746358010
+    second: Player Die_14
+  - first:
+      213: -4659137826748988237
+    second: Player Die_15
+  - first:
+      213: -4782018272470210317
+    second: Player Die_16
+  - first:
+      213: 4064660775875127736
+    second: Player Die_17
+  - first:
+      213: 3727623612648315547
+    second: Player Die_18
+  - first:
+      213: 7249499631539729814
+    second: Player Die_19
+  - first:
+      213: -1885102999758417165
+    second: Player Die_20
+  - first:
+      213: -8533392155833630708
+    second: Player Die_21
+  - first:
+      213: -4050650669594820939
+    second: Player Die_22
+  - first:
+      213: 6133108729571375170
+    second: Player Die_23
+  - first:
+      213: -7263358278894355490
+    second: Player Die_24
+  - first:
+      213: -2795201302160325931
+    second: Player Die_25
+  - first:
+      213: 7337845232975462610
+    second: Player Die_26
+  - first:
+      213: -8368498470337461088
+    second: Player Die_27
+  - first:
+      213: -7075972913604181422
+    second: Player Die_28
+  - first:
+      213: 4320532469703425916
+    second: Player Die_29
+  - first:
+      213: -6452083227858312705
+    second: Player Die_30
+  - first:
+      213: -7011170234833131739
+    second: Player Die_31
+  - first:
+      213: -7898641063201844208
+    second: Player Die_32
+  - first:
+      213: -6985316266495321121
+    second: Player Die_33
+  - first:
+      213: -5503652497852717778
+    second: Player Die_34
+  - first:
+      213: -3740732197657272226
+    second: Player Die_35
+  - first:
+      213: -5813210706551423621
+    second: Player Die_36
+  - first:
+      213: -3391121469895134646
+    second: Player Die_37
+  - first:
+      213: -4246539739269871113
+    second: Player Die_38
+  - first:
+      213: 4578896833194159976
+    second: Player Die_39
+  - first:
+      213: -3462432784093086637
+    second: Player Die_40
+  - first:
+      213: -8539975933578824101
+    second: Player Die_41
+  - first:
+      213: 8576239810993849916
+    second: Player Die_42
+  - first:
+      213: -3688942032577030131
+    second: Player Die_43
+  - first:
+      213: -8833193875969563535
+    second: Player Die_44
+  - first:
+      213: -3563746046708118288
+    second: Player Die_45
+  - first:
+      213: 6121196627777416637
+    second: Player Die_46
+  - first:
+      213: -9018403834117840856
+    second: Player Die_47
+  - first:
+      213: -9105964068020529561
+    second: Player Die_48
+  - first:
+      213: -8442895479413790563
+    second: Player Die_49
+  - first:
+      213: 4234986936486992416
+    second: Player Die_50
+  - first:
+      213: -8057318313850908823
+    second: Player Die_51
+  - first:
+      213: 3020584934216346678
+    second: Player Die_52
+  - first:
+      213: 8828813959393783355
+    second: Player Die_53
+  - first:
+      213: -6228218940132579509
+    second: Player Die_54
+  - first:
+      213: 1573147242691772367
+    second: Player Die_55
+  - first:
+      213: -8926858104622323397
+    second: Player Die_56
+  - first:
+      213: 3437724116483381547
+    second: Player Die_57
+  - first:
+      213: -205599613410905309
+    second: Player Die_58
+  - first:
+      213: 2294072311924646252
+    second: Player Die_59
+  - first:
+      213: 6072259422472357982
+    second: Player Die_60
+  - first:
+      213: 8728713962525129796
+    second: Player Die_61
+  - first:
+      213: 2722015142814697056
+    second: Player Die_62
+  - first:
+      213: -4337972562248359167
+    second: Player Die_63
+  - first:
+      213: -5216702412323178352
+    second: Player Die_64
+  - first:
+      213: -3064722773507942216
+    second: Player Die_65
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player Die_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d717edf77fec450800000000000000
+      internalID: 6111093872953228605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b42862eed7d34aa0800000000000000
+      internalID: -6177856911541001031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1f2943a26be1920800000000000000
+      internalID: 2963005897243292095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76488fe67e6eea5f0800000000000000
+      internalID: -743403006795938713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_4
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7c19aff099ef810800000000000000
+      internalID: 1801045194902194136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_5
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504f1fdfe4511cf40800000000000000
+      internalID: 5746898028513588229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_6
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a832da1a91bbec0800000000000000
+      internalID: -3550215699066287613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_7
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a999202a4f447760800000000000000
+      internalID: 7454670462990784930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_8
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112ef43ed29f420e0800000000000000
+      internalID: -2295435934569602543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_9
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e885a21479011f640800000000000000
+      internalID: 5111885293861623950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_10
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5b34fd1a3681820800000000000000
+      internalID: 2889168707844814240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_11
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baaa3ca0027b705d0800000000000000
+      internalID: -3096304870546494805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_12
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51118d3f1efbba0d0800000000000000
+      internalID: -3410421315623448299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_13
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ce9382f5e6e13a0800000000000000
+      internalID: -6692790641250145171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_14
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60194bb9c6fe595e0800000000000000
+      internalID: -1903352017746358010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_15
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b48a0de4da675fb0800000000000000
+      internalID: -4659137826748988237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_16
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f86cf7a7bbd2adb0800000000000000
+      internalID: -4782018272470210317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_17
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9208ea073986830800000000000000
+      internalID: 4064660775875127736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_18
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 36
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ad2480ded2bb330800000000000000
+      internalID: 3727623612648315547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_19
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 35
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695304161856b9460800000000000000
+      internalID: 7249499631539729814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_20
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 35
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f250663fc4c6d5e0800000000000000
+      internalID: -1885102999758417165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_28
+      rect:
+        serializedVersion: 2
+        x: 2926
+        y: 44
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252465c00281dcd90800000000000000
+      internalID: -7075972913604181422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_29
+      rect:
+        serializedVersion: 2
+        x: 3031
+        y: 49
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fb639d36d95fb30800000000000000
+      internalID: 4320532469703425916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_43
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 35
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d081d3724ce3eccc0800000000000000
+      internalID: -3688942032577030131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_49
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 52
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d982ac93b4fc4da80800000000000000
+      internalID: -8442895479413790563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_21
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 35
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fe749081f3f80f0800000000000000
+      internalID: -1112601210469748858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_22
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 35
+        width: 55
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8db0ad1ebb4bfc50800000000000000
+      internalID: 6700032150556687759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_23
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 35
+        width: 74
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69196ea0cd9ca4c0800000000000000
+      internalID: -4274868495396038291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_24
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 36
+        width: 71
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dfcee93d9b6b1660800000000000000
+      internalID: 7357592739265826769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_25
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 37
+        width: 52
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa52a8588328b1be0800000000000000
+      internalID: -1505466471155096150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_26
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 39
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae456d73fe35d4c00800000000000000
+      internalID: 886456988560938218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Die_27
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 41
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6fadb0daee968a0800000000000000
+      internalID: -6311250975787387223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

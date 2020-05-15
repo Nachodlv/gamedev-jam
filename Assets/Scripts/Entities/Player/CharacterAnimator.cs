@@ -13,6 +13,7 @@ namespace Player
 		[SerializeField] private WallJumper wallJumper;
 		[SerializeField] private PlayerAttacker playerAttacker;
 		[SerializeField] private DashAbility dashAbility;
+		[SerializeField] private APlayer player;
 		
 		public event Action OnAttackAnimation;
 		
@@ -21,9 +22,10 @@ namespace Player
 		private static readonly int WallBool = Animator.StringToHash("grabWall");
 		private static readonly int Speed = Animator.StringToHash("speed");
 		private static readonly int AttackTrigger = Animator.StringToHash("attack");
+		private static readonly int DashTrigger = Animator.StringToHash("dash");
+		private static readonly int DieTrigger = Animator.StringToHash("die");
 
 		private Animator _animator;
-		private static readonly int DashTrigger = Animator.StringToHash("dash");
 
 		private void Awake()
 		{
@@ -33,6 +35,7 @@ namespace Player
 			wallJumper.OnTouchingWall += GrabWall;
 			playerAttacker.OnStartAttack += StartAttack;
 			dashAbility.OnDash += Dash;
+			player.OnDie += Die;
 		}
 
 		private void Update()
@@ -73,6 +76,11 @@ namespace Player
 		private void MakeDash()
 		{
 			dashAbility.MakeDash();
+		}
+
+		private void Die()
+		{
+			_animator.SetTrigger(DieTrigger);
 		}
 	}
 }

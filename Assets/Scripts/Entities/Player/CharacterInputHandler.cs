@@ -28,6 +28,7 @@ using UnityEngine;
 		private bool _isGrabbingWall;
 		private float _lastTimePressed;
 		private AxisDetection _axisDetection;
+		private bool _enabled = true;
 
 		private void Awake()
 		{
@@ -35,14 +36,16 @@ using UnityEngine;
 			_wallJumper = GetComponent<WallJumper>();
 			_controller = new InputActionController();
 			_playerAttacker = GetComponent<PlayerAttacker>();
-			_controller.Player.Jump.performed += ctx => Jump();
-			_controller.Player.Crouch.performed += ctx => Crouch();
-			_controller.Player.Attack.performed += ctx => Attack();
-			_controller.Player.TimeStop.performed += ctx => TimeStopAbility();
-			_controller.Player.Dash.performed += ctx => Dash();
+			_controller.Player.Jump.performed += ctx => PlayerFunction(Jump);
+			_controller.Player.Crouch.performed += ctx => PlayerFunction(Crouch);
+			_controller.Player.Attack.performed += ctx => PlayerFunction(Attack);
+			_controller.Player.TimeStop.performed += ctx => PlayerFunction(TimeStopAbility);
+			_controller.Player.Dash.performed += ctx => PlayerFunction(Dash);
 			
 			_wallJumper.OnTouchingWall += (grabbing, right) => WallGrabbed(grabbing);
-			
+
+			aPlayer.OnDie += () => _enabled = false;
+			aPlayer.OnResetLevel += () => _enabled = true;
 			// _axisDetection = new AxisDetection(Move, Dash, timeForDoublePress);
 		}
 
@@ -54,6 +57,7 @@ using UnityEngine;
 
 		private void FixedUpdate()
 		{
+			if (!_enabled) return;
 			if (_jump)
 			{
 				if(_wallJumper.CanWallJump()) _wallJumper.Jump();
@@ -64,6 +68,11 @@ using UnityEngine;
 			_movement = 0;
 			_crouch = false;
 		}
+
+		private void PlayerFunction(Action playerFunction)
+		{
+			if (_enabled) playerFunction();
+		} 
 
 		private void Attack()
 		{

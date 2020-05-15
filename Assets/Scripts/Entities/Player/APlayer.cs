@@ -13,12 +13,13 @@ namespace Entities.Player
 		[SerializeField] private HealthDisplayer healthDiplayer;
 		
 		public event Action OnDie;
+		public event Action OnResetLevel; 
 		public Stats Stats => stats;
 		public TimeStopAbility TimeStopAbility { get; private set; }
 		public DashAbility DashAbility { get; private set; }
 
 		private bool _dead;
-
+		
 		protected override void Awake()
 		{
 			base.Awake();
@@ -59,8 +60,10 @@ namespace Entities.Player
 
 		private IEnumerator WaitForAnimationToEnd()
 		{
-			yield return new WaitForSeconds(0.2f);
 			OnDie?.Invoke();
+			RigidBody2D.velocity = Vector2.zero;
+			yield return new WaitForSeconds(1.67f);
+			OnResetLevel?.Invoke();
 			ResetPlayer();
 		}
 

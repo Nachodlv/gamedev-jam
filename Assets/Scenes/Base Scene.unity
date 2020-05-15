@@ -2125,6 +2125,11 @@ PrefabInstance:
       propertyPath: dashAbility
       value: 
       objectReference: {fileID: 437799489}
+    - target: {fileID: 4364613026574781500, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1414586194}
     - target: {fileID: 4364613026574781501, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2184,6 +2189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027442308414, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
@@ -2304,6 +2314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: invincibleTime
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: sword
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341847, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}

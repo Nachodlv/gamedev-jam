@@ -11,8 +11,9 @@ namespace DefaultNamespace
 		[SerializeField] private float invincibleTime = 1f;
 		[SerializeField] private float timeBetweenBlinks = 0.2f;
 		[SerializeField] private SpriteRenderer[] spriteRenderers;
-		
-		private Rigidbody2D _rigidbody2D;
+
+		protected Rigidbody2D RigidBody2D { get; private set; }
+
 		private WaitForSeconds _timeBetweenBlinks;
 		private Func<IEnumerator> _blinkFunction;
 		private Coroutine _blinkCoroutine;
@@ -20,7 +21,7 @@ namespace DefaultNamespace
 
 		protected virtual void Awake()
 		{
-			_rigidbody2D = GetComponent<Rigidbody2D>();
+			RigidBody2D = GetComponent<Rigidbody2D>();
 			_timeBetweenBlinks = new WaitForSeconds(timeBetweenBlinks);
 			_blinkFunction = StartBlinking;
 		}
@@ -35,7 +36,7 @@ namespace DefaultNamespace
 			_blinkCoroutine = StartCoroutine(_blinkFunction());
 
 			var direction = (transform.position - positionAttacker).normalized;
-			_rigidbody2D.AddForce(direction * forceAppliedOnHit);
+			RigidBody2D.AddForce(direction * forceAppliedOnHit);
 		}
 
 		protected abstract bool DealDamage(float damage, bool instantKill);
