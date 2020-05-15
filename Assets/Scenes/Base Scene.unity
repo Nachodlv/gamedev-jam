@@ -2315,6 +2315,16 @@ PrefabInstance:
       propertyPath: maximumTimeGrabbingWall
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341852, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: timeNotMoving
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341852, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: wallJump
+      value: 1100
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341853, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: maxVelocity

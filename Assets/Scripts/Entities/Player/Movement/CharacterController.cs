@@ -24,6 +24,12 @@ public class CharacterController : MonoBehaviour
 	public Vector3 Velocity => _myRigidBody2D.velocity;
 	public bool FacingRight { get; private set; } = true;
 
+	public bool AirControl
+	{
+		get => airControl;
+		set => airControl = value;
+	}
+
 	private const float GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private const float CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 
