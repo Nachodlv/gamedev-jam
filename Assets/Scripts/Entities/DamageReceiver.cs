@@ -13,12 +13,12 @@ namespace DefaultNamespace
 		[SerializeField] private SpriteRenderer[] spriteRenderers;
 
 		protected Rigidbody2D RigidBody2D { get; private set; }
-
+		protected bool Dead { get; set; }
+		
 		private WaitForSeconds _timeBetweenBlinks;
 		private Func<IEnumerator> _blinkFunction;
 		private Coroutine _blinkCoroutine;
 		private bool _invincible;
-		private bool dead;
 
 		protected virtual void Awake()
 		{
@@ -29,9 +29,9 @@ namespace DefaultNamespace
 
 		public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false)
 		{
-			if (_invincible || dead) return;
-			dead = DealDamage(damage, instantKill);
-			if (dead) return;
+			if (_invincible || Dead) return;
+			Dead = DealDamage(damage, instantKill);
+			if (Dead) return;
 			
 			_blinkCoroutine = StartCoroutine(_blinkFunction());
 

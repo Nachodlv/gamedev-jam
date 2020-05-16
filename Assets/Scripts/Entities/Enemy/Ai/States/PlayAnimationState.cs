@@ -8,15 +8,18 @@ namespace Enemy.Ai.States
     {
         public bool Finished { get; private set; }
 
+        private readonly float _animationtime;
         private float _remainingTime;
         private readonly int _animationTrigger;
         private bool _hasRemainingTime;
+        private Animator _animator;
 
         public PlayAnimationState(Animator animator, Transform player, Mover mover, string animationTrigger,
-            float animationTime) : base(mover, animator, player)
+            float animationTime) : base(mover, animator.transform, player)
         {
             _animationTrigger = Animator.StringToHash(animationTrigger);
-            _remainingTime = animationTime;
+            _animationtime = animationTime;
+            _animator = animator;
         }
 
         public override void Tick()
@@ -31,8 +34,9 @@ namespace Enemy.Ai.States
 
         public override void OnEnter()
         {
+            _remainingTime = _animationtime;
             LookAtTarget();
-            Animator.SetTrigger(_animationTrigger);
+            _animator.SetTrigger(_animationTrigger);
         }
 
         public override void OnExit()

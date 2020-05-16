@@ -18,7 +18,6 @@ namespace Entities.Player
 		public TimeStopAbility TimeStopAbility { get; private set; }
 		public DashAbility DashAbility { get; private set; }
 
-		private bool _dead;
 		
 		protected override void Awake()
 		{
@@ -29,18 +28,13 @@ namespace Entities.Player
 
 		private void Update()
 		{
-			if (_dead) return;
+			if (Dead) return;
 			UpdateHealth(stats.Health - Time.deltaTime);
-			if (stats.Health <= 0)
-			{
-				_dead = true;
-				StartCoroutine(WaitForAnimationToEnd());
-			}
 		}
 
 		public void StartLevel(float time)
 		{
-			_dead = false;
+			Dead = false;
 			stats.Health = time;
 			healthDiplayer.SetUpMaxHealth(time);
 		}
@@ -49,12 +43,17 @@ namespace Entities.Player
 		{
 			stats.Health = newHealth;
 			healthDiplayer.UpdateHealth(stats.Health);
+			if (stats.Health <= 0)
+			{
+				Dead = true;
+				StartCoroutine(WaitForAnimationToEnd());
+			}
 		}
 
 		protected override bool DealDamage(float damage, bool instantKill)
 		{
-			if(_dead) return true;
-			stats.Health = instantKill ? 0 : stats.Health - damage;
+			if(Dead) return true;
+			UpdateHealth(instantKill ? 0 : stats.Health - damage);
 			return stats.Health <= 0;
 		}
 

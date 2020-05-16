@@ -6,13 +6,13 @@ namespace Enemy.Ai.States
 	{
 		private readonly Transform _player;
 		protected readonly Mover Mover;
-		protected readonly Animator Animator;
+		protected readonly Transform _self;
 
-		protected MoverState(Mover mover, Animator animator, Transform player)
+		protected MoverState(Mover mover, Transform self, Transform player)
 		{
 			Mover = mover;
-			Animator = animator;
 			_player = player;
+			_self = self;
 		}
 		
 		public abstract void Tick();
@@ -22,7 +22,7 @@ namespace Enemy.Ai.States
 		
 		protected void LookAtTarget()
 		{
-			Mover.Flip(_player.position.x < Animator.transform.position.x ? new Vector2(-1, 0) : new Vector2(1, 0));
+			Mover.Flip(_player.position.x < _self.position.x ? new Vector2(-1, 0) : new Vector2(1, 0));
 		}
 	}
 }

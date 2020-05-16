@@ -8,12 +8,20 @@ namespace Enemy.Ai.States
 
 		private EnemyWeapon _enemyWeapon;
 		private Animator _animator;
+		private bool _hasAnimator;
 
 		public AttackState(EnemyWeapon enemyWeapon, Animator animator, Mover mover, Transform player) : base(mover,
-			animator, player)
+			animator.transform, player)
 		{
 			_enemyWeapon = enemyWeapon;
 			_animator = animator;
+			_hasAnimator = true;
+		}
+		
+		public AttackState(EnemyWeapon enemyWeapon, Transform self, Mover mover, Transform player) : base(mover, self, player)
+		{
+			_enemyWeapon = enemyWeapon;
+			_hasAnimator = false;
 		}
 
 		public override void Tick()
@@ -21,7 +29,7 @@ namespace Enemy.Ai.States
 			LookAtTarget();
 			if (!_enemyWeapon.CanShoot()) return;
 			_enemyWeapon.Shoot(Mover.FacingRight);
-			_animator.SetTrigger(Shoot);
+			if(_hasAnimator) _animator.SetTrigger(Shoot);
 		}
 
 		public override void FixedTick()

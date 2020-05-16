@@ -101,18 +101,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ef29002680446f9f71fd24741eb292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-    Health: 0
-    Speed: 5
   animator: {fileID: 5234703491314297970}
   spriteRenderer: {fileID: 5234703491314297971}
   visionRange: 20
   enemyWeapon: {fileID: 5234703491918572764}
-  ignoredLayers:
+  hitLayers:
     serializedVersion: 2
     m_Bits: 823
   leftPosition: {fileID: 5234703492149930640}
   rightPosition: {fileID: 5234703492098868730}
+  prepareToAttackAnimationLength: 0
+  dieAnimationLength: 0
 --- !u!61 &5234703491298521009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,9 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceAppliedOnHit: 500
+  invincibleTime: 1
+  timeBetweenBlinks: 0.2
+  spriteRenderers: []
   stats:
-    Health: 2
-    Speed: 2
+    health: 0
+    speed: 0
 --- !u!114 &5234703491298521008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +241,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 734024109
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 8596640243658272642, guid: 66f4da2f11ac426409506a500c4f3bc8,
     type: 3}

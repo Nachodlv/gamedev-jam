@@ -15,7 +15,7 @@ namespace Entities.Enemy.Enemies
 		[SerializeField] protected SpriteRenderer spriteRenderer;
 		[SerializeField] protected float visionRange = 5f;
 		[SerializeField] protected EnemyWeapon enemyWeapon;
-		[SerializeField] private LayerMask ignoredLayers;
+		[SerializeField] private LayerMask hitLayers;
 		
 		public Animator Animator => animator;
 		public Rigidbody2D RigidBody { get; private set; }
@@ -35,7 +35,6 @@ namespace Entities.Enemy.Enemies
 		private void Awake()
 		{
 			_enemy = GetComponent<AEnemy>();
-			Mover = new Mover(spriteRenderer, RigidBody, Stats.Speed);
 
 			_enemy.OnDie += OnDie;
 			RigidBody = GetComponent<Rigidbody2D>();
@@ -45,6 +44,8 @@ namespace Entities.Enemy.Enemies
 			_distanceDetector.targetTag = "Player";
 
 			StateMachine = new StateMachine();
+			
+			Mover = new Mover(spriteRenderer, RigidBody, Stats.Speed);
 			SetUpStates();
 		}
 
@@ -64,7 +65,7 @@ namespace Entities.Enemy.Enemies
 			if (colliders.Count == 0) return false;
 			var position = transform.position;
 			Debug.DrawLine(position, colliders[0].position);
-			var hit = Physics2D.Linecast(position, colliders[0].position, ignoredLayers);
+			var hit = Physics2D.Linecast(position, colliders[0].position, hitLayers);
 			var hitTransform = hit.transform;
 			if (hitTransform == null) return true;
 			return hitTransform.gameObject == colliders[0].gameObject;
