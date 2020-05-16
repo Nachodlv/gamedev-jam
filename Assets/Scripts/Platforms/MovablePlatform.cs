@@ -1,10 +1,11 @@
 ﻿using System;
+using Entities;
 using UnityEngine;
 
 namespace Platforms
 {
 	[RequireComponent(typeof(Rigidbody2D))]
-	public class MovablePlatform : MonoBehaviour
+	public class MovablePlatform : MonoBehaviour, IPausable
 	{
 		[SerializeField] private Transform[] transforms;
 		[SerializeField] private float speed;
@@ -14,6 +15,7 @@ namespace Platforms
 		private int _currentPosition;
 		private Rigidbody2D _rigidBody;
 		private Vector3 _velocity;
+		private bool _paused;
 		
 		private Vector2 NextPosition => _positions[_currentPosition];
 
@@ -29,6 +31,7 @@ namespace Platforms
 
 		private void Update()
 		{
+			if (_paused) return;
 			var position = _rigidBody.position;
 			var targetVelocity = NextPosition - position;
 			targetVelocity = targetVelocity.normalized * speed;
@@ -38,6 +41,16 @@ namespace Platforms
 			{
 				_currentPosition = (_currentPosition + 1) % _positions.Length;
 			}
+		}
+
+		public void Pause()
+		{
+			_paused = true;
+		}
+
+		public void UnPause()
+		{
+			_paused = false;
 		}
 	}
 }

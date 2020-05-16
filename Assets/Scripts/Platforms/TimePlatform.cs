@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using Utils;
 
 namespace Platforms
 {
@@ -8,29 +9,39 @@ namespace Platforms
 	{
 		[SerializeField] private float timeToDeactivate;
 
-		private static readonly int PlayerExit = Animator.StringToHash("playerExit");
+		private static readonly int PlayerExitTrigger = Animator.StringToHash("playerExit");
 
-		private WaitForSeconds _waitingTime;
-		private Func<IEnumerator> _waitCoroutine;
+		private WaitSeconds _waitSeconds;
+		private bool _triggered;
 
 		protected override void Awake()
 		{
 			base.Awake();
 			OnTriggerEnter += TriggerEnter;
-			_waitingTime = new WaitForSeconds(timeToDeactivate);
-			_waitCoroutine = WaitCoroutine;
+			_waitSeconds = new WaitSeconds(this, PlayerExit, timeToDeactivate);
 		}
 
 		private void TriggerEnter()
 		{
-			StartCoroutine(_waitCoroutine());
+			_waitSeconds.Wait();
 		}
 
-		private IEnumerator WaitCoroutine()
+		private void PlayerExit()
 		{
-			yield return _waitingTime;
-			Animator.SetTrigger(PlayerExit);
+			if (Paused)
+			{
+				_triggered = true;
+				return;
+			}
+			Animator.SetTrigger(PlayerExitTrigger);
 		}
-		
+
+		public override void UnPause()
+		{
+			base.UnPause();
+			if (!_triggered) return;
+			TriggerEnter();
+			_triggered = false;
+		}
 	}
 }
