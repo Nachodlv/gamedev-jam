@@ -20,8 +20,7 @@ namespace Entities.Enemy.Enemies
             var idleState = new IdleState(this);
             var largeAttackState = new AttackState(enemyWeapon, Animator, Mover, Player);
             var prepareShortAttack = new PlayAnimationState(Animator, Player, Mover, "prepareShortAttack", 0.5f);
-            var shortRangeState = new MultipleStates(new List<IState>
-                {new AttackState(shortRangeWeapon, Animator, Mover, Player), largeAttackState});
+            var shortRangeState = new AttackState(shortRangeWeapon, transform, Mover, Player);
             var idleShortRangeState = new IdleState(this);
             var dieAnimation = new PlayAnimationState(Animator, Player, Mover, "die", 0.67f);
             var destroySelf = new DestroySelfState(gameObject);
