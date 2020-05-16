@@ -1,10 +1,11 @@
 ﻿using System;
+using Entities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
-	public class EnemyWeapon : MonoBehaviour
+	public class EnemyWeapon : MonoBehaviour, IPausable
 	{
 		[SerializeField] private Bullet bulletPrefab;
 		[SerializeField] private float timeBetweenShoots;
@@ -12,6 +13,7 @@ namespace Enemy
 
 		private float _lastShoot;
 		private Transform _bulletAnchor;
+		private float _pausedTime;
 
 		private void Start()
 		{
@@ -33,6 +35,16 @@ namespace Enemy
 		private void OnDestroy()
 		{
 			if(_bulletAnchor != null) Destroy(_bulletAnchor.gameObject);
+		}
+
+		public void Pause()
+		{
+			_pausedTime = Time.time;
+		}
+
+		public void UnPause()
+		{
+			_lastShoot += Time.time - _pausedTime;
 		}
 	}
 }

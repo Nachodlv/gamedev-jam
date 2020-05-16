@@ -1,5 +1,6 @@
 using System;
 using DefaultNamespace;
+using Enemy;
 using UnityEngine;
 
 namespace Player.Attack
@@ -11,6 +12,7 @@ namespace Player.Attack
 		[SerializeField] private CharacterController characterController;
 		[SerializeField] private float timeBetweenAttacks = 1f;
 		[SerializeField] private CharacterAnimator animator;
+		[SerializeField] private float reflectionMultiplier = 1f;
 		
 		public event Action OnStartAttack;
 		public event Action OnMakeAttack;
@@ -51,6 +53,8 @@ namespace Player.Attack
 		private void AttackCollider(RaycastHit2D hit)
 		{
 			var damageReceiver = hit.collider.GetComponent<DamageReceiver>();
+			var bullet = hit.collider.GetComponent<Bullet>();
+			if (bullet != null) ReflectBullet(bullet);
 			if (damageReceiver == null) return;
 			damageReceiver.ReceiveDamage(sword.Damage, transform.position);
 		}
@@ -76,6 +80,16 @@ namespace Player.Attack
 			var size = Vector2.one * _collider.bounds.size.y;
 			size.x = sword.Range;
 			return size;
+		}
+
+		private void ReflectBullet(Bullet bullet)
+		{
+			var bulletTransform = bullet.transform;
+			var direction = (bulletTransform.position - transform.position).normalized;
+			direction.y = bulletTransform.right.y;
+			bullet.gameObject.layer = LayerMask.NameToLayer("Player");
+			bullet.Damage *= reflectionMultiplier;
+			bulletTransform.right = direction;
 		}
 	}
 }

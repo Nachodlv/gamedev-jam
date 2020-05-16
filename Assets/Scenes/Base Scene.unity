@@ -448,7 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504961146}
   - component: {fileID: 504961147}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grabber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860725362}
   - component: {fileID: 860725363}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Dash trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1715,7 +1715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717905138}
   - component: {fileID: 1717905139}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 'Eye line '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2091,6 +2091,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613025570461902, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613025791860025, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613025791860027, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -2111,6 +2121,16 @@ PrefabInstance:
       propertyPath: m_ApplyToSortingLayers.Array.data[5]
       value: 734024109
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613025991980218, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613026518756593, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613026518756595, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -2120,6 +2140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613026574781490, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4364613026574781500, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
@@ -2161,6 +2186,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8e383b53faf887e4887cb0f2e137d040, type: 2}
+    - target: {fileID: 4364613027301248650, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027301248660, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: range
@@ -2196,6 +2226,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027409827009, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027409827011, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -2205,6 +2240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[5]
       value: -710203683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027442308412, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027442308414, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
@@ -2351,6 +2391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341847, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341852, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: maximumTimeGrabbingWall
@@ -2376,15 +2421,35 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 2039027304}
+    - target: {fileID: 4364613027450341855, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: reflectionMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027450823060, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.98
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450823061, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027486713460, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027486713461, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027507763334, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9, type: 3}

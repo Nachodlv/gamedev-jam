@@ -14,6 +14,12 @@ namespace Enemy
 		[SerializeField] private float damage;
 		[SerializeField] private float timeToLive = 4f;
 
+		public float Damage
+		{
+			get => damage;
+			set => damage = value;
+		}
+		
 		private SpriteRenderer _spriteRenderer;
 		private Rigidbody2D _rigidBody2D;
 		private Mover _mover;
@@ -32,6 +38,8 @@ namespace Enemy
 			_destroyCoroutine = StartCoroutine(_destroyOnTimeOut());
 			
 			_mover = new Mover(_spriteRenderer, _rigidBody2D, speed);
+			
+			//TODO on activate change to bullet layer, reset damage
 		}
 
 		private void FixedUpdate()
