@@ -20,7 +20,7 @@ namespace Entities.Enemy.Enemies
 		public Animator Animator => animator;
 		public Rigidbody2D RigidBody { get; private set; }
 		protected Mover Mover { get; private set; }
-		private Stats Stats => _enemy.Stats;
+		protected Stats Stats => _enemy.Stats;
 
 		
 		protected StateMachine StateMachine;
