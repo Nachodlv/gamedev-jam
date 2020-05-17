@@ -1,10 +1,11 @@
 ﻿using System;
 using UnityEngine;
+using Utils;
 using CharacterController = Entities.Player.Movement.CharacterController;
 
 namespace Entities.Player.Abilities
 {
-	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
+	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D), typeof(DamageReceiver))]
 	public class DashAbility : MonoBehaviour
 	{
 		[SerializeField] private CharacterController _characterController;
@@ -12,6 +13,7 @@ namespace Entities.Player.Abilities
 		[SerializeField] private LayerMask collisionMask;
 		[SerializeField] private float damage = 4f;
 		[SerializeField] private float timeBetweenDashes = 1f;
+		[SerializeField] private float invincibleTime = 0.5f;
 
 		public event Action OnDash;
 		
@@ -20,19 +22,25 @@ namespace Entities.Player.Abilities
 		private Collider2D _collider;
 		private Rigidbody2D _rigidBody;
 		private float _lastDash;
+		private DamageReceiver _damageReceiver;
+		private WaitSeconds _invincibleWaitTime;
 
 		private void Awake()
 		{
-			_characterController.OnLandEvent += OnLand;
 			_characterController.OnJumpEvent += OnJump;
 			_hits = new RaycastHit2D[10];
 			_collider = GetComponent<Collider2D>();
 			_rigidBody = GetComponent<Rigidbody2D>();
+			_damageReceiver = GetComponent<DamageReceiver>();
+			_invincibleWaitTime = 
+				new WaitSeconds(this, () => _damageReceiver.Invincible = false, invincibleTime);
 		}
 
 		public void Dash()
 		{
 			if (!CanDash()) return;
+			_damageReceiver.Invincible = true;
+			_invincibleWaitTime.Wait();
 			_hasDashed = true;
 			_lastDash = Time.time;
 			OnDash?.Invoke();
@@ -77,11 +85,6 @@ namespace Entities.Player.Abilities
 			point.x += _collider.bounds.extents.x * (_characterController.FacingRight? -1 : 1);
 			transform.position = point;
 			Debug.DrawLine(transform.position, point, Color.red, 5);
-		}
-
-		private void OnLand()
-		{
-			// _onAir = false;
 		}
 
 		private void OnJump()

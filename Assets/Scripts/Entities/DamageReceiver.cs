@@ -11,14 +11,15 @@ namespace Entities
 		[SerializeField] private float invincibleTime = 1f;
 		[SerializeField] private float timeBetweenBlinks = 0.2f;
 		[SerializeField] private SpriteRenderer[] spriteRenderers;
+		
+		public bool Invincible { get; set; }
 
 		protected Rigidbody2D RigidBody2D { get; private set; }
 		protected bool Dead { get; set; }
-		
+
 		private WaitForSeconds _timeBetweenBlinks;
 		private Func<IEnumerator> _blinkFunction;
 		private Coroutine _blinkCoroutine;
-		private bool _invincible;
 
 		protected virtual void Awake()
 		{
@@ -29,7 +30,7 @@ namespace Entities
 
 		public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false)
 		{
-			if (_invincible || Dead) return;
+			if (Invincible || Dead) return;
 			Dead = DealDamage(damage, instantKill);
 			if (Dead) return;
 			
@@ -43,7 +44,7 @@ namespace Entities
 
 		private IEnumerator StartBlinking()
 		{
-			_invincible = true;
+			Invincible = true;
 			var now = Time.time;
 			var hide = false;
 			while (Time.time - now < invincibleTime)
@@ -53,10 +54,11 @@ namespace Entities
 				yield return _timeBetweenBlinks;
 			}
 
-			_invincible = false;
+			Invincible = false;
 			ChangeAlphaSpriteRender(false);
 		}
-
+		
+		
 		private void ChangeAlphaSpriteRender(bool hide)
 		{
 			for (var i = 0; i < spriteRenderers.Length; i++)
