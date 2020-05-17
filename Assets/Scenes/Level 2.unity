@@ -9043,15 +9043,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Enemy (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 8422605857765219246, guid: 28af9f99a86d8ba4fa9984313bd23b7a,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.07573891
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422605857765219246, guid: 28af9f99a86d8ba4fa9984313bd23b7a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.3923454
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28af9f99a86d8ba4fa9984313bd23b7a, type: 3}
