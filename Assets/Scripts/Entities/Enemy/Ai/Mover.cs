@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemy.Ai
+namespace Entities.Enemy.Ai
 {
 	public class Mover
 	{

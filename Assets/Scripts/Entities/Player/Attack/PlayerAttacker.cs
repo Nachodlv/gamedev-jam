@@ -1,9 +1,9 @@
 using System;
-using DefaultNamespace;
-using Enemy;
+using Entities.Enemy;
 using UnityEngine;
+using CharacterController = Entities.Player.Movement.CharacterController;
 
-namespace Player.Attack
+namespace Entities.Player.Attack
 {
 	[RequireComponent(typeof(Collider2D))]
 	public class PlayerAttacker : MonoBehaviour

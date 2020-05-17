@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player.Attack
+namespace Entities.Player.Attack
 {
 	public class Sword : MonoBehaviour
 	{

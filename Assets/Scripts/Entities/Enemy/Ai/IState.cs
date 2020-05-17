@@ -1,8 +1,11 @@
-﻿public interface IState
+﻿namespace Entities.Enemy.Ai
 {
-    void Tick();
+    public interface IState
+    {
+        void Tick();
     
-    void FixedTick();
-    void OnEnter();
-    void OnExit();
+        void FixedTick();
+        void OnEnter();
+        void OnExit();
+    }
 }

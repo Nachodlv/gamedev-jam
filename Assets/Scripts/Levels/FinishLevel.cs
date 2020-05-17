@@ -1,6 +1,5 @@
 ﻿using System;
 using Entities.Player;
-using Player;
 using UnityEngine;
 
 namespace Levels

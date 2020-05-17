@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using DefaultNamespace;
+using Entities.Player.Abilities;
 using UI;
 using UnityEngine;
 

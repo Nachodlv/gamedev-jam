@@ -3,7 +3,6 @@ using System.Linq;
 using Cinemachine;
 using Entities;
 using Entities.Player;
-using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

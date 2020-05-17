@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using Enemy;
-using Enemy.Ai;
-using Enemy.Ai.States;
-using Entities.Enemy.Ai.States;
+﻿using Entities.Enemy.Ai.States;
 using UnityEngine;
 
 namespace Entities.Enemy.Enemies

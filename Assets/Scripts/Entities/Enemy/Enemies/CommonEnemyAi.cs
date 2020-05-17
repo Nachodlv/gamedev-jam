@@ -1,11 +1,7 @@
-﻿﻿using System;
-using Enemy.Ai.States;
- using Entities.Enemy.Enemies;
- using Player;
+﻿using Entities.Enemy.Ai.States;
 using UnityEngine;
-using Utils;
 
-namespace Enemy.Ai
+namespace Entities.Enemy.Enemies
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class CommonEnemyAi : EnemyAi

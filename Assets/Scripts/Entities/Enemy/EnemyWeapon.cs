@@ -1,9 +1,6 @@
-﻿using System;
-using Entities;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
-namespace Enemy
+namespace Entities.Enemy
 {
 	public class EnemyWeapon : MonoBehaviour, IPausable
 	{

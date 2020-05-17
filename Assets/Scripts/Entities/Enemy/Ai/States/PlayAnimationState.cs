@@ -1,8 +1,6 @@
-﻿using System;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Enemy.Ai.States
+namespace Entities.Enemy.Ai.States
 {
     public class PlayAnimationState : MoverState
     {

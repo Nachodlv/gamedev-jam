@@ -1,7 +1,6 @@
 ﻿using System;
-using Enemy;
-using Enemy.Ai;
-using Enemy.Ai.States;
+using Entities.Enemy.Ai;
+using Entities.Enemy.Ai.States;
 using Entities.Player;
 using UnityEngine;
 using Utils;

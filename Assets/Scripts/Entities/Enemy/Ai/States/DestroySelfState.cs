@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemy.Ai.States
+namespace Entities.Enemy.Ai.States
 {
 	public class DestroySelfState: IState
 	{

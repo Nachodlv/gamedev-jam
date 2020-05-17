@@ -3,27 +3,24 @@ using Entities.Player;
 using Levels;
 using UnityEngine;
 
-namespace DefaultNamespace
+public class GameController: MonoBehaviour
 {
-	public class GameController: MonoBehaviour
+	[SerializeField] private LevelManager levelManager;
+	[SerializeField] private APlayer player;
+		
+	private void Awake()
 	{
-		[SerializeField] private LevelManager levelManager;
-		[SerializeField] private APlayer player;
-		
-		private void Awake()
-		{
-			player.OnResetLevel += ResetLevel;
-		}
-
-		public void FinishLevel()
-		{
-			levelManager.FinishLevel();
-		}
-
-		private void ResetLevel()
-		{
-			levelManager.ResetLevel();
-		}
-		
+		player.OnResetLevel += ResetLevel;
 	}
+
+	public void FinishLevel()
+	{
+		levelManager.FinishLevel();
+	}
+
+	private void ResetLevel()
+	{
+		levelManager.ResetLevel();
+	}
+		
 }

@@ -1,8 +1,8 @@
 ﻿using System;
-using DefaultNamespace;
-using Player.Attack;
+using Entities.Player.Attack;
 using UnityEngine;
 using Utils.Audio;
+using CharacterController = Entities.Player.Movement.CharacterController;
 
 namespace Entities.Player
 {

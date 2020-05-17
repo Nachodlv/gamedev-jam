@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Entities
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public abstract class DamageReceiver: MonoBehaviour

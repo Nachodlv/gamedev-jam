@@ -1,13 +1,12 @@
-﻿﻿using System;
- using DefaultNamespace;
- using Enemy.Ai;
- using Entities.Player;
- using Input;
-using Player.Attack;
+﻿using System;
+using Entities.Player.Attack;
+using Entities.Player.Movement;
+using Input;
 using UnityEngine;
- using Utils;
+using Utils;
+using CharacterController = Entities.Player.Movement.CharacterController;
 
- namespace Player
+namespace Entities.Player
 {
 	[RequireComponent(
 		typeof(CharacterController), 

@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Assertions.Comparers;
 using Utils;
 
-namespace DefaultNamespace
+namespace Entities.Player.Movement
 {
 	[RequireComponent(typeof(CharacterController), typeof(Rigidbody2D))]
 	public class WallJumper : MonoBehaviour

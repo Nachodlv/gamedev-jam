@@ -1,20 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public class Stats
+namespace Entities
 {
-	[SerializeField] private float health;
-	[SerializeField] private float speed;
-	public float Speed => speed;
-
-	public float Health
+	[Serializable]
+	public class Stats
 	{
-		get => health;
-		set => health = value;
-	}
+		[SerializeField] private float health;
+		[SerializeField] private float speed;
+		public float Speed => speed;
 
-	private float _currentHealth;
-	private bool _initialized;
+		public float Health
+		{
+			get => health;
+			set => health = value;
+		}
+
+		private float _currentHealth;
+		private bool _initialized;
 	
+	}
 }

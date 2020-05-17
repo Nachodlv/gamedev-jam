@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace
+﻿namespace Entities
 {
 	public interface IHaveStats
 	{

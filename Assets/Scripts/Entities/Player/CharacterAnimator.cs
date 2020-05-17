@@ -1,10 +1,11 @@
 using System;
-using DefaultNamespace;
-using Entities.Player;
-using Player.Attack;
+using Entities.Player.Abilities;
+using Entities.Player.Attack;
+using Entities.Player.Movement;
 using UnityEngine;
+using CharacterController = Entities.Player.Movement.CharacterController;
 
-namespace Player
+namespace Entities.Player
 {
 	[RequireComponent(typeof(Animator))]
 	public class CharacterAnimator : MonoBehaviour

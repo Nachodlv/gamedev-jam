@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace Entities.Player
+namespace Entities.Player.Abilities
 {
 	public class TimeStopAbility : MonoBehaviour
 	{

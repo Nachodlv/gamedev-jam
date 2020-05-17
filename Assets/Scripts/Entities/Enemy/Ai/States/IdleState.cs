@@ -1,8 +1,7 @@
-﻿﻿using Entities.Enemy.Enemies;
- using UnityEngine;
-using UnityEngine.Rendering;
+﻿using Entities.Enemy.Enemies;
+using UnityEngine;
 
-namespace Enemy.Ai.States
+namespace Entities.Enemy.Ai.States
 {
 	public class IdleState: IState
 	{

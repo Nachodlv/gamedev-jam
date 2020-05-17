@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
-using DefaultNamespace;
-using Enemy.Ai;
-using Entities;
+using Entities.Enemy.Ai;
 using UnityEngine;
 
-namespace Enemy
+namespace Entities.Enemy
 {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
 	public class Bullet: MonoBehaviour, IPausable

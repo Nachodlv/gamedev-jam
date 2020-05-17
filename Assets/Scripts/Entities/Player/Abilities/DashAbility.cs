@@ -1,8 +1,8 @@
 ﻿using System;
-using DefaultNamespace;
 using UnityEngine;
+using CharacterController = Entities.Player.Movement.CharacterController;
 
-namespace Entities.Player
+namespace Entities.Player.Abilities
 {
 	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
 	public class DashAbility : MonoBehaviour
