@@ -17,7 +17,7 @@ namespace Entities.Player.Movement
 		public delegate void TouchingWall(bool isTouching, bool isRight);
 		public event TouchingWall OnTouchingWall;
 
-		private const float TriggerRadius = 0.1f;
+		private const float TriggerRadius = 0.2f;
 
 		private CharacterController _characterController;
 		private bool _touchingRightWall;
@@ -38,7 +38,6 @@ namespace Entities.Player.Movement
 			_waitSeconds = new WaitSeconds(this, RegainMovement, timeNotMoving);
 			OnTouchingWall += WallTouched;
 			_characterController.OnLandEvent += OnLand;
-			// _characterController.OnFlip += OnFlip;
 		}
 
 		private void Update()
@@ -79,6 +78,7 @@ namespace Entities.Player.Movement
 
 		public void Jump()
 		{
+			Debug.Log("Wall jump!");
 			_timeGrabbingWall = 0;
 			_characterController.JumpWithOptions(true, _touchingRightWall ? 45 : -45, wallJump);
 			_characterController.AirControl = false;
@@ -121,12 +121,6 @@ namespace Entities.Player.Movement
 			_timeGrabbingWall = 0;
 			_previousCollider = float.MaxValue;
 			OnTouchingWall?.Invoke(false, false);
-		}
-
-		private void OnFlip()
-		{
-			OnTouchingWall?.Invoke(false, false);
-			_timeGrabbingWall = maximumTimeGrabbingWall;
 		}
 
 		private void RegainMovement()

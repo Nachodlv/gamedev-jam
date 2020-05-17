@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58905630}
   - component: {fileID: 58905629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Water grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -251,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -486,6 +496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -1036,6 +1051,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1111,6 +1131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1185,6 +1210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -1341,6 +1371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1416,6 +1451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1490,6 +1530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -1804,7 +1849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395001292}
   - component: {fileID: 395001291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1849,6 +1894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -2005,6 +2055,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2079,6 +2134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -2235,6 +2295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2309,6 +2374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -2385,6 +2455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2459,6 +2534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Left spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603236880807251346, guid: fc472f575ef680b40b4cb29d3d063647,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1603236880807251350, guid: fc472f575ef680b40b4cb29d3d063647,
         type: 3}
@@ -2614,6 +2694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -2894,6 +2979,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &658673759 stripped
@@ -3153,6 +3243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -4666,6 +4761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4796,6 +4896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &766145124 stripped
@@ -4895,6 +5000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -5051,6 +5161,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5125,6 +5240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -5280,6 +5400,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5354,6 +5479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -5484,6 +5614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Right spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
@@ -5974,6 +6109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6129,6 +6269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6203,6 +6348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -28365,6 +28515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28520,6 +28675,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28594,6 +28754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -28750,6 +28915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28880,6 +29050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &1099777803 stripped
@@ -28955,6 +29130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &1108176780 stripped
@@ -28974,6 +29154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -29209,6 +29394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29339,6 +29529,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &1190329720 stripped
@@ -29439,6 +29634,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29513,6 +29713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -29668,6 +29873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -29984,6 +30194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30059,6 +30274,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30133,6 +30353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -30278,6 +30503,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30352,6 +30582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -30428,6 +30663,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30502,6 +30742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -30578,6 +30823,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30653,6 +30903,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30727,6 +30982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -30882,6 +31142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -31118,6 +31383,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31192,6 +31462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -31348,6 +31623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31422,6 +31702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -31498,6 +31783,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31572,6 +31862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -31703,6 +31998,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &1666390772 stripped
@@ -31722,6 +32022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -31872,6 +32177,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31946,6 +32256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -32451,6 +32766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32766,6 +33086,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32840,6 +33165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Left spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603236880807251346, guid: fc472f575ef680b40b4cb29d3d063647,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1603236880807251350, guid: fc472f575ef680b40b4cb29d3d063647,
         type: 3}
@@ -32996,6 +33326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33151,6 +33486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33281,6 +33621,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4874624841579460174, guid: 9fd5a5bac4c92c24092dee16c7374515,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5a5bac4c92c24092dee16c7374515, type: 3}
 --- !u!4 &1954789666 stripped
@@ -33381,6 +33726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 1603236880807251346, guid: fc472f575ef680b40b4cb29d3d063647,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1603236880807251350, guid: fc472f575ef680b40b4cb29d3d063647,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33455,6 +33805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -33770,6 +34125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33844,6 +34204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -33920,6 +34285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33994,6 +34364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
@@ -34230,6 +34605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34384,6 +34764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428595790000551104, guid: cc759a73d3762804db15b3b9d5b216aa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4428595790000551108, guid: cc759a73d3762804db15b3b9d5b216aa,
         type: 3}
