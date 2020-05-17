@@ -8,6 +8,7 @@ env:
   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
   UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+  PROJECT_NAME: Timebot
 
 jobs:
   builds:
@@ -41,7 +42,7 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           buildsPath: build
-          buildName: GameDev-${{ matrix.targetPlatform }}
+          buildName: ${{PROJECT_NAME}}-${{ matrix.targetPlatform }}
 
       # Output 
       - uses: actions/upload-artifact@v1
@@ -78,21 +79,10 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           buildsPath: build
-          buildName: GameDev-WebGl 
+          buildName: ${{PROJECT_NAME}}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages
-          FOLDER: build/WebGL/GameDev-WebGl
-      # - name: Commit changes
-      #   run: |
-      #     echo ${{ github.ref }}
-      #     git add /build/GameDev-WebGl/
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git commit -m "ci: Automated build push" -a | exit 0
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+          FOLDER: build/WebGL/${{PROJECT_NAME}}
