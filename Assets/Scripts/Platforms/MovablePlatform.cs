@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Entities;
 using UnityEngine;
 
@@ -9,12 +10,12 @@ namespace Platforms
 	{
 		[SerializeField] private Transform[] transforms;
 		[SerializeField] private float speed;
-		[SerializeField] private float movementSmoothing = 0.5f;
+		[SerializeField] private float movementSmoothing = 0.1f;
 
 		private Vector2[] _positions;
 		private int _currentPosition;
 		private Rigidbody2D _rigidBody;
-		private Vector3 _velocity;
+		private Vector2 _velocity;
 		private bool _paused;
 		
 		private Vector2 NextPosition => _positions[_currentPosition];
@@ -35,9 +36,9 @@ namespace Platforms
 			var position = _rigidBody.position;
 			var targetVelocity = NextPosition - position;
 			targetVelocity = targetVelocity.normalized * speed;
-			_rigidBody.velocity = Vector3.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing);
-
-			if (Vector3.Distance(position, NextPosition) < 0.01f)
+			var velocity = Vector2.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing);
+			_rigidBody.velocity = velocity;
+			if (Vector3.Distance(position, NextPosition) < 0.1f)
 			{
 				_currentPosition = (_currentPosition + 1) % _positions.Length;
 			}
@@ -46,6 +47,7 @@ namespace Platforms
 		public void Pause()
 		{
 			_paused = true;
+			_rigidBody.velocity = Vector2.zero;
 		}
 
 		public void UnPause()

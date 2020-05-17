@@ -15,5 +15,5 @@ MonoBehaviour:
   index: 5
   levelName: Level 2
   time: 100
-  playerPosition: {x: -22.1, y: 10.5}
+  playerPosition: {x: -23, y: 11}
   backgrounds: []
