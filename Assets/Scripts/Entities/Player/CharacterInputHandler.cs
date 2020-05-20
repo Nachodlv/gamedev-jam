@@ -3,6 +3,7 @@ using Entities.Player.Attack;
 using Entities.Player.Movement;
 using Input;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Utils;
 using CharacterController = Entities.Player.Movement.CharacterController;
 
@@ -35,7 +36,9 @@ namespace Entities.Player
 			_wallJumper = GetComponent<WallJumper>();
 			_controller = new InputActionController();
 			_playerAttacker = GetComponent<PlayerAttacker>();
-			_controller.Player.Jump.performed += ctx => PlayerFunction(Jump);
+			_controller.Player.Jump.started += ctx => PlayerFunction(StartJumping);
+			_controller.Player.Jump.canceled += ctx => PlayerFunction(StopJumping);
+			_controller.Player.Jump.performed += ctx => PlayerFunction(StopJumping);
 			_controller.Player.Crouch.performed += ctx => PlayerFunction(Crouch);
 			_controller.Player.Attack.performed += ctx => PlayerFunction(Attack);
 			_controller.Player.TimeStop.performed += ctx => PlayerFunction(TimeStopAbility);
@@ -60,7 +63,7 @@ namespace Entities.Player
 			if (_jump)
 			{
 				if(_wallJumper.CanWallJump()) _wallJumper.Jump();
-				else _characterController.Jump();
+				else _characterController.StartJumping();
 				_jump = false;
 			}
 			_characterController.Move(_movement, _crouch, !_isGrabbingWall);
@@ -78,9 +81,14 @@ namespace Entities.Player
 			if(!_isGrabbingWall) _playerAttacker.Attack();
 		}
 
-		private void Jump()
+		private void StartJumping()
 		{
 			_jump = true;
+		}
+
+		private void StopJumping()
+		{
+			_characterController.StopJumping();
 		}
 
 		private void Crouch()

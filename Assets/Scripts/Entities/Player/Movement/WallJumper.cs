@@ -79,7 +79,7 @@ namespace Entities.Player.Movement
 		public void Jump()
 		{
 			_timeGrabbingWall = 0;
-			_characterController.JumpWithOptions(true, _touchingRightWall ? 45 : -45, wallJump);
+			_characterController.StartJumpWithOptions(true, _touchingRightWall ? 25 : -25, wallJump);
 			_characterController.AirControl = false;
 			_waitSeconds.Wait();
 		}

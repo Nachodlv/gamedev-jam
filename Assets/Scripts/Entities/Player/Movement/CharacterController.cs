@@ -17,6 +17,7 @@ namespace Entities.Player.Movement
 		[SerializeField] private int maxJumps = 1;
 		[SerializeField] private SpriteRenderer spriteRenderer;
 		[SerializeField] private float maxVelocity = 5f;
+		[SerializeField] private float timeJumping = 1f;
 	
 		public event Action OnJumpEvent;
 		public event Action OnLandEvent;
@@ -39,8 +40,10 @@ namespace Entities.Player.Movement
 		private Vector3 _velocity = Vector3.zero;
 		private bool _wasCrouching;
 		private int _currentJumps;
-		private bool _justJump;
 		private Collider2D[] _colliders;
+		private Vector2 _jumpDirection;
+		private bool _jumping;
+		private float _jumpTime;
 
 		private void Awake()
 		{
@@ -50,14 +53,14 @@ namespace Entities.Player.Movement
 
 		private void FixedUpdate()
 		{
+			if (_jumping)
+			{
+				Jump();
+				return;
+			}			
 			// if(Grounded) return;
 			var wasGrounded = Grounded;
-			if (_justJump)
-			{
-				_justJump = false;
-				return;
-			}
-		
+
 			var size = Physics2D.OverlapCircleNonAlloc(groundCheck.position, GroundedRadius, _colliders, whatIsGround);
 			for (var i = 0; i < size; i++)
 			{
@@ -144,26 +147,39 @@ namespace Entities.Player.Movement
 		
 		}
 
-		public void Jump()
+		public void StartJumping()
 		{
-			JumpWithOptions(false, 0, jumpForce);
+			StartJumpWithOptions(false, 0, jumpForce);
 		}
 
-		public void JumpWithOptions(bool ignoreMaximumJumps, float angle, float force)
+		public void StopJumping()
 		{
-			if (!ignoreMaximumJumps && _currentJumps >= maxJumps) return;
-			_justJump = true;	
+			_jumping = false;
+		}
+
+		public void StartJumpWithOptions(bool ignoreMaximumJumps, float angle, float force)
+		{
+			if ((!ignoreMaximumJumps && _currentJumps >= maxJumps) || _jumping) return;
+			_jumping = true;
 			Grounded = false;
+			_jumpTime = Time.time;
+			_currentJumps ++;
+
 			var velocity = _myRigidBody2D.velocity;
 			velocity.y = velocity.y < 0 ? 0 : velocity.y;
 			_myRigidBody2D.velocity = velocity;
-			var jumpDirection = new Vector2(0f, force);
-			jumpDirection = Quaternion.Euler(0, 0, angle) * jumpDirection;
-			_myRigidBody2D.AddForce(jumpDirection);
-			_currentJumps ++;
+			_jumpDirection = new Vector2(0f, force);
+			_jumpDirection = Quaternion.Euler(0, 0, angle) * _jumpDirection;
+			_myRigidBody2D.AddForce(_jumpDirection * 5);
 			OnJumpEvent?.Invoke();
 		}
 
+		private void Jump()
+		{
+			if(Time.time - _jumpTime > timeJumping) StopJumping();
+
+			_myRigidBody2D.AddForce(_jumpDirection * ((timeJumping - (Time.time - _jumpTime)) / timeJumping));
+		}
 
 		public void Flip()
 		{
