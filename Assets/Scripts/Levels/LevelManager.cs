@@ -12,21 +12,18 @@ namespace Levels
 	{
 		[SerializeField] private LevelSettings[] levels;
 		[SerializeField] private APlayer player;
-		[SerializeField] private Animator levelTransition;
 
 		public event Action<LevelSettings> OnLevelChange;
 		
 		private int _currentLevel;
 		private int _previousLevel;
-		private static readonly int FadeIn = Animator.StringToHash("fadeIn");
-		private static readonly int FadeOut = Animator.StringToHash("fadeOut");
 
 		private LevelSettings Currentlevel => levels[_currentLevel];
 		private LevelSettings PreviousLevel => levels[_previousLevel];
 		
 		private void Awake()
 		{
-			LoadCurrentLevel();
+			LoadLevel();
 		}
 
 		public void FinishLevel()
@@ -34,24 +31,29 @@ namespace Levels
 			_previousLevel = _currentLevel;
 			if (_currentLevel >= levels.Length - 1) _currentLevel = 0;
 			else _currentLevel++;
-			LoadCurrentLevel();
+			LoadCurrentLevelWithFade();
 			SceneManager.UnloadSceneAsync(PreviousLevel.index);
 		}
 
 		public void ResetLevel()
 		{
 			SceneManager.UnloadSceneAsync(Currentlevel.index);
-			LoadCurrentLevel();
+			LoadCurrentLevelWithFade();
 		}
 		
-		private void LoadCurrentLevel()
+		private void LoadCurrentLevelWithFade()
 		{
-			levelTransition.SetTrigger(FadeIn);
+			LevelTransition.Instance.FadeIn();
+			LoadLevel();
+		}
+
+		private void LoadLevel()
+		{
 			var loadSceneAsync = SceneManager.LoadSceneAsync(Currentlevel.index, LoadSceneMode.Additive);
 			loadSceneAsync.completed += operation =>
 			{
 				SetUpPlayer();
-				levelTransition.SetTrigger(FadeOut);
+				LevelTransition.Instance.FadeOut();
 				OnLevelChange?.Invoke(Currentlevel);
 			};
 		}
