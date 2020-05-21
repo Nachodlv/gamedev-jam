@@ -17,6 +17,7 @@ namespace Entities.Player
 		[SerializeField] private APlayer player;
 		
 		public event Action OnAttackAnimation;
+		public event Action OnSwordDrawn;
 		
 		private static readonly int JumpTrigger = Animator.StringToHash("jump");
 		private static readonly int GroundTrigger = Animator.StringToHash("ground");
@@ -27,6 +28,7 @@ namespace Entities.Player
 		private static readonly int DieTrigger = Animator.StringToHash("die");
 
 		private Animator _animator;
+		private bool _swordDrawn;
 
 		private void Awake()
 		{
@@ -56,11 +58,14 @@ namespace Entities.Player
 
 		private void GrabWall(bool isGrabbed, bool isRight)
 		{
+			_swordDrawn = false;
 			_animator.SetBool(WallBool, isGrabbed);
 		}
 
 		private void StartAttack()
 		{
+			if(!_swordDrawn) OnSwordDrawn?.Invoke();
+			_swordDrawn = true;
 			_animator.SetTrigger(AttackTrigger);
 		}
 
