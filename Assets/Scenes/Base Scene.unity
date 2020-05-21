@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordDraw: {fileID: 8300000, guid: 22912296e25e19343be722b6f8142f58, type: 3}
   attackClip: {fileID: 8300000, guid: df700bf3826e8264c98335a514d98c08, type: 3}
-  jumpClip: {fileID: 0}
+  jumpClip: {fileID: 8300000, guid: 8722779798c89f842b20f9d4512df8a3, type: 3}
   hitGroundClip: {fileID: 8300000, guid: 0c834176b23c9c3489aefb6fe70ed642, type: 3}
   timeStopAbility: {fileID: 8300000, guid: 921bb5fe4de4a5b4ca00eb9eaa2b09e7, type: 3}
   dieClip: {fileID: 8300000, guid: 391705dd68d4c7d45945b826a9886a9b, type: 3}
