@@ -2342,6 +2342,11 @@ PrefabInstance:
       propertyPath: timeForDoublePress
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341843, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: spriteRenderers.Array.size
@@ -2446,6 +2451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeJumping
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341853, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: airControl
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341855, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}

@@ -68,6 +68,16 @@ PrefabInstance:
       propertyPath: dieAnimationLength
       value: 0.57
       objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521011, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234703491298521011, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521013, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: m_Name
