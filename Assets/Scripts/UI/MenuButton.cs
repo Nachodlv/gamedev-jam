@@ -3,6 +3,7 @@ using Levels;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utils.Audio;
 
 namespace UI
 {
@@ -18,11 +19,14 @@ namespace UI
             _animator = GetComponent<Animator>();
             GetComponent<Button>().onClick.AddListener(TriggerButtonAnimation);
         }
+        
+        [SerializeField] private AudioClip clip;
 
         private void TriggerButtonAnimation()
         {
             LevelTransition.Instance.FadeIn();
             _animator.SetTrigger(Tap);
+            AudioManager.Instance.PlaySound(clip);
         }
 
         private void FinishAnimation()

@@ -8,18 +8,22 @@ namespace Entities.Player
 {
 	public class CharacterAudioHandler : MonoBehaviour
 	{
-		[Header("Audios")]
+		[Header("Audios")] 
+		[SerializeField] private AudioClip swordDraw;
 		[SerializeField] private AudioClip attackClip;
 		[SerializeField] private AudioClip jumpClip;
 		[SerializeField] private AudioClip hitGroundClip;
 		[SerializeField] private AudioClip timeStopAbility;
 		[SerializeField] private AudioClip dieClip;
 		[SerializeField] private AudioClip walkingClip;
+		[SerializeField] private AudioClip continousStoppedTime;
+		[SerializeField] private AudioClip timeStopEnd;
 		
 		[Header("References")]
 		[SerializeField] private CharacterController characterController;
 		[SerializeField] private PlayerAttacker playerAttacker;
 		[SerializeField] private APlayer player;
+		[SerializeField] private CharacterAnimator characterAnimator;
 
 		[Header("Settings")] [SerializeField] private float timeBetweenWalkingClips;
 		
@@ -27,15 +31,17 @@ namespace Entities.Player
 		
 		private void Awake()
 		{
-			// characterController.OnJumpEvent += () => PlaySound(jumpClip);
+			characterController.OnJumpEvent += () => PlaySound(jumpClip);
 			characterController.OnLandEvent += () => PlaySound(hitGroundClip);
 			playerAttacker.OnMakeAttack += () => PlaySound(attackClip);
 			player.OnDie += () => PlaySound(dieClip);
+			characterAnimator.OnSwordDrawn += () => PlaySound(swordDraw);
 		}
 
 		private void Start()
 		{
 			player.TimeStopAbility.OnTimeStop += () => PlaySound(timeStopAbility);
+			player.TimeStopAbility.OnTimeStop += () => PlaySound(continousStoppedTime); //TODO
 		}
 
 		private void Update()

@@ -21,6 +21,7 @@ namespace Utils.Audio
             if (Instance != null)
             {
                 Destroy(gameObject);
+                return;
             }
             else
             {

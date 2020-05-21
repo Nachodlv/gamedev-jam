@@ -88,5 +88,6 @@ namespace Entities.Player
 		{
 			_animator.SetTrigger(DieTrigger);
 		}
+		
 	}
 }
