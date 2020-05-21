@@ -6,6 +6,8 @@ namespace Entities.Player.Movement
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class CharacterController : MonoBehaviour
 	{
+		private const float GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+
 		[SerializeField] private float jumpForce = 400f;							// Amount of force added when the player jumps.
 		[Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;	// How much to smooth out the movement
 		[SerializeField] private LayerMask whatIsGround;							// A mask determining what is ground to the character
@@ -13,19 +15,13 @@ namespace Entities.Player.Movement
 		[SerializeField] private int maxJumps = 1;
 		[SerializeField] private float maxVelocity = 5f;
 		[SerializeField] private float timeJumping = 1f;
-		[SerializeField] private float airControl = 100f;
 	
 		public event Action OnJumpEvent;
 		public event Action OnLandEvent;
-		public event Action<bool> OnCrouchEvent;
-		public event Action OnFlip;
 		public bool Grounded { get; private set; }
 		public Vector3 Velocity => _myRigidBody2D.velocity;
 		public bool FacingRight { get; private set; } = true;
-
 		public bool AirControl { get; set; } = true;
-
-		private const float GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 
 		private Rigidbody2D _myRigidBody2D;
 		private Vector3 _velocity = Vector3.zero;
@@ -71,21 +67,12 @@ namespace Entities.Player.Movement
 		public void Move(float move, bool crouch, bool canFlip )
 		{
 		
-			// Move the character by finding the target velocity
 			var velocity = _myRigidBody2D.velocity;
-			// if (Grounded)
-			// {
-				Vector3 targetVelocity = new Vector2(move * 10f, velocity.y);
-				var newVelocity = Vector3.SmoothDamp(velocity, targetVelocity, ref _velocity, 
-					movementSmoothing, maxVelocity);
-				_myRigidBody2D.velocity = newVelocity;
-			// }
-			// else if(AirControl && Mathf.Abs(_myRigidBody2D.velocity.x) < maxVelocity)
-			// {
-			// 	Debug.Log("In The Air");
-			// 	Vector3 targetVelocity = new Vector2(move * airControl, 0);
-			// 	_myRigidBody2D.AddForce(targetVelocity);
-			// }
+			Vector3 targetVelocity = new Vector2(move * 10f, velocity.y);
+			var newVelocity = Vector3.SmoothDamp(velocity, targetVelocity, ref _velocity, 
+				movementSmoothing, maxVelocity);
+			_myRigidBody2D.velocity = newVelocity;
+		
 		
 			if (move > 0 && !FacingRight && canFlip)
 			{
@@ -95,7 +82,6 @@ namespace Entities.Player.Movement
 			{
 				Flip();
 			}
-		
 		}
 
 		public void StartJumping()
@@ -132,17 +118,14 @@ namespace Entities.Player.Movement
 			_myRigidBody2D.AddForce(_jumpDirection * ((timeJumping - (Time.time - _jumpTime)) / timeJumping));
 		}
 
-		public void Flip()
+		private void Flip()
 		{
-			// Switch the way the player is labelled as facing.
 			FacingRight = !FacingRight;
 
-			// Multiply the player's x local scale by -1.
-			Vector3 theScale = transform.localScale;
+			var myTransform = transform;
+			var theScale = myTransform.localScale;
 			theScale.x *= -1;
-			transform.localScale = theScale;
-			// spriteRenderer.flipX = !_facingRight;
-			OnFlip?.Invoke();
+			myTransform.localScale = theScale;
 		}
 	}
 }
