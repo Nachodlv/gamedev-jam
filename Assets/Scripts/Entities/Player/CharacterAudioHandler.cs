@@ -1,4 +1,7 @@
-﻿using Entities.Player.Attack;
+﻿using System;
+using Entities.Enemy;
+using Entities.Player.Abilities;
+using Entities.Player.Attack;
 using UnityEngine;
 using Utils.Audio;
 using Entities.Player.Movement;
@@ -18,12 +21,14 @@ namespace Entities.Player
 		[SerializeField] private AudioClip walkingClip;
 		[SerializeField] private AudioClip continuousStoppedTime;
 		[SerializeField] private AudioClip timeStopEnd;
-		
+		[SerializeField] private AudioClip dash;
+
 		[Header("References")]
 		[SerializeField] private CharacterController characterController;
 		[SerializeField] private PlayerAttacker playerAttacker;
 		[SerializeField] private APlayer player;
 		[SerializeField] private CharacterAnimator characterAnimator;
+		[SerializeField] private DashAbility dashAbility;
 
 		[Header("Settings")] [SerializeField] private float timeBetweenWalkingClips;
 		
@@ -36,6 +41,9 @@ namespace Entities.Player
 			player.OnDie += () => PlaySound(dieClip);
 			characterAnimator.OnSwordDrawn += () => PlaySound(swordDraw);
 			characterAnimator.OnAttackAnimation += () => PlaySound(attackClip);
+			dashAbility.OnDash += () => PlaySound(dash);
+			//Sonido devolucion bala (TODO)
+			//Battery pick up
 		}
 
 		private void Update()
