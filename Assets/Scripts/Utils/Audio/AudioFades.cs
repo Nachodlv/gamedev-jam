@@ -7,7 +7,9 @@ namespace Utils.Audio
     public class AudioFades
     {
  
-        public static IEnumerator FadeOut(AudioSource audioSource, float fadeTime) {
+        public static IEnumerator FadeOut(AudioSourcePooleable audioSourcePooleable, float fadeTime)
+        {
+            var audioSource = audioSourcePooleable.AudioSource;
             var startVolume = audioSource.volume;
 
             while (audioSource.volume > 0) {
@@ -16,7 +18,8 @@ namespace Utils.Audio
                 yield return null;
             }
 
-            audioSource.Stop ();
+            audioSource.Stop();
+            audioSourcePooleable.Deactivate();
             audioSource.volume = startVolume;
         }
         

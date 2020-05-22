@@ -1,12 +1,12 @@
-﻿using System;
-using Entities.Player.Attack;
+﻿using Entities.Player.Attack;
 using UnityEngine;
 using Utils.Audio;
+using Entities.Player.Movement;
 using CharacterController = Entities.Player.Movement.CharacterController;
 
 namespace Entities.Player
 {
-	public class CharacterAudioHandler : MonoBehaviour
+	public class CharacterAudioHandler : MonoBehaviour, IPausable
 	{
 		[Header("Audios")] 
 		[SerializeField] private AudioClip swordDraw;
@@ -16,7 +16,7 @@ namespace Entities.Player
 		[SerializeField] private AudioClip timeStopAbility;
 		[SerializeField] private AudioClip dieClip;
 		[SerializeField] private AudioClip walkingClip;
-		[SerializeField] private AudioClip continousStoppedTime;
+		[SerializeField] private AudioClip continuousStoppedTime;
 		[SerializeField] private AudioClip timeStopEnd;
 		
 		[Header("References")]
@@ -33,15 +33,9 @@ namespace Entities.Player
 		{
 			characterController.OnJumpEvent += () => PlaySound(jumpClip);
 			characterController.OnLandEvent += () => PlaySound(hitGroundClip);
-			playerAttacker.OnMakeAttack += () => PlaySound(attackClip);
 			player.OnDie += () => PlaySound(dieClip);
 			characterAnimator.OnSwordDrawn += () => PlaySound(swordDraw);
-		}
-
-		private void Start()
-		{
-			player.TimeStopAbility.OnTimeStop += () => PlaySound(timeStopAbility);
-			player.TimeStopAbility.OnTimeStop += () => PlaySound(continousStoppedTime); //TODO
+			characterAnimator.OnAttackAnimation += () => PlaySound(attackClip);
 		}
 
 		private void Update()
@@ -55,6 +49,18 @@ namespace Entities.Player
 		private void PlaySound(AudioClip clip)
 		{
 			AudioManager.Instance.PlaySound(clip);
+		}
+
+		public void Pause()
+		{
+			PlaySound(timeStopAbility);
+			AudioManager.Instance.PlayBackgroundMusic(continuousStoppedTime);
+		}
+
+		public void UnPause()
+		{
+			AudioManager.Instance.StopBackgroundMusic(continuousStoppedTime);
+			PlaySound(timeStopEnd);
 		}
 	}
 }

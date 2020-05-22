@@ -1297,7 +1297,7 @@ MonoBehaviour:
   timeStopAbility: {fileID: 8300000, guid: 921bb5fe4de4a5b4ca00eb9eaa2b09e7, type: 3}
   dieClip: {fileID: 8300000, guid: 391705dd68d4c7d45945b826a9886a9b, type: 3}
   walkingClip: {fileID: 8300000, guid: 45ed3925aaa8b0d43b5dd4f747105568, type: 3}
-  continousStoppedTime: {fileID: 8300000, guid: dde329065fcc12a44a46bce4f87f3bd5,
+  continuousStoppedTime: {fileID: 8300000, guid: dde329065fcc12a44a46bce4f87f3bd5,
     type: 3}
   timeStopEnd: {fileID: 8300000, guid: 24a07a90798d5c841bb27930021d9855, type: 3}
   characterController: {fileID: 437799485}

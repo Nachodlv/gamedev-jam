@@ -1,23 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Utils.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class AudioManager: MonoBehaviour
+    public class AudioManager : MonoBehaviour
     {
         [SerializeField] private int audioSourceQuantity;
         [SerializeField] private AudioSourcePooleable audioSourcePrefab;
         [SerializeField] private float fadeTime = 2f;
-        
+
         public static AudioManager Instance;
         public bool Muted { get; private set; }
 
-        private AudioSource _audioSource;
-        private ObjectPooler<AudioSourcePooleable> _pooler;
+        private ObjectPooler<AudioSourcePooleable> _audioClipPooler;
+        private ObjectPooler<AudioSourcePooleable> _backgroundMusicPooler;
 
         private void Awake()
         {
-            _audioSource = GetComponent<AudioSource>();
             if (Instance != null)
             {
                 Destroy(gameObject);
@@ -28,20 +28,15 @@ namespace Utils.Audio
                 Instance = this;
                 DontDestroyOnLoad(this);
             }
-            
-            PoolAudioSources();
-        }
 
-        private void Start()
-        {
-            _audioSource.loop = true;
-            _audioSource.Play();
+            PoolAudioSources();
+            InitializeBackgroundMusicPool();
         }
 
         public void PlaySound(AudioClip clip, float volume = 1)
         {
             if (Muted) return;
-            var audioSource = _pooler.GetNextObject();
+            var audioSource = _audioClipPooler.GetNextObject();
             audioSource.SetClip(clip);
             audioSource.SetVolume(volume);
             audioSource.StartClip();
@@ -50,48 +45,91 @@ namespace Utils.Audio
         public void PlaySoundWithFade(AudioClip clip, float volume)
         {
             if (Muted) return;
-            var audioSource = _pooler.GetNextObject();
+            var audioSource = _audioClipPooler.GetNextObject();
             audioSource.SetClip(clip);
             StartCoroutine(AudioFades.FadeIn(audioSource.AudioSource, fadeTime, volume));
-        } 
-        
+        }
+
         public void PlaySound(AudioClip clip)
         {
             PlaySound(clip, 1);
         }
+        
 
-        public void Mute()
+        public void PlayBackgroundMusic(AudioClip clip)
         {
-            _audioSource.Pause();
-            Muted = true;
+            PauseAllBackgroundMusic();
+
+            var audioSource = _backgroundMusicPooler.GetNextObject();
+            audioSource.AudioSource.clip = clip;
+            audioSource.AudioSource.Play();
         }
 
-        public void UnMute()
+        public void PauseBackgroundMusic(AudioClip clip)
         {
-            _audioSource.Play();
-            Muted = false;
+            GetAudioSource(clip)?.AudioSource.Pause();
+        }
+
+        private void PauseAllBackgroundMusic()
+        {
+            foreach (var audioSourcePooleable in _backgroundMusicPooler.Objects)
+            {
+                audioSourcePooleable.AudioSource.Pause();
+            }
+        }
+
+        public void ResumeBackgroundMusic(AudioClip clip)
+        {
+            GetAudioSource(clip)?.AudioSource.UnPause();
+        }
+
+        public void StopBackgroundMusic(AudioClip clip)
+        {
+            var audioSource = GetAudioSource(clip);
+            audioSource?.Deactivate();
+            var activeObject = _backgroundMusicPooler.ActiveObjects;
+            if (activeObject.Count > 0) 
+                activeObject[activeObject.Count - 1].AudioSource.UnPause();
         }
         
-        public void ChangeClip(AudioClip clip)
+        public void FadeOutClip(AudioClip clip)
         {
-            _audioSource.clip = clip;
-            if(!Muted) _audioSource.Play();
+            StartCoroutine(AudioFades.FadeOut(GetAudioSource(clip), fadeTime));
         }
 
-        public void FadeOutClip()
+        public void FadeOutClip(AudioClip clip, float velocity)
         {
-            StartCoroutine(AudioFades.FadeOut(_audioSource, fadeTime));
-        }
-
-        public void FadeOutClip(float velocity)
-        {
-            StartCoroutine(AudioFades.FadeOut(_audioSource, velocity));
+            StartCoroutine(AudioFades.FadeOut(GetAudioSource(clip), velocity));
         }
 
         private void PoolAudioSources()
         {
-            _pooler = new ObjectPooler<AudioSourcePooleable>();
-            _pooler.InstantiateObjects(audioSourceQuantity, audioSourcePrefab, "Audio Sources");
+            _audioClipPooler = new ObjectPooler<AudioSourcePooleable>();
+            var parent = _audioClipPooler.InstantiateObjects(audioSourceQuantity, audioSourcePrefab, "Audio Sources");
+            DontDestroyOnLoad(parent);
+        }
+
+        private void InitializeBackgroundMusicPool()
+        {
+            _backgroundMusicPooler = new ObjectPooler<AudioSourcePooleable>();
+            var parent = _backgroundMusicPooler.InstantiateObjects(2, audioSourcePrefab, "Background Music", audioSources =>
+            {
+                foreach (var audioSource in audioSources)
+                {
+                    audioSource.AudioSource.loop = true;
+                }
+            });
+            DontDestroyOnLoad(parent);
+        }
+
+        private AudioSourcePooleable GetAudioSource(AudioClip clip)
+        {
+            foreach (var audioSource in _backgroundMusicPooler.Objects)
+            {
+                if (audioSource.AudioSource.clip == clip) return audioSource;
+            }
+
+            return null;
         }
     }
 }

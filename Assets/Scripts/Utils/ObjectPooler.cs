@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -14,6 +15,7 @@ namespace Utils
         private Action<List<T>> _onGrow;
 
         public List<T> Objects => _objects;
+        public List<T> ActiveObjects => _objects.Where(o => o.IsActive).ToList();
 
         /// <summary>
         /// Instantiates game objects with the given <paramref name="pooleable"/> and <paramref name="quantity"/>.
@@ -23,7 +25,7 @@ namespace Utils
         /// <param name="pooleable"></param>
         /// <param name="parentName"></param>
         /// <param name="grow">Method that will be executed when the pool grows.</param>
-        public void InstantiateObjects(int quantity, T pooleable, string parentName,
+        public GameObject InstantiateObjects(int quantity, T pooleable, string parentName,
             Action<List<T>> grow = null)
         {
             _initialQuantity = quantity;
@@ -35,6 +37,7 @@ namespace Utils
             _objects = new List<T>();
             _onGrow = grow;
             Grow();
+            return _parent;
         }
 
         /// <summary>

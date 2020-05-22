@@ -15,7 +15,6 @@ namespace Entities.Player.Attack
 		[SerializeField] private float reflectionMultiplier = 1f;
 		
 		public event Action OnStartAttack;
-		public event Action OnMakeAttack;
 
 		private bool _swordDisplayed;
 		private Collider2D _collider;
@@ -38,7 +37,6 @@ namespace Entities.Player.Attack
 
 		private void MakeAttack()
 		{
-			OnMakeAttack?.Invoke();
 			var myPosition = transform.position;
 			var center = myPosition;
 			center.x += (_collider.bounds.extents.x + sword.Range) * (characterController.FacingRight ? 1 : -1);

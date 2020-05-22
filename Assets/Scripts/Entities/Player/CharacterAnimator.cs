@@ -58,7 +58,7 @@ namespace Entities.Player
 
 		private void GrabWall(bool isGrabbed, bool isRight)
 		{
-			_swordDrawn = false;
+			if(isGrabbed) _swordDrawn = false;
 			_animator.SetBool(WallBool, isGrabbed);
 		}
 
