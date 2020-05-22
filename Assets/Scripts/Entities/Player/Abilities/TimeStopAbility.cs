@@ -20,8 +20,6 @@ namespace Entities.Player.Abilities
 			set => _pausables = value;
 		}
 
-		public event Action OnTimeStop;
-		
 		private IPausable[] _pausables;
 		private float _timeAvailableToStop;
 		private bool _paused;
@@ -64,7 +62,6 @@ namespace Entities.Player.Abilities
 			{
 				pausable.Pause();
 			}
-			OnTimeStop?.Invoke();
 		}
 
 		public void UnPause()

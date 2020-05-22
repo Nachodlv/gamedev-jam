@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Utils;
 
 namespace Entities.Grabbables
@@ -6,7 +7,9 @@ namespace Entities.Grabbables
 	public class Grabber : MonoBehaviour
 	{
 		[SerializeField] private float grabbingDistance;
-			
+
+		public event Action OnGrab;
+		
 		private DistanceDetector _distanceDetector;
 		private void Awake()
 		{
@@ -22,6 +25,7 @@ namespace Entities.Grabbables
 			var grabbable = collider.GetComponentInParent<Grabbable>();
 			if (grabbable == null) return;
 			grabbable.OnGrabberNear(this);
+			OnGrab?.Invoke();
 		}
 	}
 }

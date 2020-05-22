@@ -15,6 +15,7 @@ namespace Entities.Player.Attack
 		[SerializeField] private float reflectionMultiplier = 1f;
 		
 		public event Action OnStartAttack;
+		public event Action OnReflectBullet;
 
 		private bool _swordDisplayed;
 		private Collider2D _collider;
@@ -88,6 +89,7 @@ namespace Entities.Player.Attack
 			bullet.gameObject.layer = LayerMask.NameToLayer("Player");
 			bullet.Damage *= reflectionMultiplier;
 			bulletTransform.right = direction;
+			OnReflectBullet?.Invoke();
 		}
 	}
 }
