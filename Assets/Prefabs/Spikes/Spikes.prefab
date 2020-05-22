@@ -124,3 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   instantKill: 1
+  overrideInvincibility: 1

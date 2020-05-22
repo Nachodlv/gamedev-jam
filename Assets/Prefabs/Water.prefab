@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   instantKill: 1
+  overrideInvincibility: 1
 --- !u!61 &8992039743171365845
 BoxCollider2D:
   m_ObjectHideFlags: 0

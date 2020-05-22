@@ -4,75 +4,75 @@ using UnityEngine;
 
 namespace Entities
 {
-	[RequireComponent(typeof(Rigidbody2D))]
-	public abstract class DamageReceiver: MonoBehaviour
-	{
-		[SerializeField] private float forceAppliedOnHit = 1f;
-		[SerializeField] private float invincibleTime = 1f;
-		[SerializeField] private float timeBetweenBlinks = 0.2f;
-		[SerializeField] private SpriteRenderer[] spriteRenderers;
-		
-		public bool Invincible { get; set; }
+    [RequireComponent(typeof(Rigidbody2D))]
+    public abstract class DamageReceiver : MonoBehaviour
+    {
+        [SerializeField] private float forceAppliedOnHit = 1f;
+        [SerializeField] private float invincibleTime = 1f;
+        [SerializeField] private float timeBetweenBlinks = 0.2f;
+        [SerializeField] private SpriteRenderer[] spriteRenderers;
 
-		protected Rigidbody2D RigidBody2D { get; private set; }
-		protected bool Dead { get; set; }
+        public bool Invincible { get; set; }
 
-		private WaitForSeconds _timeBetweenBlinks;
-		private Func<IEnumerator> _blinkFunction;
-		private Coroutine _blinkCoroutine;
+        protected Rigidbody2D RigidBody2D { get; private set; }
+        protected bool Dead { get; set; }
 
-		protected virtual void Awake()
-		{
-			RigidBody2D = GetComponent<Rigidbody2D>();
-			_timeBetweenBlinks = new WaitForSeconds(timeBetweenBlinks);
-			_blinkFunction = StartBlinking;
-		}
+        private WaitForSeconds _timeBetweenBlinks;
+        private Func<IEnumerator> _blinkFunction;
+        private Coroutine _blinkCoroutine;
 
-		public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false)
-		{
-			if (Invincible || Dead) return;
-			Dead = DealDamage(damage, instantKill);
-			if (Dead) return;
-			
-			_blinkCoroutine = StartCoroutine(_blinkFunction());
+        protected virtual void Awake()
+        {
+            RigidBody2D = GetComponent<Rigidbody2D>();
+            _timeBetweenBlinks = new WaitForSeconds(timeBetweenBlinks);
+            _blinkFunction = StartBlinking;
+        }
 
-			var direction = (transform.position - positionAttacker).normalized;
-			RigidBody2D.AddForce(direction * forceAppliedOnHit);
-		}
+        public void ReceiveDamage(float damage, Vector3 positionAttacker, bool instantKill = false,
+            bool overrideInvincible = false)
+        {
+            if ((Invincible && !overrideInvincible) || Dead) return;
+            Dead = DealDamage(damage, instantKill);
+            if (Dead) return;
 
-		protected abstract bool DealDamage(float damage, bool instantKill);
+            _blinkCoroutine = StartCoroutine(_blinkFunction());
 
-		private IEnumerator StartBlinking()
-		{
-			Invincible = true;
-			var now = Time.time;
-			var hide = false;
-			while (Time.time - now < invincibleTime)
-			{
-				hide = !hide;
-				ChangeAlphaSpriteRender(hide);
-				yield return _timeBetweenBlinks;
-			}
+            var direction = (transform.position - positionAttacker).normalized;
+            RigidBody2D.AddForce(direction * forceAppliedOnHit);
+        }
 
-			Invincible = false;
-			ChangeAlphaSpriteRender(false);
-		}
-		
-		
-		private void ChangeAlphaSpriteRender(bool hide)
-		{
-			for (var i = 0; i < spriteRenderers.Length; i++)
-			{
-				var color = spriteRenderers[i].color;
-				color.a = hide ? 0 : 1;
-				spriteRenderers[i].color = color;
-			}
-			
-		}
+        protected abstract bool DealDamage(float damage, bool instantKill);
 
-		private void OnDestroy()
-		{
-			if(_blinkCoroutine != null) StopCoroutine(_blinkCoroutine);
-		}
-	}
+        private IEnumerator StartBlinking()
+        {
+            Invincible = true;
+            var now = Time.time;
+            var hide = false;
+            while (Time.time - now < invincibleTime)
+            {
+                hide = !hide;
+                ChangeAlphaSpriteRender(hide);
+                yield return _timeBetweenBlinks;
+            }
+
+            Invincible = false;
+            ChangeAlphaSpriteRender(false);
+        }
+
+
+        private void ChangeAlphaSpriteRender(bool hide)
+        {
+            for (var i = 0; i < spriteRenderers.Length; i++)
+            {
+                var color = spriteRenderers[i].color;
+                color.a = hide ? 0 : 1;
+                spriteRenderers[i].color = color;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_blinkCoroutine != null) StopCoroutine(_blinkCoroutine);
+        }
+    }
 }
