@@ -1,37 +1,28 @@
 ﻿using UnityEngine;
+using Utils;
 
 namespace Entities.Enemy
 {
 	public class EnemyWeapon : MonoBehaviour, IPausable
 	{
-		[SerializeField] private Bullet bulletPrefab;
 		[SerializeField] private float timeBetweenShoots;
 		[SerializeField] private Transform shootingPoint;
-
+		[SerializeField] private Pool.PoolType bulletType;
+		
 		private float _lastShoot;
-		private Transform _bulletAnchor;
 		private float _pausedTime;
-
-		private void Start()
-		{
-			_bulletAnchor = new GameObject("Bullet anchor").transform;
-		}
 
 		public void Shoot(bool isRight)
 		{
 			_lastShoot = Time.time;
-			var rotation = Quaternion.AngleAxis(isRight ? 0 : 180, Vector3.forward);
-			Instantiate(bulletPrefab, shootingPoint.position, rotation, _bulletAnchor);
+			var bullet = GlobalPooler.Instance.GetBullet(bulletType).transform;
+			bullet.position = shootingPoint.position;
+			bullet.rotation = Quaternion.AngleAxis(isRight ? 0 : 180, Vector3.forward);
 		}
 
 		public bool CanShoot()
 		{
 			return Time.time - _lastShoot > timeBetweenShoots;
-		}
-
-		private void OnDestroy()
-		{
-			if(_bulletAnchor != null) Destroy(_bulletAnchor.gameObject);
 		}
 
 		public void Pause()

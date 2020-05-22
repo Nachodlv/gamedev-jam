@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be5c84173f94cf6a08fe2869c848379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1253244177033159630, guid: 90ace2bd045b105439bc8fa984ccf4b6,
-    type: 3}
   timeBetweenShoots: 3
   shootingPoint: {fileID: 8422605857702957480}
+  bulletType: 2
 --- !u!1 &8422605857702957481
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be5c84173f94cf6a08fe2869c848379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: -7875608415353774412, guid: 14eb626624ffae54688fbe5c10a9e59b,
-    type: 3}
   timeBetweenShoots: 1
   shootingPoint: {fileID: 8422605858092073544}
+  bulletType: 3

@@ -220,6 +220,11 @@ PrefabInstance:
       propertyPath: timeBetweenShoots
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5234703491918572764, guid: 9144d83c2cac5574587952d127068b17,
+        type: 3}
+      propertyPath: bulletType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5234703492098868730, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: m_LocalPosition.x

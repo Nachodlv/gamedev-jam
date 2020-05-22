@@ -2,11 +2,12 @@
 using System.Collections;
 using Entities.Enemy.Ai;
 using UnityEngine;
+using Utils;
 
 namespace Entities.Enemy
 {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
-	public class Bullet: MonoBehaviour, IPausable
+	public class Bullet: Pooleable, IPausable
 	{
 		[SerializeField] private float speed;
 		[SerializeField] private float damage;
@@ -69,7 +70,7 @@ namespace Entities.Enemy
 		private void DestroyBullet()
 		{
 			StopCoroutine(_destroyCoroutine);
-			Destroy(gameObject);
+			Deactivate();
 		}
 
 		public void Pause()

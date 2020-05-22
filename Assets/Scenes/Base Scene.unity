@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1386,6 +1386,24 @@ MonoBehaviour:
     quantity: 5
     prefab: {fileID: 6823529748232891007, guid: 5c2e96079d5b6954b84f9ae1de3e6a51,
       type: 3}
+    poolType: 0
+  bulletPools:
+  - quantity: 5
+    prefab: {fileID: 5798518200487775037, guid: 90ace2bd045b105439bc8fa984ccf4b6,
+      type: 3}
+    poolType: 2
+  - quantity: 5
+    prefab: {fileID: 2390255636174920399, guid: 60dd7d2964b4aa64ba5a3d47a47a4175,
+      type: 3}
+    poolType: 1
+  - quantity: 5
+    prefab: {fileID: 3564693437214326758, guid: a7023a406e691924cb53f046ae84f125,
+      type: 3}
+    poolType: 4
+  - quantity: 5
+    prefab: {fileID: 3618547224481674029, guid: 14eb626624ffae54688fbe5c10a9e59b,
+      type: 3}
+    poolType: 3
   levelManager: {fileID: 1546048122}
 --- !u!1 &1572965681
 GameObject:
