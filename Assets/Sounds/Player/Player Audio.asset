@@ -12,16 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c55ae20a564098971c72a66464eb8e, type: 3}
   m_Name: Player Audio
   m_EditorClassIdentifier: 
-  swordDraw: {fileID: 8300000, guid: 22912296e25e19343be722b6f8142f58, type: 3}
-  attackClip: {fileID: 8300000, guid: df700bf3826e8264c98335a514d98c08, type: 3}
-  jumpClip: {fileID: 8300000, guid: 8a3cfa1b37223154791bb741269cf9a1, type: 3}
-  hitGroundClip: {fileID: 8300000, guid: 0c834176b23c9c3489aefb6fe70ed642, type: 3}
-  timeStopAbility: {fileID: 8300000, guid: 921bb5fe4de4a5b4ca00eb9eaa2b09e7, type: 3}
-  dieClip: {fileID: 8300000, guid: c881c6d4e5686004f88ffa17d4327255, type: 3}
-  walkingClip: {fileID: 8300000, guid: 45ed3925aaa8b0d43b5dd4f747105568, type: 3}
-  continuousStoppedTime: {fileID: 8300000, guid: dde329065fcc12a44a46bce4f87f3bd5,
-    type: 3}
-  timeStopEnd: {fileID: 8300000, guid: 24a07a90798d5c841bb27930021d9855, type: 3}
-  dash: {fileID: 8300000, guid: f2b0ca89f0cdd664b8921068a06f83ac, type: 3}
-  batteryPickUp: {fileID: 8300000, guid: e5657bdeaffa7124da0946a2352ced2e, type: 3}
-  reflectBullet: {fileID: 8300000, guid: ca1e829b165792e49a47fb266fc68761, type: 3}
+  swordDraw:
+    audioClip: {fileID: 8300000, guid: 22912296e25e19343be722b6f8142f58, type: 3}
+    volume: 1
+  attackClip:
+    audioClip: {fileID: 8300000, guid: df700bf3826e8264c98335a514d98c08, type: 3}
+    volume: 1
+  jumpClip:
+    audioClip: {fileID: 8300000, guid: 8a3cfa1b37223154791bb741269cf9a1, type: 3}
+    volume: 1
+  hitGroundClip:
+    audioClip: {fileID: 8300000, guid: 0c834176b23c9c3489aefb6fe70ed642, type: 3}
+    volume: 1
+  timeStopAbility:
+    audioClip: {fileID: 8300000, guid: 921bb5fe4de4a5b4ca00eb9eaa2b09e7, type: 3}
+    volume: 1
+  dieClip:
+    audioClip: {fileID: 8300000, guid: c881c6d4e5686004f88ffa17d4327255, type: 3}
+    volume: 1
+  walkingClip:
+    audioClip: {fileID: 8300000, guid: 45ed3925aaa8b0d43b5dd4f747105568, type: 3}
+    volume: 1
+  continuousStoppedTime:
+    audioClip: {fileID: 8300000, guid: dde329065fcc12a44a46bce4f87f3bd5, type: 3}
+    volume: 1
+  timeStopEnd:
+    audioClip: {fileID: 8300000, guid: 24a07a90798d5c841bb27930021d9855, type: 3}
+    volume: 1
+  dash:
+    audioClip: {fileID: 8300000, guid: f2b0ca89f0cdd664b8921068a06f83ac, type: 3}
+    volume: 1
+  batteryPickUp:
+    audioClip: {fileID: 8300000, guid: e5657bdeaffa7124da0946a2352ced2e, type: 3}
+    volume: 1
+  reflectBullet:
+    audioClip: {fileID: 8300000, guid: ca1e829b165792e49a47fb266fc68761, type: 3}
+    volume: 1

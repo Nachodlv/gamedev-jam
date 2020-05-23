@@ -46,21 +46,25 @@ namespace Entities.Player
 			_lastWalkingClip = Time.time;
 		}
 
-		private void PlaySound(AudioClip clip)
+		private void PlaySound(CustomAudioClip customClip)
 		{
-			AudioManager.Instance.PlaySound(clip);
+			AudioManager.Instance.PlaySound(customClip.audioClip, new AudioOptions
+			{
+				Volume = customClip.volume,
+				LowPassFilter = _paused
+			});
 		}
 
 		public void Pause()
 		{
 			_paused = true;
 			PlaySound(audioReferences.timeStopAbility);
-			AudioManager.Instance.PlayBackgroundMusic(audioReferences.continuousStoppedTime);
+			AudioManager.Instance.PlayBackgroundMusic(audioReferences.continuousStoppedTime.audioClip);
 		}
 
 		public void UnPause()
 		{
-			AudioManager.Instance.StopBackgroundMusic(audioReferences.continuousStoppedTime);
+			AudioManager.Instance.StopBackgroundMusic(audioReferences.continuousStoppedTime.audioClip);
 			if(_paused) PlaySound(audioReferences.timeStopEnd);
 			_paused = false;
 		}

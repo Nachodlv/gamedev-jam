@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5234703491298521010}
   - component: {fileID: 5234703491298521009}
   - component: {fileID: 5234703491298521014}
-  - component: {fileID: 5234703491298521008}
+  - component: {fileID: 9027022780585251685}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -157,7 +157,7 @@ MonoBehaviour:
   stats:
     health: 0
     speed: 0
---- !u!114 &5234703491298521008
+--- !u!114 &9027022780585251685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,11 +166,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5234703491298521013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f83cb84760541c0acd98359e84be2a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f17e215358641448bbc019be4fed16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
   instantKill: 1
+  overrideInvincibility: 1
 --- !u!1 &5234703491314297968
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,10 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be5c84173f94cf6a08fe2869c848379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1253244177033159630, guid: 90ace2bd045b105439bc8fa984ccf4b6,
-    type: 3}
   timeBetweenShoots: 10
   shootingPoint: {fileID: 5234703491160174884}
+  bulletType: 0
 --- !u!1 &5234703492098868729
 GameObject:
   m_ObjectHideFlags: 0

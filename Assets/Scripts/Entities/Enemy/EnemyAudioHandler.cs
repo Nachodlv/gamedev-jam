@@ -8,7 +8,7 @@ namespace Entities.Enemy
     public class EnemyAudioHandler : MonoBehaviour
     {
         [Header("Audios")]
-        [SerializeField] private AudioClip EnemySlowAttack;
+        [SerializeField] private AudioClip enemySlowAttack;
         
         [Header("References")]
         [SerializeField] private EnemyWeapon enemyWeapon;
@@ -18,7 +18,6 @@ namespace Entities.Enemy
             // enemyWeapon.Shoot += () => PlaySound(EnemySlowAttack); // Implementar efecto cuando disparan enemigos (TODO)
         }
         
-       
         private void PlaySound(AudioClip clip)
         {
             AudioManager.Instance.PlaySound(clip);
