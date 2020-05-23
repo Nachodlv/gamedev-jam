@@ -21,6 +21,7 @@ namespace Entities.Enemy.Enemies
 		protected Mover Mover { get; private set; }
 		protected Stats Stats => _enemy.Stats;
 
+		public event Action OnPlayerSight;
 		
 		protected StateMachine StateMachine;
 		protected Transform Player;
@@ -67,7 +68,9 @@ namespace Entities.Enemy.Enemies
 			var hit = Physics2D.Linecast(position, colliders[0].position, hitLayers);
 			var hitTransform = hit.transform;
 			if (hitTransform == null) return true;
-			return hitTransform.gameObject == colliders[0].gameObject;
+			var isPlayer = hitTransform.gameObject == colliders[0].gameObject;
+			if(isPlayer) OnPlayerSight?.Invoke();
+			return isPlayer;
 		}
 		
 		protected Func<bool> FinishPlayingAnimation(PlayAnimationState state) => () => state.Finished;

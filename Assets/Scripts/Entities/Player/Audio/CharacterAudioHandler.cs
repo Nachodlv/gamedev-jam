@@ -51,7 +51,6 @@ namespace Entities.Player
 			AudioManager.Instance.PlaySound(customClip.audioClip, new AudioOptions
 			{
 				Volume = customClip.volume,
-				LowPassFilter = _paused
 			});
 		}
 

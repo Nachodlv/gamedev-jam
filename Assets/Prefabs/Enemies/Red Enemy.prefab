@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8422605857314835032}
   - component: {fileID: 8422605857314835035}
+  - component: {fileID: 8829409232576838577}
   m_Layer: 10
   m_Name: Cannon
   m_TagString: Untagged
@@ -47,6 +48,20 @@ MonoBehaviour:
   timeBetweenShoots: 3
   shootingPoint: {fileID: 8422605857702957480}
   bulletType: 2
+--- !u!114 &8829409232576838577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422605857314835033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e9e7eac714480f87622cac2eb10682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAudioReferences: {fileID: 11400000, guid: f58665f92d8988c4ba946d81f69a08a4,
+    type: 2}
 --- !u!1 &8422605857702957481
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   instantKill: 1
-  overrideInvincibility: 1
+  overrideInvincibility: 0
 --- !u!1 &8422605857843501203
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8422605858554725431}
   - component: {fileID: 8422605858554725428}
+  - component: {fileID: 2984008485144484455}
   m_Layer: 10
   m_Name: Laser
   m_TagString: Untagged
@@ -414,3 +430,17 @@ MonoBehaviour:
   timeBetweenShoots: 1
   shootingPoint: {fileID: 8422605858092073544}
   bulletType: 3
+--- !u!114 &2984008485144484455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422605858554725429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e9e7eac714480f87622cac2eb10682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAudioReferences: {fileID: 11400000, guid: a293d881e685cf446bdc94898035c7de,
+    type: 2}

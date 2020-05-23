@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Utils.Audio;
 
 namespace Entities.Player
 {
@@ -18,12 +19,5 @@ namespace Entities.Player
         public CustomAudioClip dash;
         public CustomAudioClip batteryPickUp;
         public CustomAudioClip reflectBullet;
-    }
-
-    [Serializable]
-    public class CustomAudioClip
-    {
-        public AudioClip audioClip;
-        [Range(0,1)] public float volume = 1;
     }
 }

@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   instantKill: 1
-  overrideInvincibility: 1
+  overrideInvincibility: 0
 --- !u!1 &5234703491314297968
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5234703491918572579}
   - component: {fileID: 5234703491918572764}
+  - component: {fileID: 6742769585229714475}
   m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
@@ -322,6 +323,20 @@ MonoBehaviour:
   timeBetweenShoots: 10
   shootingPoint: {fileID: 5234703491160174884}
   bulletType: 0
+--- !u!114 &6742769585229714475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234703491918572578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e9e7eac714480f87622cac2eb10682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAudioReferences: {fileID: 11400000, guid: f58665f92d8988c4ba946d81f69a08a4,
+    type: 2}
 --- !u!1 &5234703492098868729
 GameObject:
   m_ObjectHideFlags: 0

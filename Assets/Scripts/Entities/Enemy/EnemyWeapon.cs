@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Utils;
 
 namespace Entities.Enemy
@@ -8,6 +9,8 @@ namespace Entities.Enemy
 		[SerializeField] private float timeBetweenShoots;
 		[SerializeField] private Transform shootingPoint;
 		[SerializeField] private Pool.PoolType bulletType;
+
+		public event Action OnShoot;
 		
 		private float _lastShoot;
 		private float _pausedTime;
@@ -18,6 +21,7 @@ namespace Entities.Enemy
 			var bullet = GlobalPooler.Instance.GetBullet(bulletType).transform;
 			bullet.position = shootingPoint.position;
 			bullet.rotation = Quaternion.AngleAxis(isRight ? 0 : 180, Vector3.forward);
+			OnShoot?.Invoke();
 		}
 
 		public bool CanShoot()

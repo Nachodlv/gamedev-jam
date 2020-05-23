@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Entities;
 using UnityEngine;
 
 namespace Utils.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : MonoBehaviour, IPausable
     {
         [SerializeField] private int audioSourceQuantity;
         [SerializeField] private AudioSourcePooleable audioSourcePrefab;
@@ -17,6 +18,7 @@ namespace Utils.Audio
         private ObjectPooler<AudioSourcePooleable> _audioClipPooler;
         private ObjectPooler<AudioSourcePooleable> _lowPassFilterPooler;
         private ObjectPooler<AudioSourcePooleable> _backgroundMusicPooler;
+        private bool _paused;
 
         private void Awake()
         {
@@ -43,6 +45,7 @@ namespace Utils.Audio
         public void PlaySound(AudioClip clip, AudioOptions audioOptions )
         {
             if (Muted) return;
+            audioOptions.LowPassFilter = _paused;
             var audioSource = audioOptions.LowPassFilter? _lowPassFilterPooler.GetNextObject() :_audioClipPooler.GetNextObject();
             audioSource.SetClip(clip);
             audioSource.SetVolume(audioOptions.Volume);
@@ -136,6 +139,16 @@ namespace Utils.Audio
             }
 
             return null;
+        }
+
+        public void Pause()
+        {
+            _paused = true;
+        }
+
+        public void UnPause()
+        {
+            _paused = false;
         }
     }
 }
