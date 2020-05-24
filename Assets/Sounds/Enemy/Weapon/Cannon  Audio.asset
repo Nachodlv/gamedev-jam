@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoot:
     audioClip: {fileID: 8300000, guid: 7c9c39000e6790e4a964353b0d701865, type: 3}
-    volume: 1
+    volume: 0.4

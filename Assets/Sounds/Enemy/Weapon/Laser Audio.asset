@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Laser Audio
   m_EditorClassIdentifier: 
   shoot:
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 389d04aa2f44ef044b6d379fce3af74b, type: 3}
     volume: 1
