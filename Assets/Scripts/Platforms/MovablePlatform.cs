@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entities;
+using Entities.Enemy;
+using Entities.Enemy.Enemies;
 using UnityEngine;
 
 namespace Platforms

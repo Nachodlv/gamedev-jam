@@ -26,9 +26,11 @@ namespace Entities.Enemy
 		private WaitForSeconds _timeToLive;
 		private Coroutine _destroyCoroutine;
 		private bool _paused;
+		private float _initialDamage;
 		
 		private void Awake()
 		{
+			_initialDamage = damage;
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_rigidBody2D = GetComponent<Rigidbody2D>();
 			
@@ -82,6 +84,13 @@ namespace Entities.Enemy
 		public void UnPause()
 		{
 			_paused = false;
+		}
+
+		public override void Activate()
+		{
+			base.Activate();
+			Damage = _initialDamage;
+			gameObject.layer = LayerMask.NameToLayer("Bullet");
 		}
 	}
 }
