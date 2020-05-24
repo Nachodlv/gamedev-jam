@@ -184,6 +184,24 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: 8, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 9, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -2, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -788,9 +806,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8629dd6fdf2cd3447ab94c805a653875, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 72c00e14d08f69249af59512f74113b8, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: d7475da7351fe2044b221099eebf252e, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 4a3da78881d26f548b584ce6f63e5d0d, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: dc0115542a6c6b446a32c55d8209e0a6, type: 2}
@@ -879,10 +897,10 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 5476372403621263160, guid: 4ca009b47e8cdcd4b88811b6ece4cf5b,
       type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 2131544251437089410, guid: 4ca009b47e8cdcd4b88811b6ece4cf5b,
       type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 2091482672263622209, guid: 4ca009b47e8cdcd4b88811b6ece4cf5b,
       type: 3}
   - m_RefCount: 1
@@ -1012,7 +1030,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 8
+  - m_RefCount: 10
     m_Data:
       e00: -1
       e01: 0
@@ -1031,7 +1049,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 77
+  - m_RefCount: 79
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1

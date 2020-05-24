@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb27c620c14e4db0bdecdce7b214d514, type: 3}
   m_Name: Stop Time Test
   m_EditorClassIdentifier: 
-  index: 5
+  index: 6
   levelName: Stop TimeTest
   time: 100
   playerPosition: {x: -2.8, y: 0.1}
