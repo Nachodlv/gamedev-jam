@@ -43,7 +43,6 @@ namespace Entities.Player.Movement
 		private void Update()
 		{
 			if (_touchingLeftWall || _touchingRightWall) _timeGrabbingWall += Time.deltaTime;
-			if (_timeGrabbingWall > maximumTimeGrabbingWall) WallTouched(false, false);
 			
 			if (!_touchingRightWall && _rightTrigger)
 			{
@@ -65,7 +64,7 @@ namespace Entities.Player.Movement
 
 		private void FixedUpdate()
 		{
-			if (_touchingLeftWall || _touchingRightWall)
+			if ((_touchingLeftWall || _touchingRightWall) && _timeGrabbingWall < maximumTimeGrabbingWall)
 			{
 				var velocity = _rigidBody2D.velocity;
 				velocity.y = velocity.y < 0 ? 0 : velocity.y;
@@ -86,7 +85,7 @@ namespace Entities.Player.Movement
 
 		public bool CanWallJump()
 		{
-			if ((!_touchingLeftWall && !_touchingRightWall) || _timeGrabbingWall > maximumTimeGrabbingWall)
+			if (!_touchingLeftWall && !_touchingRightWall)
 				return false;
 			var y = transform.position.x;
 
@@ -97,7 +96,7 @@ namespace Entities.Player.Movement
 
 		private bool CheckTrigger(Transform trigger)
 		{
-			if (_characterController.Grounded || _timeGrabbingWall > maximumTimeGrabbingWall) return false;
+			if (_characterController.Grounded) return false;
 			var size = Physics2D.OverlapCircleNonAlloc(trigger.position, TriggerRadius, _colliders, whatIsWall);
 			return size > 0;
 		}
