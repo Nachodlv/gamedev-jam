@@ -143,4 +143,6 @@ MonoBehaviour:
   audioSourceQuantity: 10
   audioSourcePrefab: {fileID: 6694574327446188243, guid: 3ccaa495a2cf25342ac1898af9f573db,
     type: 3}
+  lowPassFilterPrefab: {fileID: 6694574327446188243, guid: 91ea1e176d9e06a45886c4fdb9bb3b5e,
+    type: 3}
   fadeTime: 2
