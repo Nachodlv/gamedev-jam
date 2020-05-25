@@ -114,7 +114,6 @@ namespace Entities.Player.Movement
 		private void Jump()
 		{
 			if(Time.time - _jumpTime > timeJumping) StopJumping();
-
 			_myRigidBody2D.AddForce(_jumpDirection * ((timeJumping - (Time.time - _jumpTime)) / timeJumping));
 		}
 
