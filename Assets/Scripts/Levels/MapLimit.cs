@@ -10,7 +10,7 @@ namespace Levels
 		{
 			var damageReceiver = other.GetComponent<DamageReceiver>();
 			if (damageReceiver == null) return;
-			damageReceiver.ReceiveDamage(0, Vector3.zero, true);
+			damageReceiver.ReceiveDamage(0, Vector3.zero, true, true);
 		}
 	}
 }
