@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: d6bd164e83d2fe34fbb310818fc4a8a6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5749850937571196291
+    second: Die Floater_0
+  - first:
+      213: -7504373646326902830
+    second: Die Floater_1
+  - first:
+      213: -7113197353981069235
+    second: Die Floater_2
+  - first:
+      213: 3539499550432744283
+    second: Die Floater_3
+  - first:
+      213: 3286495425896247278
+    second: Die Floater_4
+  - first:
+      213: 3450952699182851628
+    second: Die Floater_5
+  - first:
+      213: 304873950852815348
+    second: Die Floater_6
+  - first:
+      213: -6909030993543280382
+    second: Die Floater_7
+  - first:
+      213: 1370904257049718416
+    second: Die Floater_8
+  - first:
+      213: 862529580415228418
+    second: Die Floater_9
+  - first:
+      213: 2147401263580740950
+    second: Die Floater_10
+  - first:
+      213: 2006719863248583116
+    second: Die Floater_11
+  - first:
+      213: -9002987192994780231
+    second: Die Floater_12
+  - first:
+      213: 7353332817155955296
+    second: Die Floater_13
+  - first:
+      213: -2365770865433035727
+    second: Die Floater_14
+  - first:
+      213: -4345576170968884991
+    second: Die Floater_15
+  - first:
+      213: 1494691280739086570
+    second: Die Floater_16
+  - first:
+      213: -6284747938422067542
+    second: Die Floater_17
+  - first:
+      213: 1274384983854167032
+    second: Die Floater_18
+  - first:
+      213: 4844490285637221068
+    second: Die Floater_19
+  - first:
+      213: 8733701374506593918
+    second: Die Floater_20
+  - first:
+      213: 8914765759661970502
+    second: Die Floater_21
+  - first:
+      213: -5895986580719482584
+    second: Die Floater_22
+  - first:
+      213: 8280719413614675096
+    second: Die Floater_23
+  - first:
+      213: -8720558700893584838
+    second: Die Floater_24
+  - first:
+      213: 3968567014180042700
+    second: Die Floater_25
+  - first:
+      213: -2009534052071921082
+    second: Die Floater_26
+  - first:
+      213: -8733688844891452537
+    second: Die Floater_27
+  - first:
+      213: -3593268306201241387
+    second: Die Floater_28
+  - first:
+      213: 1039070558967173481
+    second: Die Floater_29
+  - first:
+      213: 934151093172979855
+    second: Die Floater_30
+  - first:
+      213: 7557191673301674699
+    second: Die Floater_31
+  - first:
+      213: 5085909178715306537
+    second: Die Floater_32
+  - first:
+      213: -5846249216596507286
+    second: Die Floater_33
+  - first:
+      213: -8835973257879819383
+    second: Die Floater_34
+  - first:
+      213: -2925174221050464147
+    second: Die Floater_35
+  - first:
+      213: 714614566794954877
+    second: Die Floater_36
+  - first:
+      213: -5039400879802857574
+    second: Die Floater_37
+  - first:
+      213: -841727638444987794
+    second: Die Floater_38
+  - first:
+      213: -7524298086781866541
+    second: Die Floater_39
+  - first:
+      213: -720837533709575268
+    second: Die Floater_40
+  - first:
+      213: -2795605386129776195
+    second: Die Floater_41
+  - first:
+      213: -6470437603939208879
+    second: Die Floater_42
+  - first:
+      213: -7638034641318699
+    second: Die Floater_43
+  - first:
+      213: 4098639548989043980
+    second: Die Floater_44
+  - first:
+      213: 3410138949117114307
+    second: Die Floater_45
+  - first:
+      213: 6328009288794402837
+    second: Die Floater_46
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Die Floater_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 29
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d724f9a490d6430b0800000000000000
+      internalID: -5749850937571196291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 29
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfc1e4bdeb1bd790800000000000000
+      internalID: -7504373646326902830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_3
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 29
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53d23a8614de1130800000000000000
+      internalID: 3539499550432744283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_5
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 29
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26287b223f34ef20800000000000000
+      internalID: 3450952699182851628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_7
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 29
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20940bfbae03e10a0800000000000000
+      internalID: -6909030993543280382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_9
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 29
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a9ae0651258fb00800000000000000
+      internalID: 862529580415228418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_12
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 29
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bba72c09d6fe0380800000000000000
+      internalID: -9002987192994780231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_14
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 29
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c35e9aee71b2fd0800000000000000
+      internalID: -2365770865433035727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_17
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 29
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaeeb7b4c0718c8a0800000000000000
+      internalID: -6284747938422067542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_19
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 32
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccabc316f361b3340800000000000000
+      internalID: 4844490285637221068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die Floater_22
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 29
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829cebf617f3d2ea0800000000000000
+      internalID: -5895986580719482584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
