@@ -19,9 +19,9 @@ namespace Entities.Player.Abilities
 		{
 			set => _pausables = value;
 		}
+		public float TimeAvailableToStop { get; private set; }
 
 		private IPausable[] _pausables;
-		private float _timeAvailableToStop;
 		private bool _paused;
 		private float _unPausedTime;
 		private float _initialLightIntensity;
@@ -29,7 +29,7 @@ namespace Entities.Player.Abilities
 		private void Awake()
 		{
 			Pausables = new IPausable[0];
-			_timeAvailableToStop = maximumTime;
+			TimeAvailableToStop = maximumTime;
 			_initialLightIntensity = universalLight.intensity;
 			trail.emitting = false;
 		}
@@ -39,12 +39,12 @@ namespace Entities.Player.Abilities
 			ChangeLightingIfNeeded();
 			if (!_paused)
 			{
-				if (_timeAvailableToStop >= maximumTime || Time.time - _unPausedTime < rechargingDelay) return;
-				_timeAvailableToStop += rechargeRatio * Time.deltaTime;
+				if (TimeAvailableToStop >= maximumTime || Time.time - _unPausedTime < rechargingDelay) return;
+				TimeAvailableToStop += rechargeRatio * Time.deltaTime;
 				return;
 			}
-			if(_timeAvailableToStop <= 0) UnPause();
-			_timeAvailableToStop -= Time.deltaTime;
+			if(TimeAvailableToStop <= 0) UnPause();
+			TimeAvailableToStop -= Time.deltaTime;
 		}
 
 		public void Pause()

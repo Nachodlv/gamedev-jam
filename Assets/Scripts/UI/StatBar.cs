@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ namespace UI
         private int maxValue;
         [SerializeField][Tooltip("Current value of the stat bar")]
         private int currentValue;
+        [SerializeField] private bool showText = true;
 
         /// <summary>
         /// When the CurrentValue is set then it updates the fillAmount of the statBarImage and the text of the currentValue.
@@ -26,7 +28,7 @@ namespace UI
             set
             {
                 currentValue = value;
-                currentValueText.text = value.ToString();
+                if(showText) currentValueText.text = value.ToString();
 
                 var barValue =  currentValue / (float) maxValue;
                 statBarImage.fillAmount = barValue;
@@ -42,11 +44,8 @@ namespace UI
             set
             {
                 maxValue = value;
-                maxValueText.text = value.ToString();
+                if(showText) maxValueText.text = value.ToString();
             }
         }
-    
-
-   
     }
 }

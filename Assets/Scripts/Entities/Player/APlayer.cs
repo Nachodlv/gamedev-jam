@@ -10,7 +10,7 @@ namespace Entities.Player
 	public class APlayer : DamageReceiver, IHaveStats
 	{
 		[SerializeField] private Stats stats;
-		[SerializeField] private HealthDisplayer healthDiplayer;
+		[SerializeField] private SpritesProgressBar healthDiplayer;
 		
 		public event Action OnDie;
 		public event Action OnResetLevel; 
@@ -36,13 +36,13 @@ namespace Entities.Player
 		{
 			Dead = false;
 			stats.Health = time;
-			healthDiplayer.SetUpMaxHealth(time);
+			healthDiplayer.SetUpMaxValue(time);
 		}
 
 		public void UpdateHealth(float newHealth)
 		{
 			stats.Health = newHealth;
-			healthDiplayer.UpdateHealth(stats.Health);
+			healthDiplayer.UpdateValue(stats.Health);
 			if (stats.Health <= 0)
 			{
 				Dead = true;
