@@ -17,12 +17,14 @@ namespace Levels
 		
 		private int _currentLevel;
 		private int _previousLevel;
+		private Transform _camera;
 
 		private LevelSettings Currentlevel => levels[_currentLevel];
 		private LevelSettings PreviousLevel => levels[_previousLevel];
-		
+
 		private void Awake()
 		{
+			_camera = Camera.main.transform;
 			LoadLevel();
 		}
 
@@ -54,6 +56,7 @@ namespace Levels
 			{
 				SetUpPlayer();
 				LevelTransition.Instance.FadeOut();
+				_camera.transform.position = player.transform.position;
 				OnLevelChange?.Invoke(Currentlevel);
 			};
 		}
