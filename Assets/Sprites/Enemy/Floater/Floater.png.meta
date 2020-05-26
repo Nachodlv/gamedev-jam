@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 5020833796227807481
     second: Floater_2
+  - first:
+      213: -9207956712041253148
+    second: Floater_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,12 +114,12 @@ TextureImporter:
       name: Floater_0
       rect:
         serializedVersion: 2
-        x: 142
-        y: 87
-        width: 22
+        x: 15
+        y: 16
+        width: 20
         height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,12 +135,12 @@ TextureImporter:
       name: Floater_1
       rect:
         serializedVersion: 2
-        x: 342
-        y: 86
-        width: 22
+        x: 63
+        y: 17
+        width: 20
         height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +156,12 @@ TextureImporter:
       name: Floater_2
       rect:
         serializedVersion: 2
-        x: 542
-        y: 86
-        width: 22
+        x: 111
+        y: 16
+        width: 20
         height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -23,6 +23,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4025674622185165378, guid: 0025d0b39bbf17d4b8d5e19ac617e09a,
         type: 3}
+    - target: {fileID: 4647160907227181340, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647160907227181340, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4647160907227181341, guid: c8bb02017e050664990885a03cf15c85,
         type: 3}
       propertyPath: m_Controller
