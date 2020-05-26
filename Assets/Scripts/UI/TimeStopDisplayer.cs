@@ -4,26 +4,27 @@ using UnityEngine;
 
 namespace UI
 {
-    [RequireComponent(typeof(SpritesProgressBar))]
+    [RequireComponent(typeof(StatBar))]
     public class TimeStopDisplayer : MonoBehaviour
     {
         [SerializeField] private TimeStopAbility timeStop;
 
-        private SpritesProgressBar _spritesProgressBar;
+        private StatBar _statBar;
 
         private void Awake()
         {
-            _spritesProgressBar = GetComponent<SpritesProgressBar>();
+            _statBar = GetComponent<StatBar>();
         }
 
         private void Start()
         {
-            _spritesProgressBar.SetUpMaxValue(timeStop.TimeAvailableToStop);
+            _statBar.MaxValue = timeStop.TimeAvailableToStop;
+            _statBar.CurrentValue = timeStop.TimeAvailableToStop;
         }
 
         private void Update()
         {
-            _spritesProgressBar.UpdateValue(timeStop.TimeAvailableToStop);
+            _statBar.CurrentValue = timeStop.TimeAvailableToStop;
         }
     }
 }
