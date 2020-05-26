@@ -18,6 +18,7 @@ namespace Levels
 		private int _currentLevel;
 		private int _previousLevel;
 		private Transform _camera;
+		private int _retryQuantity;
 
 		private LevelSettings Currentlevel => levels[_currentLevel];
 		private LevelSettings PreviousLevel => levels[_previousLevel];
@@ -30,6 +31,7 @@ namespace Levels
 
 		public void FinishLevel()
 		{
+			_retryQuantity = 0;
 			_previousLevel = _currentLevel;
 			if (_currentLevel >= levels.Length - 1) _currentLevel = 0;
 			else _currentLevel++;
@@ -39,6 +41,7 @@ namespace Levels
 
 		public void ResetLevel()
 		{
+			_retryQuantity++;
 			SceneManager.UnloadSceneAsync(Currentlevel.index);
 			LoadCurrentLevelWithFade();
 		}
@@ -56,7 +59,6 @@ namespace Levels
 			{
 				SetUpPlayer();
 				LevelTransition.Instance.FadeOut();
-				_camera.transform.position = player.transform.position;
 				OnLevelChange?.Invoke(Currentlevel);
 			};
 		}
@@ -64,7 +66,8 @@ namespace Levels
 		private void SetUpPlayer()
 		{
 			player.GetComponent<Rigidbody2D>().position = Currentlevel.playerPosition;
-			player.StartLevel(Currentlevel.time);
+			player.StartLevel(Currentlevel.time, _retryQuantity);
+			_camera.transform.position = player.transform.position;
 		}
 		
 		

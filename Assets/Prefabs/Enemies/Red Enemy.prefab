@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceAppliedOnHit: 0
-  invincibleTime: 0.8
-  timeBetweenBlinks: 0.15
+  invincibleTime: 0.3
+  timeBetweenBlinks: 0.1
   spriteRenderers:
   - {fileID: 8422605857843501213}
   stats:

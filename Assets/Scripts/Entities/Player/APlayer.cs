@@ -18,6 +18,7 @@ namespace Entities.Player
 		public TimeStopAbility TimeStopAbility { get; private set; }
 		public DashAbility DashAbility { get; private set; }
 
+		public int RetryQuantity { get; private set; }
 		
 		protected override void Awake()
 		{
@@ -32,11 +33,12 @@ namespace Entities.Player
 			UpdateHealth(stats.Health - Time.deltaTime);
 		}
 
-		public void StartLevel(float time)
+		public void StartLevel(float time, int retryQuantity)
 		{
 			Dead = false;
 			stats.Health = time;
 			healthDiplayer.SetUpMaxValue(time);
+			RetryQuantity = retryQuantity;
 		}
 
 		public void UpdateHealth(float newHealth)
