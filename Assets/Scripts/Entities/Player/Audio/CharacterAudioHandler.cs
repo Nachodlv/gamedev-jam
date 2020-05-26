@@ -1,15 +1,12 @@
-﻿using System;
-using Entities.Enemy;
-using Entities.Grabbables;
-using Entities.Player.Abilities;
+﻿using Entities.Grabbables;
 using Entities.Player.Attack;
 using UnityEngine;
 using Utils.Audio;
-using Entities.Player.Movement;
 using CharacterController = Entities.Player.Movement.CharacterController;
 
-namespace Entities.Player
+namespace Entities.Player.Audio
 {
+	[RequireComponent(typeof(AudioClip))]
 	public class CharacterAudioHandler : MonoBehaviour, IPausable
 	{
 		[Header("Audios")] [SerializeField] private PlayerAudioReferences audioReferences;
@@ -25,9 +22,12 @@ namespace Entities.Player
 		
 		private float _lastWalkingClip;
 		private bool _paused;
+		private AudioSource _audioSource;
 		
 		private void Awake()
 		{
+			_audioSource = GetComponent<AudioSource>();
+			
 			characterController.OnJumpEvent += () => PlaySound(audioReferences.jumpClip);
 			characterController.OnLandEvent += () => PlaySound(audioReferences.hitGroundClip);
 			player.OnDie += () => PlaySound(audioReferences.dieClip);
@@ -54,17 +54,23 @@ namespace Entities.Player
 			});
 		}
 
+		private void PlayInterruptibleSound(CustomAudioClip customClip)
+		{
+			_audioSource.clip = customClip.audioClip;
+			_audioSource.Play();
+		}
+
 		public void Pause()
 		{
 			_paused = true;
-			PlaySound(audioReferences.timeStopAbility);
+			PlayInterruptibleSound(audioReferences.timeStopAbility);
 			AudioManager.Instance.PlayBackgroundMusic(audioReferences.continuousStoppedTime.audioClip);
 		}
 
 		public void UnPause()
 		{
 			AudioManager.Instance.StopBackgroundMusic(audioReferences.continuousStoppedTime.audioClip);
-			if(_paused) PlaySound(audioReferences.timeStopEnd);
+			if(_paused) PlayInterruptibleSound(audioReferences.timeStopEnd);
 			_paused = false;
 		}
 	}
