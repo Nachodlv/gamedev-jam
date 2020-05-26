@@ -12,6 +12,8 @@ namespace UI
         [SerializeField] private float timeShowing = 1f;
         [SerializeField] private float fadeSpeed = 1f;
         [SerializeField] private Collider2D collider2D;
+        [SerializeField] private int requiredDeads;
+        [SerializeField] private bool showOnlyOnce;
 
         private Func<IEnumerator> _fadeIn;
         private Func<IEnumerator> _fadeOut;
@@ -30,6 +32,7 @@ namespace UI
         {
             var player = other.GetComponentInChildren<APlayer>();
             if (player == null) return;
+            if(showOnlyOnce && player.RetryQuantity != requiredDeads) return;
             ShowText();
             collider2D.enabled = false;
         }

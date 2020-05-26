@@ -38,9 +38,9 @@ namespace Platforms
 			var position = _rigidBody.position;
 			var targetVelocity = NextPosition - position;
 			targetVelocity = targetVelocity.normalized * speed;
-			var velocity = Vector2.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing);
+			var velocity = Vector2.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing, speed);
 			_rigidBody.velocity = velocity;
-			if (Vector3.Distance(position, NextPosition) < 0.1f)
+			if (Vector3.Distance(position, NextPosition) < 0.01f)
 			{
 				_currentPosition = (_currentPosition + 1) % _positions.Length;
 			}

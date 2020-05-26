@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: timeBetweenBlinks
-      value: 0.15
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}
       propertyPath: invincibleTime
-      value: 0.8
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5234703491298521015, guid: 9144d83c2cac5574587952d127068b17,
         type: 3}

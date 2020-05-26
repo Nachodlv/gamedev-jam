@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,40 +15,41 @@ namespace UI
         [SerializeField] [Tooltip("Image of the scrollbar")]
         private Image statBarImage;
         [SerializeField][Tooltip("Max value of the stat bar")]
-        private int maxValue;
+        private float maxValue;
         [SerializeField][Tooltip("Current value of the stat bar")]
-        private int currentValue;
+        private float currentValue;
+        [SerializeField] private bool showText = true;
+        [SerializeField] private Color maxColor;
+        [SerializeField] private Color minColor;
 
         /// <summary>
         /// When the CurrentValue is set then it updates the fillAmount of the statBarImage and the text of the currentValue.
         /// </summary>
-        public int CurrentValue
+        public float CurrentValue
         {
             get => currentValue;
             set
             {
                 currentValue = value;
-                currentValueText.text = value.ToString();
+                if(showText) currentValueText.text = value.ToString(CultureInfo.InvariantCulture);
 
                 var barValue =  currentValue / (float) maxValue;
                 statBarImage.fillAmount = barValue;
+                statBarImage.color = Color.Lerp(minColor, maxColor, currentValue / maxValue);
             }
         }
 
         /// <summary>
         /// When the MaxValue is set then it updates the text of the maxValueText.
         /// </summary>
-        public int MaxValue
+        public float MaxValue
         {
             get => maxValue;
             set
             {
                 maxValue = value;
-                maxValueText.text = value.ToString();
+                if(showText) maxValueText.text = value.ToString(CultureInfo.InvariantCulture);
             }
         }
-    
-
-   
     }
 }

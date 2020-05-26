@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: 0025d0b39bbf17d4b8d5e19ac617e09a
+guid: 2d32272168eea714faec13c61eb55910
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4025674622185165378
-    second: Floater_0
+      213: 5672249930436467589
+    second: Time stop_0
   - first:
-      213: -6427773164961398344
-    second: Floater_1
+      213: 3587841348189742438
+    second: Time stop_1
   - first:
-      213: 5020833796227807481
-    second: Floater_2
+      213: 3023777237574454061
+    second: Time stop_2
   - first:
-      213: -9207956712041253148
-    second: Floater_3
+      213: -7594976318375707741
+    second: Time stop_3
+  - first:
+      213: 4647557218495703862
+    second: Time stop_4
+  - first:
+      213: -8554257358934590778
+    second: Time stop_5
+  - first:
+      213: 1809243258795681594
+    second: Time stop_6
+  - first:
+      213: 980444992918586481
+    second: Time stop_7
+  - first:
+      213: 3235380616225464029
+    second: Time stop_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,64 +126,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floater_0
+      name: Time stop_8
       rect:
         serializedVersion: 2
-        x: 15
-        y: 16
-        width: 20
-        height: 43
+        x: 501
+        y: 44
+        width: 51
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242d6ac6db11ed730800000000000000
-      internalID: 4025674622185165378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floater_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 17
-        width: 20
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b100bdbc56fbc6a0800000000000000
-      internalID: -6427773164961398344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floater_2
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 16
-        width: 20
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f83f647cb59da540800000000000000
-      internalID: 5020833796227807481
+      spriteID: dde9d47578166ec20800000000000000
+      internalID: 3235380616225464029
       vertices: []
       indices: 
       edges: []
