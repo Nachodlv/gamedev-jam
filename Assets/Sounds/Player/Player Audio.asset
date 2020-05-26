@@ -23,7 +23,7 @@ MonoBehaviour:
     volume: 1
   hitGroundClip:
     audioClip: {fileID: 8300000, guid: a207468eb9aecb14382c8364ed94a768, type: 3}
-    volume: 0.2
+    volume: 0.3
   timeStopAbility:
     audioClip: {fileID: 8300000, guid: 921bb5fe4de4a5b4ca00eb9eaa2b09e7, type: 3}
     volume: 0.5
@@ -32,7 +32,7 @@ MonoBehaviour:
     volume: 1
   walkingClip:
     audioClip: {fileID: 8300000, guid: 45ed3925aaa8b0d43b5dd4f747105568, type: 3}
-    volume: 0.3
+    volume: 0.4
   continuousStoppedTime:
     audioClip: {fileID: 8300000, guid: dde329065fcc12a44a46bce4f87f3bd5, type: 3}
     volume: 1
