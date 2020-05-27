@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 3
   levelName: Level 2
-  time: 100
+  time: 20
   playerPosition: {x: -23, y: 11}
   backgrounds:
   - {fileID: -6533503349901115832, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
