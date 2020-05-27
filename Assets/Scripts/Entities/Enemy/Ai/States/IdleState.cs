@@ -16,6 +16,7 @@ namespace Entities.Enemy.Ai.States
 		private readonly Mover _mover;
 		private static readonly int Speed = Animator.StringToHash("speed");
 		private bool _move;
+		private EnemyAi _enemyAi;
 
 		public IdleState(Transform leftPosition, Transform rightPosition, EnemyAi enemyAi, Mover mover)
 		{
@@ -25,6 +26,7 @@ namespace Entities.Enemy.Ai.States
 			_rigidBody2D = enemyAi.RigidBody;
 			_mover = mover;
 			_move = true;
+			_enemyAi = enemyAi;
 		}
 
 		public IdleState(EnemyAi enemyAi)
@@ -65,6 +67,7 @@ namespace Entities.Enemy.Ai.States
 			_rigidBody2D.velocity = Vector2.zero;
 			if(_move) SetAnimatorVelocity();
 			_animator.SetBool(IdleBool, false);
+			_enemyAi.PlayerSighted();
 		}
 
 		private void SetAnimatorVelocity()
