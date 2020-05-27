@@ -149,5 +149,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 6.83
       objectReference: {fileID: 0}
+    - target: {fileID: 6145247558697371972, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: weaponAudioReferences
+      value: 
+      objectReference: {fileID: 11400000, guid: bbe5dbefdcd281743b294c0158687bc5,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bb02017e050664990885a03cf15c85, type: 3}
