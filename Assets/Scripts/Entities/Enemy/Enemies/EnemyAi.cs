@@ -67,9 +67,9 @@ namespace Entities.Enemy.Enemies
 			Debug.DrawLine(position, colliders[0].position);
 			var hit = Physics2D.Linecast(position, colliders[0].position, hitLayers);
 			var hitTransform = hit.transform;
-			if (hitTransform == null) return true;
+			if (hitTransform == null)
+				return true;
 			var isPlayer = hitTransform.gameObject == colliders[0].gameObject;
-			if(isPlayer) OnPlayerSight?.Invoke();
 			return isPlayer;
 		}
 		
@@ -100,6 +100,11 @@ namespace Entities.Enemy.Enemies
 		private void OnDie()
 		{
 			_dead = true;
+		}
+
+		public void PlayerSighted()
+		{
+			OnPlayerSight?.Invoke();
 		}
 	}
 }

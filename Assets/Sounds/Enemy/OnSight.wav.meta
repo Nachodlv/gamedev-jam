@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: d02ebf65f8461fb4c92ce48b0ff16d3d
+<<<<<<< HEAD:Assets/Sounds/Background Track.wav.meta
+guid: adbea1f9500ec30489eb40206e6106a5
+=======
+guid: 6222d71407813fa45b0dfe7291fbc8b9
+>>>>>>> origin/audio-test:Assets/Sounds/Enemy/OnSight.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6

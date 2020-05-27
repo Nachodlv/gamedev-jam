@@ -19,6 +19,7 @@ namespace Platforms
 		private Rigidbody2D _rigidBody;
 		private Vector2 _velocity;
 		private bool _paused;
+		private Vector2 _targetVelocity;
 		
 		private Vector2 NextPosition => _positions[_currentPosition];
 
@@ -38,9 +39,9 @@ namespace Platforms
 			var position = _rigidBody.position;
 			var targetVelocity = NextPosition - position;
 			targetVelocity = targetVelocity.normalized * speed;
-			var velocity = Vector2.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing, speed);
+			var velocity = Vector2.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing);
 			_rigidBody.velocity = velocity;
-			if (Vector3.Distance(position, NextPosition) < 0.01f)
+			if (Vector3.Distance(position, NextPosition) < speed/20)
 			{
 				_currentPosition = (_currentPosition + 1) % _positions.Length;
 			}

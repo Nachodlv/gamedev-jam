@@ -60,12 +60,13 @@ namespace Utils.Audio
             StartCoroutine(AudioFades.FadeIn(audioSource.AudioSource, fadeTime, volume));
         }
 
-        public void PlayBackgroundMusic(AudioClip clip)
+        public void PlayBackgroundMusic(AudioClip clip, AudioOptions audioOptions)
         {
             PauseAllBackgroundMusic();
 
             var audioSource = _backgroundMusicPooler.GetNextObject();
             audioSource.AudioSource.clip = clip;
+            audioSource.AudioSource.volume = audioOptions.Volume;
             audioSource.AudioSource.Play();
         }
 

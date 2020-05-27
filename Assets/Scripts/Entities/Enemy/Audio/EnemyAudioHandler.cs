@@ -12,9 +12,19 @@ namespace Entities.Enemy
         [Header("References")]
         [SerializeField] private EnemyAi enemyAi;
 
+        [Header("Configuration")] [SerializeField]
+        private float timeBetweenPlayerSights = 2f;
+
+        private float lastPlayerSight;
         private void Awake()
         {
-            enemyAi.OnPlayerSight += () => PlaySound(enemyAudioReferences.onSight);
+            enemyAi.OnPlayerSight += () =>
+            {
+                var now = Time.time;
+                if (now - lastPlayerSight < timeBetweenPlayerSights) return;
+                lastPlayerSight = now;
+                PlaySound(enemyAudioReferences.onSight);
+            };
         }
         
         private void PlaySound(CustomAudioClip customAudioClip)

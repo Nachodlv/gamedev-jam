@@ -1,5 +1,4 @@
-﻿using Cinemachine;
-using Entities.Player;
+﻿using Entities.Player;
 using Levels;
 using UnityEngine;
 

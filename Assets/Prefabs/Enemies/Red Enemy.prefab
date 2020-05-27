@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 8422605857843501202}
   - component: {fileID: 8422605857843501213}
   - component: {fileID: 8422605857843501212}
+  - component: {fileID: 7285661527359529674}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -352,6 +353,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7285661527359529674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422605857843501203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4248edfc5096b964c951b8fe0121cb91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAudioReferences: {fileID: 11400000, guid: 4b70b5cc18097374388026ef2af08de4,
+    type: 2}
+  enemyAi: {fileID: 8422605857765219245}
 --- !u!1 &8422605858092073545
 GameObject:
   m_ObjectHideFlags: 0

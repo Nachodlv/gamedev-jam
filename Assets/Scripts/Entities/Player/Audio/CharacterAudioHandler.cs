@@ -57,6 +57,7 @@ namespace Entities.Player.Audio
 		private void PlayInterruptibleSound(CustomAudioClip customClip)
 		{
 			_audioSource.clip = customClip.audioClip;
+			_audioSource.volume = customClip.volume;
 			_audioSource.Play();
 		}
 
@@ -64,7 +65,10 @@ namespace Entities.Player.Audio
 		{
 			_paused = true;
 			PlayInterruptibleSound(audioReferences.timeStopAbility);
-			AudioManager.Instance.PlayBackgroundMusic(audioReferences.continuousStoppedTime.audioClip);
+			AudioManager.Instance.PlayBackgroundMusic(audioReferences.continuousStoppedTime.audioClip, new AudioOptions
+			{
+				Volume = audioReferences.continuousStoppedTime.volume
+			});
 		}
 
 		public void UnPause()
