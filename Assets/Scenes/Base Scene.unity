@@ -245,9 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c487e5808545d7ab21c34c02ddc8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumTime: 10
+  maximumTime: 8
   rechargingDelay: 2
-  rechargeRatio: 2
+  rechargeRatio: 1
   universalLight: {fileID: 1002839372}
   lightIntensity: 0.4
   changeLightSpeed: 0.5
@@ -1163,7 +1163,7 @@ Transform:
   - {fileID: 1002839373}
   - {fileID: 876323879}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002839371
 GameObject:
@@ -1400,7 +1400,7 @@ Transform:
   m_Children:
   - {fileID: 775412946}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1028900999
 MonoBehaviour:
@@ -1702,6 +1702,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f36523a72f55d474cb3c74ebc230d00e, type: 2}
   - {fileID: 11400000, guid: 85fcb1c6a3314fd46b12679dd1095793, type: 2}
   - {fileID: 11400000, guid: 7a8058b7e67d3534ba92ab7b4e86cc60, type: 2}
+  - {fileID: 11400000, guid: 76abe5d24e87ac344ad121ccd5be56b4, type: 2}
   player: {fileID: 1414586194}
 --- !u!114 &1546048123
 MonoBehaviour:
@@ -2449,7 +2450,7 @@ PrefabInstance:
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
