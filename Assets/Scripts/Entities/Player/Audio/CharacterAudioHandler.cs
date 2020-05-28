@@ -65,6 +65,7 @@ namespace Entities.Player.Audio
 		{
 			_paused = true;
 			PlayInterruptibleSound(audioReferences.timeStopAbility);
+			AudioManager.Instance.PauseAllBackgroundMusic();
 			AudioManager.Instance.PlayBackgroundMusic(audioReferences.continuousStoppedTime.audioClip, new AudioOptions
 			{
 				Volume = audioReferences.continuousStoppedTime.volume

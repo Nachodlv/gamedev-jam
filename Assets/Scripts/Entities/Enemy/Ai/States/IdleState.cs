@@ -31,6 +31,7 @@ namespace Entities.Enemy.Ai.States
 
 		public IdleState(EnemyAi enemyAi)
 		{
+			_enemyAi = enemyAi;
 			_animator = enemyAi.Animator;
 			_rigidBody2D = enemyAi.RigidBody;
 			_move = false;

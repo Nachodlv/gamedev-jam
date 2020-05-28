@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Utils.Audio
 {
-    [RequireComponent(typeof(AudioSource))]
     public class AudioManager : MonoBehaviour, IPausable
     {
         [SerializeField] private int audioSourceQuantity;
@@ -62,8 +61,6 @@ namespace Utils.Audio
 
         public void PlayBackgroundMusic(AudioClip clip, AudioOptions audioOptions)
         {
-            PauseAllBackgroundMusic();
-
             var audioSource = _backgroundMusicPooler.GetNextObject();
             audioSource.AudioSource.clip = clip;
             audioSource.AudioSource.volume = audioOptions.Volume;
@@ -75,7 +72,7 @@ namespace Utils.Audio
             GetAudioSource(clip)?.AudioSource.Pause();
         }
 
-        private void PauseAllBackgroundMusic()
+        public void PauseAllBackgroundMusic()
         {
             foreach (var audioSourcePooleable in _backgroundMusicPooler.Objects)
             {
@@ -93,8 +90,10 @@ namespace Utils.Audio
             var audioSource = GetAudioSource(clip);
             audioSource?.Deactivate();
             var activeObject = _backgroundMusicPooler.ActiveObjects;
-            if (activeObject.Count > 0)
-                activeObject[activeObject.Count - 1].AudioSource.UnPause();
+            foreach (var audioSourcePooleable in activeObject)
+            {
+                audioSourcePooleable.AudioSource.UnPause();
+            }
         }
 
         public void FadeOutClip(AudioClip clip)

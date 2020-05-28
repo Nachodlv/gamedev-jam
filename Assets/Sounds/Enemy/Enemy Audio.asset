@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy Audio
   m_EditorClassIdentifier: 
   onSight:
-    audioClip: {fileID: 8300000, guid: 6222d71407813fa45b0dfe7291fbc8b9, type: 3}
+    audioClip: {fileID: 8300000, guid: b2f640ccaf5c3804d9c736a96b591938, type: 3}
     volume: 1
