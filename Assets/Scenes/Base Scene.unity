@@ -1593,7 +1593,7 @@ MonoBehaviour:
   playerAttacker: {fileID: 437799483}
   grabber: {fileID: 504961147}
   timeBetweenWalkingClips: 0.2
-  timeBetweenLowHealthClip: 2.5
+  timeBetweenLowHealthClip: 4
 --- !u!1 &1546048121
 GameObject:
   m_ObjectHideFlags: 0
