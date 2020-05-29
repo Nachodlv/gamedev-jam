@@ -17,7 +17,7 @@ namespace Levels
 		
 		private int _currentLevel;
 		private int _previousLevel;
-		private Transform _camera;
+		private CinemachineFramingTransposer _camera;
 		private int _retryQuantity;
 
 		private LevelSettings Currentlevel => levels[_currentLevel];
@@ -25,7 +25,7 @@ namespace Levels
 
 		private void Awake()
 		{
-			_camera = Camera.main.transform;
+			_camera = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
 			LoadLevel();
 		}
 
@@ -65,9 +65,13 @@ namespace Levels
 
 		private void SetUpPlayer()
 		{
-			player.GetComponent<Rigidbody2D>().position = Currentlevel.playerPosition;
+			var previousPosition = player.transform.position;
+			player.transform.position = Currentlevel.playerPosition;
 			player.StartLevel(Currentlevel.time, _retryQuantity);
-			_camera.transform.position = player.transform.position;
+			// player.gameObject.SetActive(false);
+			// player.gameObject.SetActive(true);
+			_camera.OnTargetObjectWarped(player.transform, Currentlevel.playerPosition - (Vector2) previousPosition);
+			// _camera.transform.position = player.transform.position;
 		}
 		
 		
