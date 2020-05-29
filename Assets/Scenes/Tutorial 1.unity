@@ -17919,6 +17919,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1576418072}
     m_Modifications:
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_text
+      value: Welcome test subject #R0b071N
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278217215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3043466970966123436, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_LocalPosition.x
