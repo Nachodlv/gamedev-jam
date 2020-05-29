@@ -19,5 +19,6 @@ namespace Entities.Player
         public CustomAudioClip dash;
         public CustomAudioClip batteryPickUp;
         public CustomAudioClip reflectBullet;
+        public CustomAudioClip lowHealth;
     }
 }

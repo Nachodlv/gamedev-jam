@@ -18,10 +18,14 @@ namespace Entities.Player.Audio
 		[SerializeField] private PlayerAttacker playerAttacker;
 		[SerializeField] private Grabber grabber;
 
-		[Header("Settings")] [SerializeField] private float timeBetweenWalkingClips;
+		[Header("Settings")] 
+		[SerializeField] private float timeBetweenWalkingClips;
+		[SerializeField] private float timeBetweenLowHealthClip = 0.2f;
 		
 		private float _lastWalkingClip;
 		private bool _paused;
+		private bool _isInLowHealth;
+		private float _lastLowHealthClip;
 		private AudioSource _audioSource;
 		
 		private void Awake()
@@ -34,16 +38,28 @@ namespace Entities.Player.Audio
 			characterAnimator.OnSwordDrawn += () => PlaySound(audioReferences.swordDraw);
 			characterAnimator.OnAttackAnimation += () => PlaySound(audioReferences.attackClip);
 			player.DashAbility.OnDash += () => PlaySound(audioReferences.dash);
+			player.OnLowHealth += (isInLowHealth) => _isInLowHealth = isInLowHealth;
 			playerAttacker.OnReflectBullet += () => PlaySound(audioReferences.reflectBullet);
 			grabber.OnGrab += () => PlaySound(audioReferences.batteryPickUp);
 		}
 
 		private void Update()
 		{
-			if (Time.time - _lastWalkingClip < timeBetweenWalkingClips || !characterController.Grounded ||
-			    Mathf.Abs(characterController.Velocity.x) < 0.01f) return;
-			PlaySound(audioReferences.walkingClip);
-			_lastWalkingClip = Time.time;
+			var now = Time.time;
+			
+			if (now - _lastWalkingClip > timeBetweenWalkingClips && characterController.Grounded &&
+			    Mathf.Abs(characterController.Velocity.x) > 0.01f)
+			{
+				PlaySound(audioReferences.walkingClip);
+				_lastWalkingClip = now;
+			}
+
+			if (_isInLowHealth && now - _lastLowHealthClip > timeBetweenLowHealthClip)
+			{
+				PlaySound(audioReferences.lowHealth);
+				_lastLowHealthClip = now;
+			}
+			
 		}
 
 		private void PlaySound(CustomAudioClip customClip)

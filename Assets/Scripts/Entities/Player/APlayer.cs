@@ -6,71 +6,91 @@ using UnityEngine;
 
 namespace Entities.Player
 {
-	[RequireComponent(typeof(TimeStopAbility), typeof(DashAbility))]
-	public class APlayer : DamageReceiver, IHaveStats
-	{
-		[SerializeField] private Stats stats;
-		[SerializeField] private SpritesProgressBar healthDiplayer;
-		
-		public event Action OnDie;
-		public event Action OnResetLevel; 
-		public Stats Stats => stats;
-		public TimeStopAbility TimeStopAbility { get; private set; }
-		public DashAbility DashAbility { get; private set; }
+    [RequireComponent(typeof(TimeStopAbility), typeof(DashAbility))]
+    public class APlayer : DamageReceiver, IHaveStats
+    {
+        [SerializeField] private Stats stats;
+        [SerializeField] private SpritesProgressBar healthDiplayer;
+        [SerializeField, Range(0, 1)] private float lowHealthPercentage = 0.2f;
 
-		public int RetryQuantity { get; private set; }
-		
-		protected override void Awake()
-		{
-			base.Awake();
-			TimeStopAbility = GetComponent<TimeStopAbility>();
-			DashAbility = GetComponent<DashAbility>();
-		}
+        public event Action OnDie;
+        public event Action OnResetLevel;
+        public event Action<bool> OnLowHealth;
+        public Stats Stats => stats;
+        public TimeStopAbility TimeStopAbility { get; private set; }
+        public DashAbility DashAbility { get; private set; }
 
-		private void Update()
-		{
-			if (Dead) return;
-			UpdateHealth(stats.Health - Time.deltaTime);
-		}
+        public int RetryQuantity { get; private set; }
 
-		public void StartLevel(float time, int retryQuantity)
-		{
-			Dead = false;
-			stats.Health = time;
-			healthDiplayer.SetUpMaxValue(time);
-			RetryQuantity = retryQuantity;
-		}
+        private float _maxHealth;
+        private bool _onLowHealth;
 
-		public void UpdateHealth(float newHealth)
-		{
-			stats.Health = newHealth;
-			healthDiplayer.UpdateValue(stats.Health);
-			if (stats.Health <= 0)
-			{
-				Dead = true;
-				StartCoroutine(WaitForAnimationToEnd());
-			}
-		}
+        protected override void Awake()
+        {
+            base.Awake();
+            TimeStopAbility = GetComponent<TimeStopAbility>();
+            DashAbility = GetComponent<DashAbility>();
+        }
 
-		protected override bool DealDamage(float damage, bool instantKill)
-		{
-			if(Dead) return true;
-			UpdateHealth(instantKill ? 0 : stats.Health - damage);
-			return stats.Health <= 0;
-		}
+        private void Update()
+        {
+            if (Dead) return;
+            UpdateHealth(stats.Health - Time.deltaTime);
+        }
 
-		private IEnumerator WaitForAnimationToEnd()
-		{
-			OnDie?.Invoke();
-			RigidBody2D.velocity = Vector2.zero;
-			yield return new WaitForSeconds(1.67f);
-			OnResetLevel?.Invoke();
-			ResetPlayer();
-		}
+        public void StartLevel(float time, int retryQuantity)
+        {
+            Dead = false;
+            _maxHealth = time;
+            stats.Health = time;
+            healthDiplayer.SetUpMaxValue(time);
+            RetryQuantity = retryQuantity;
+        }
 
-		private void ResetPlayer()
-		{
-			TimeStopAbility.UnPause();
-		}
-	}
+        public void UpdateHealth(float newHealth)
+        {
+            stats.Health = newHealth;
+            healthDiplayer.UpdateValue(stats.Health);
+            if (stats.Health <= 0)
+            {
+                Dead = true;
+                StartCoroutine(WaitForAnimationToEnd());
+                return;
+            }
+            if (_maxHealth * lowHealthPercentage > newHealth)
+            {
+                if (!_onLowHealth)
+                {
+                    _onLowHealth = true;
+                    OnLowHealth?.Invoke(true);
+                }
+            }
+            else if (_onLowHealth)
+            {
+                _onLowHealth = false;
+                OnLowHealth?.Invoke(false);
+            }
+        }
+
+        protected override bool DealDamage(float damage, bool instantKill)
+        {
+            if (Dead) return true;
+            UpdateHealth(instantKill ? 0 : stats.Health - damage);
+            return stats.Health <= 0;
+        }
+
+        private IEnumerator WaitForAnimationToEnd()
+        {
+            OnDie?.Invoke();
+            RigidBody2D.velocity = Vector2.zero;
+            yield return new WaitForSeconds(1.67f);
+            OnResetLevel?.Invoke();
+            ResetPlayer();
+        }
+
+        private void ResetPlayer()
+        {
+            TimeStopAbility.UnPause();
+        }
+    }
 }
