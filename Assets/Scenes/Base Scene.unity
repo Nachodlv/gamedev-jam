@@ -1696,9 +1696,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 11400000, guid: 0396d50bae84a234e969bea2370d3658, type: 2}
-  - {fileID: 11400000, guid: 440375822c5d49844a9dfebf5f4a9190, type: 2}
-  - {fileID: 11400000, guid: d9efb74cc73017549b2e65c4f4967243, type: 2}
+  - {fileID: 11400000, guid: 85fcb1c6a3314fd46b12679dd1095793, type: 2}
+  - {fileID: 11400000, guid: 7a8058b7e67d3534ba92ab7b4e86cc60, type: 2}
+  - {fileID: 11400000, guid: 76abe5d24e87ac344ad121ccd5be56b4, type: 2}
   - {fileID: 11400000, guid: f36523a72f55d474cb3c74ebc230d00e, type: 2}
   - {fileID: 11400000, guid: 85fcb1c6a3314fd46b12679dd1095793, type: 2}
   - {fileID: 11400000, guid: 7a8058b7e67d3534ba92ab7b4e86cc60, type: 2}
@@ -2325,7 +2325,7 @@ PrefabInstance:
     - target: {fileID: 4364613027301248660, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: range
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027301248660, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
@@ -2487,6 +2487,11 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4364613027450341843, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341846, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: spriteRenderers.Array.size
@@ -2575,7 +2580,7 @@ PrefabInstance:
     - target: {fileID: 4364613027450341852, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: wallJump
-      value: 120
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341852, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
@@ -2590,7 +2595,7 @@ PrefabInstance:
     - target: {fileID: 4364613027450341853, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: jumpForce
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341853, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}

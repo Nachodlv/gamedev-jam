@@ -54,7 +54,7 @@ namespace Platforms
 		public virtual void UnPause()
 		{
 			Paused = false;
-			Animator.speed = 1;
+			if(Animator != null) Animator.speed = 1;
 			
 			if (!_triggered) return;
 			PlayerEnter();
