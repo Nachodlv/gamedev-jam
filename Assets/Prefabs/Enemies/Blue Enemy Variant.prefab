@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minQuantity: 1
   maxQuantity: 1
-  healthRestore: 10
+  healthRestore: 5
   dropForce: 1
 --- !u!114 &2457791220185204607
 MonoBehaviour:

@@ -245,9 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c487e5808545d7ab21c34c02ddc8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumTime: 8
+  maximumTime: 3.5
   rechargingDelay: 2
-  rechargeRatio: 1
+  rechargeRatio: 3
   universalLight: {fileID: 1002839372}
   lightIntensity: 0.4
   changeLightSpeed: 0.5
@@ -608,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.2, y: -24.1, z: -10}
+  m_LocalPosition: {x: -8.2, y: 8.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 513048212}
@@ -1326,7 +1326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028900996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.2, y: -24.1, z: -10}
+  m_LocalPosition: {x: -8.2, y: 8.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 775412946}
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   levels:
   - {fileID: 11400000, guid: 9cc2ff3a670f74044ad8c098ae770834, type: 2}
   - {fileID: 11400000, guid: 440375822c5d49844a9dfebf5f4a9190, type: 2}
-  - {fileID: 11400000, guid: d9efb74cc73017549b2e65c4f4967243, type: 2}
+  - {fileID: 11400000, guid: 7a8058b7e67d3534ba92ab7b4e86cc60, type: 2}
   - {fileID: 11400000, guid: f36523a72f55d474cb3c74ebc230d00e, type: 2}
   - {fileID: 11400000, guid: 85fcb1c6a3314fd46b12679dd1095793, type: 2}
   - {fileID: 11400000, guid: 7a8058b7e67d3534ba92ab7b4e86cc60, type: 2}
@@ -2357,7 +2357,7 @@ PrefabInstance:
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.1
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}

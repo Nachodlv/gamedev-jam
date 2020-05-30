@@ -38,7 +38,9 @@ namespace UI
             }
             
             var newIndex = Mathf.CeilToInt(currentValue / _range);
-            if (newIndex == _previousIndex || newIndex >= sprites.Count || newIndex < 0) return;
+            if (newIndex == _previousIndex ) return;
+            if (newIndex >= sprites.Count) newIndex = sprites.Count - 1;
+            if (newIndex < 0) newIndex = 0;
             _image.sprite = sprites[newIndex];
             _previousIndex = newIndex;
         }
