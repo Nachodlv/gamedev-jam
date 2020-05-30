@@ -49,8 +49,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ca1e829b165792e49a47fb266fc68761, type: 3}
     volume: 1
   lowHealth:
-    audioClip: {fileID: 8300000, guid: c8d4b836711585d42ad8c1fdc4e88773, type: 3}
+    audioClip: {fileID: 8300000, guid: b479895f0ac376c4fae9dc4ce3241e20, type: 3}
     volume: 0.5
   receiveDamage:
     audioClip: {fileID: 8300000, guid: b183fc0e92f322e419c22e8c12672caa, type: 3}
-    volume: 1
+    volume: 0.2
