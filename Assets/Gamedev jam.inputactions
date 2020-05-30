@@ -911,6 +911,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Configuration",
+            "id": "6109c0db-81eb-4784-a1dd-cc7ee178a8d4",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "214caca2-83dd-4f3e-951b-82ed81ee2562",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3c6453e5-2363-4cb8-a7c4-95947deeae76",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

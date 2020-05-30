@@ -926,6 +926,33 @@ namespace Input
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Configuration"",
+            ""id"": ""6109c0db-81eb-4784-a1dd-cc7ee178a8d4"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""214caca2-83dd-4f3e-951b-82ed81ee2562"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3c6453e5-2363-4cb8-a7c4-95947deeae76"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1012,6 +1039,9 @@ namespace Input
             m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+            // Configuration
+            m_Configuration = asset.FindActionMap("Configuration", throwIfNotFound: true);
+            m_Configuration_Pause = m_Configuration.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1243,6 +1273,39 @@ namespace Input
             }
         }
         public UIActions @UI => new UIActions(this);
+
+        // Configuration
+        private readonly InputActionMap m_Configuration;
+        private IConfigurationActions m_ConfigurationActionsCallbackInterface;
+        private readonly InputAction m_Configuration_Pause;
+        public struct ConfigurationActions
+        {
+            private @InputActionController m_Wrapper;
+            public ConfigurationActions(@InputActionController wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Pause => m_Wrapper.m_Configuration_Pause;
+            public InputActionMap Get() { return m_Wrapper.m_Configuration; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(ConfigurationActions set) { return set.Get(); }
+            public void SetCallbacks(IConfigurationActions instance)
+            {
+                if (m_Wrapper.m_ConfigurationActionsCallbackInterface != null)
+                {
+                    @Pause.started -= m_Wrapper.m_ConfigurationActionsCallbackInterface.OnPause;
+                    @Pause.performed -= m_Wrapper.m_ConfigurationActionsCallbackInterface.OnPause;
+                    @Pause.canceled -= m_Wrapper.m_ConfigurationActionsCallbackInterface.OnPause;
+                }
+                m_Wrapper.m_ConfigurationActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Pause.started += instance.OnPause;
+                    @Pause.performed += instance.OnPause;
+                    @Pause.canceled += instance.OnPause;
+                }
+            }
+        }
+        public ConfigurationActions @Configuration => new ConfigurationActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1310,6 +1373,10 @@ namespace Input
             void OnRightClick(InputAction.CallbackContext context);
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        }
+        public interface IConfigurationActions
+        {
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }
