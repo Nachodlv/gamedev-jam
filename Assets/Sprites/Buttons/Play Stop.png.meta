@@ -8,6 +8,24 @@ TextureImporter:
   - first:
       213: 3863737697506828063
     second: Play Stop_1
+  - first:
+      213: 8587371326812811955
+    second: Play Stop_0
+  - first:
+      213: -3337411049291758089
+    second: Play Stop_1
+  - first:
+      213: -1017497649981419227
+    second: Play Stop_2
+  - first:
+      213: 6770847003488466968
+    second: Play Stop_3
+  - first:
+      213: 6335644005303752175
+    second: Play Stop_4
+  - first:
+      213: 2265035633687255178
+    second: Play Stop_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,7 +126,28 @@ TextureImporter:
       name: Play Stop_0
       rect:
         serializedVersion: 2
-        x: 23
+        x: 1
+        y: 53
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b27d0159b87c2770800000000000000
+      internalID: 8587371326812811955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Stop_1
+      rect:
+        serializedVersion: 2
+        x: 31
         y: 43
         width: 20
         height: 15
@@ -119,18 +158,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2acf293b489730d20800000000000000
-      internalID: 3243569767492287650
+      spriteID: 7f5408145522fa1d0800000000000000
+      internalID: -3337411049291758089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Play Stop_1
+      name: Play Stop_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 25
+        x: 1
+        y: 37
         width: 20
         height: 15
       alignment: 0
@@ -140,8 +179,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1f1e2507f0ce9530800000000000000
-      internalID: 3863737697506828063
+      spriteID: 521101d374f11e1f0800000000000000
+      internalID: -1017497649981419227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Stop_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818b277e971e6fd50800000000000000
+      internalID: 6770847003488466968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Stop_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 20
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe59677b7aabce750800000000000000
+      internalID: 6335644005303752175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Stop_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 6
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88d78d78e50f6f10800000000000000
+      internalID: 2265035633687255178
       vertices: []
       indices: 
       edges: []

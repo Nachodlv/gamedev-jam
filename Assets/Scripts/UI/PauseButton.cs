@@ -1,6 +1,7 @@
 ﻿using System;
 using Input;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Utils.Audio;
 
@@ -13,6 +14,7 @@ namespace UI
         [SerializeField] private Sprite resumeSprite;
         [SerializeField] private AudioClip buttonClicked;
         [SerializeField] private Image pausePanel;
+        [SerializeField] private CanvasGroup[] buttonsToDisplay;
         
         private Button _button;
         private Image _image;
@@ -20,13 +22,18 @@ namespace UI
         
         private void Awake()
         {
-            pausePanel.enabled = false;
             _button = GetComponent<Button>();
             _image = GetComponent<Image>();
             _button.onClick.AddListener(ButtonClicked);
             
-            var controller = new InputActionController();
-            controller.Configuration.Pause.performed += (_) => ButtonClicked();
+            var controller = new InputAction(binding: "<Keyboard>/p");
+            controller.performed += (_) => ButtonClicked();
+            controller.Enable();
+        }
+
+        private void Start()
+        {
+            UnPause();
         }
 
         private void ButtonClicked()
@@ -42,14 +49,26 @@ namespace UI
             _paused = true;
             pausePanel.enabled = true;
             _image.sprite = resumeSprite;
+            ChangeAlphaButton(false);
         }
 
-        private void UnPause()
+        public void UnPause()
         {
             Time.timeScale = 1;
             _paused = false;
             pausePanel.enabled = false;
             _image.sprite = pauseSprite;
+            ChangeAlphaButton(true);
+        }
+
+        private void ChangeAlphaButton(bool hide)
+        {
+            foreach (var canvasGroup in buttonsToDisplay)
+            {
+                canvasGroup.alpha = hide ? 0 : 1;
+                canvasGroup.interactable = !hide;
+                canvasGroup.blocksRaycasts = !hide;
+            }
         }
     }
 }

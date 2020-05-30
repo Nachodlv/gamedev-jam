@@ -12,7 +12,6 @@ namespace Utils.Audio
         [SerializeField] private float fadeTime = 2f;
 
         public static AudioManager Instance;
-        public bool Muted { get; private set; }
 
         private ObjectPooler<AudioSourcePooleable> _audioClipPooler;
         private ObjectPooler<AudioSourcePooleable> _lowPassFilterPooler;
@@ -43,20 +42,11 @@ namespace Utils.Audio
         
         public void PlaySound(AudioClip clip, AudioOptions audioOptions )
         {
-            if (Muted) return;
             audioOptions.LowPassFilter = _paused;
             var audioSource = audioOptions.LowPassFilter? _lowPassFilterPooler.GetNextObject() :_audioClipPooler.GetNextObject();
             audioSource.SetClip(clip);
             audioSource.SetVolume(audioOptions.Volume);
             audioSource.StartClip();
-        }
-
-        public void PlaySoundWithFade(AudioClip clip, float volume)
-        {
-            if (Muted) return;
-            var audioSource = _audioClipPooler.GetNextObject();
-            audioSource.SetClip(clip);
-            StartCoroutine(AudioFades.FadeIn(audioSource.AudioSource, fadeTime, volume));
         }
 
         public void PlayBackgroundMusic(AudioClip clip, AudioOptions audioOptions)
@@ -67,22 +57,12 @@ namespace Utils.Audio
             audioSource.AudioSource.Play();
         }
 
-        public void PauseBackgroundMusic(AudioClip clip)
-        {
-            GetAudioSource(clip)?.AudioSource.Pause();
-        }
-
         public void PauseAllBackgroundMusic()
         {
             foreach (var audioSourcePooleable in _backgroundMusicPooler.Objects)
             {
                 audioSourcePooleable.AudioSource.Pause();
             }
-        }
-
-        public void ResumeBackgroundMusic(AudioClip clip)
-        {
-            GetAudioSource(clip)?.AudioSource.UnPause();
         }
 
         public void StopBackgroundMusic()
@@ -100,16 +80,6 @@ namespace Utils.Audio
             {
                 audioSourcePooleable.AudioSource.UnPause();
             }
-        }
-
-        public void FadeOutClip(AudioClip clip)
-        {
-            StartCoroutine(AudioFades.FadeOut(GetAudioSource(clip), fadeTime));
-        }
-
-        public void FadeOutClip(AudioClip clip, float velocity)
-        {
-            StartCoroutine(AudioFades.FadeOut(GetAudioSource(clip), velocity));
         }
 
         private void PoolAudioSources()
@@ -155,6 +125,22 @@ namespace Utils.Audio
         public void UnPause()
         {
             _paused = false;
+        }
+
+        public void Mute() => ChangeMute(true);
+        public void UnMute() => ChangeMute(false);
+
+        private void ChangeMute(bool mute)
+        {
+            foreach (var audioSourcePooleable in _audioClipPooler.Objects)
+            {
+                audioSourcePooleable.AudioSource.mute = mute;
+            }
+
+            foreach (var audioSourcePooleable in _backgroundMusicPooler.Objects)
+            {
+                audioSourcePooleable.AudioSource.mute = mute;
+            }
         }
     }
 }
