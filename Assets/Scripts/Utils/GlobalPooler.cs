@@ -19,7 +19,8 @@ namespace Utils
 			BlueCannon,
 			RedCannon,
 			Laser,
-			GreenCannon
+			GreenCannon,
+			BlueLaser
 		}
 	}
 

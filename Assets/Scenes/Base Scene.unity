@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -608,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -161.9, y: -6.52, z: -10}
+  m_LocalPosition: {x: -8.2, y: -24.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 513048212}
@@ -1326,7 +1326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028900996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -161.9, y: -6.52, z: -10}
+  m_LocalPosition: {x: -8.2, y: -24.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 775412946}
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 11400000, guid: 0396d50bae84a234e969bea2370d3658, type: 2}
+  - {fileID: 11400000, guid: 9cc2ff3a670f74044ad8c098ae770834, type: 2}
   - {fileID: 11400000, guid: 440375822c5d49844a9dfebf5f4a9190, type: 2}
   - {fileID: 11400000, guid: d9efb74cc73017549b2e65c4f4967243, type: 2}
   - {fileID: 11400000, guid: f36523a72f55d474cb3c74ebc230d00e, type: 2}
@@ -1699,6 +1699,10 @@ MonoBehaviour:
     prefab: {fileID: 3618547224481674029, guid: 14eb626624ffae54688fbe5c10a9e59b,
       type: 3}
     poolType: 3
+  - quantity: 5
+    prefab: {fileID: 5791279468128364001, guid: 00bd768813bf04347b02d7c0cf123dd2,
+      type: 3}
+    poolType: 5
   levelManager: {fileID: 1546048122}
 --- !u!114 &1546048126
 MonoBehaviour:
@@ -2348,12 +2352,12 @@ PrefabInstance:
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -161.9
+      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.52
+      value: -24.1
       objectReference: {fileID: 0}
     - target: {fileID: 4364613027450341841, guid: e0f41f2cfdb493d4da9bc6fa29b6a2c9,
         type: 3}

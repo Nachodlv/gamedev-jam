@@ -118,6 +118,26 @@ PrefabInstance:
       propertyPath: prepareToAttackAnimationLength
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4647160907444187870, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.011637211
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647160907444187870, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -1.5829201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647160907444187870, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.0399237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647160907444187870, guid: c8bb02017e050664990885a03cf15c85,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.290287
+      objectReference: {fileID: 0}
     - target: {fileID: 4647160907831390540, guid: c8bb02017e050664990885a03cf15c85,
         type: 3}
       propertyPath: m_LocalPosition.x
