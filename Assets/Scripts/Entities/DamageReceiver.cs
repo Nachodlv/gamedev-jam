@@ -13,6 +13,7 @@ namespace Entities
         [SerializeField] private SpriteRenderer[] spriteRenderers;
 
         public bool Invincible { get; set; }
+        public event Action OnDamageReceive;
 
         protected Rigidbody2D RigidBody2D { get; private set; }
         protected bool Dead { get; set; }
@@ -32,6 +33,7 @@ namespace Entities
             bool overrideInvincible = false)
         {
             if ((Invincible && !overrideInvincible) || Dead) return;
+            OnDamageReceive?.Invoke();
             Dead = DealDamage(damage, instantKill);
             if (Dead) return;
 

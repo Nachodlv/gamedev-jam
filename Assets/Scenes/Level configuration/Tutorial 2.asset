@@ -15,5 +15,5 @@ MonoBehaviour:
   index: 6
   levelName: Tutorial 2
   time: 100
-  playerPosition: {x: -173.7, y: -6}
+  playerPosition: {x: -161.9, y: -6}
   backgrounds: []

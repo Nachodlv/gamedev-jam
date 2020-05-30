@@ -8,72 +8,70 @@ using UnityEngine.SceneManagement;
 
 namespace Levels
 {
-	public class LevelManager : MonoBehaviour
-	{
-		[SerializeField] private LevelSettings[] levels;
-		[SerializeField] private APlayer player;
+    public class LevelManager : MonoBehaviour
+    {
+        [SerializeField] private LevelSettings[] levels;
+        [SerializeField] private APlayer player;
 
-		public event Action<LevelSettings> OnLevelChange;
-		
-		private int _currentLevel;
-		private int _previousLevel;
-		private CinemachineFramingTransposer _camera;
-		private int _retryQuantity;
+        public event Action<LevelSettings> OnLevelChange;
 
-		private LevelSettings Currentlevel => levels[_currentLevel];
-		private LevelSettings PreviousLevel => levels[_previousLevel];
+        private int _currentLevel;
+        private int _previousLevel;
+        private CinemachineFramingTransposer _camera;
+        private int _retryQuantity;
 
-		private void Awake()
-		{
-			_camera = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
-			LoadLevel();
-		}
+        private LevelSettings Currentlevel => levels[_currentLevel];
+        private LevelSettings PreviousLevel => levels[_previousLevel];
 
-		public void FinishLevel()
-		{
-			_retryQuantity = 0;
-			_previousLevel = _currentLevel;
-			if (_currentLevel >= levels.Length - 1) _currentLevel = 0;
-			else _currentLevel++;
-			LoadCurrentLevelWithFade();
-			SceneManager.UnloadSceneAsync(PreviousLevel.index);
-		}
+        private void Awake()
+        {
+            _camera = FindObjectOfType<CinemachineVirtualCamera>()
+                .GetCinemachineComponent<CinemachineFramingTransposer>();
+            LoadLevel();
+        }
 
-		public void ResetLevel()
-		{
-			_retryQuantity++;
-			SceneManager.UnloadSceneAsync(Currentlevel.index);
-			LoadCurrentLevelWithFade();
-		}
-		
-		private void LoadCurrentLevelWithFade()
-		{
-			LevelTransition.Instance.FadeIn();
-			LoadLevel();
-		}
+        public void FinishLevel()
+        {
+            _retryQuantity = 0;
+            _previousLevel = _currentLevel;
+            if (_currentLevel >= levels.Length - 1) _currentLevel = 0;
+            else _currentLevel++;
+            LoadCurrentLevelWithFade(PreviousLevel.index);
+        }
 
-		private void LoadLevel()
-		{
-			var loadSceneAsync = SceneManager.LoadSceneAsync(Currentlevel.index, LoadSceneMode.Additive);
-			loadSceneAsync.completed += operation =>
-			{
-				SetUpPlayer();
-				LevelTransition.Instance.FadeOut();
-				OnLevelChange?.Invoke(Currentlevel);
-			};
-		}
+        public void ResetLevel()
+        {
+            _retryQuantity++;
+            LoadCurrentLevelWithFade(Currentlevel.index);
+        }
 
-		private void SetUpPlayer()
-		{
-			var previousPosition = player.transform.position;
-			player.transform.position = Currentlevel.playerPosition;
-			player.StartLevel(Currentlevel.time, _retryQuantity);
-			// player.gameObject.SetActive(false);
-			// player.gameObject.SetActive(true);
-			_camera.OnTargetObjectWarped(player.transform, Currentlevel.playerPosition - (Vector2) previousPosition);
-			// _camera.transform.position = player.transform.position;
-		}
-		
-		
-	}
+        private void LoadCurrentLevelWithFade(int sceneToUnload)
+        {
+            LevelTransition.Instance.FadeIn();
+            var unloadScene = SceneManager.UnloadSceneAsync(sceneToUnload);
+            unloadScene.completed += (_) => LoadLevel();
+        }
+
+        private void LoadLevel()
+        {
+            var loadSceneAsync = SceneManager.LoadSceneAsync(Currentlevel.index, LoadSceneMode.Additive);
+            loadSceneAsync.completed += operation =>
+            {
+                SetUpPlayer();
+                LevelTransition.Instance.FadeOut();
+                OnLevelChange?.Invoke(Currentlevel);
+            };
+        }
+
+        private void SetUpPlayer()
+        {
+            var previousPosition = player.transform.position;
+            player.transform.position = Currentlevel.playerPosition;
+            player.StartLevel(Currentlevel.time, _retryQuantity);
+            // player.gameObject.SetActive(false);
+            // player.gameObject.SetActive(true);
+            _camera.OnTargetObjectWarped(player.transform, Currentlevel.playerPosition - (Vector2) previousPosition);
+            // _camera.transform.position = player.transform.position;
+        }
+    }
 }

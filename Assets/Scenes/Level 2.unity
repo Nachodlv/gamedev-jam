@@ -5888,7 +5888,7 @@ PrefabInstance:
     - target: {fileID: 3043466970966123437, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: requiredDeads
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970966123437, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
