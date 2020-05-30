@@ -16,12 +16,13 @@ namespace Entities.Player.Abilities
 		[SerializeField] private float invincibleTime = 0.5f;
 
 		public event Action OnDash;
-		
-		private bool _hasDashed;
+		public float LastDash { get; private set; }
+		public float TimeBetweenDashes => timeBetweenDashes;
+
+		// private bool _hasDashed;
 		private RaycastHit2D[] _hits;
 		private Collider2D _collider;
 		private Rigidbody2D _rigidBody;
-		private float _lastDash;
 		private DamageReceiver _damageReceiver;
 		private WaitSeconds _invincibleWaitTime;
 
@@ -34,6 +35,7 @@ namespace Entities.Player.Abilities
 			_damageReceiver = GetComponent<DamageReceiver>();
 			_invincibleWaitTime = 
 				new WaitSeconds(this, () => _damageReceiver.Invincible = false, invincibleTime);
+			LastDash = -timeBetweenDashes;
 		}
 
 		public void Dash()
@@ -41,8 +43,8 @@ namespace Entities.Player.Abilities
 			if (!CanDash()) return;
 			_damageReceiver.Invincible = true;
 			_invincibleWaitTime.Wait();
-			_hasDashed = true;
-			_lastDash = Time.time;
+			// _hasDashed = true;
+			LastDash = Time.time;
 			OnDash?.Invoke();
 		}
 
@@ -89,12 +91,12 @@ namespace Entities.Player.Abilities
 
 		private void OnJump()
 		{
-			_hasDashed = false;
+			// _hasDashed = false;
 		}
 
 		private bool CanDash()
 		{
-			return !_hasDashed || Time.time - _lastDash > timeBetweenDashes;
+			return Time.time - LastDash > timeBetweenDashes;
 		}
 	}
 }
