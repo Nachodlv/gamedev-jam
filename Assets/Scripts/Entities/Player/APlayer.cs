@@ -41,6 +41,7 @@ namespace Entities.Player
         public void StartLevel(float time, int retryQuantity)
         {
             Dead = false;
+            TimeStopAbility.Fill();
             _maxHealth = time;
             stats.Health = time;
             healthDiplayer.SetUpMaxValue(time);

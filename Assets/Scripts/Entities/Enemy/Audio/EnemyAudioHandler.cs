@@ -11,6 +11,7 @@ namespace Entities.Enemy
         
         [Header("References")]
         [SerializeField] private EnemyAi enemyAi;
+        [SerializeField] private AEnemy enemy;
 
         [Header("Configuration")] [SerializeField]
         private float timeBetweenPlayerSights = 2f;
@@ -25,6 +26,8 @@ namespace Entities.Enemy
                 lastPlayerSight = now;
                 PlaySound(enemyAudioReferences.onSight);
             };
+            enemy.OnDamageReceive += () => PlaySound(enemyAudioReferences.damageReceive);
+            enemy.OnDie += () => PlaySound(enemyAudioReferences.die);
         }
         
         private void PlaySound(CustomAudioClip customAudioClip)

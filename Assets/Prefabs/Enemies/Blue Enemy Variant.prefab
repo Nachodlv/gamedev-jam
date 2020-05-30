@@ -31,6 +31,8 @@ MonoBehaviour:
   enemyAudioReferences: {fileID: 11400000, guid: 4b70b5cc18097374388026ef2af08de4,
     type: 2}
   enemyAi: {fileID: 4647160907444187869}
+  enemy: {fileID: 4647160907444187865}
+  timeBetweenPlayerSights: 2
 --- !u!1001 &638226015714450799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,6 +270,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45ef29002680446f9f71fd24741eb292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4647160907444187865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5234703491298521014, guid: 9144d83c2cac5574587952d127068b17,
+    type: 3}
+  m_PrefabInstance: {fileID: 638226015714450799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647160907444187866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50e68e50c364a0b899aed958f3a51cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4647160907227181343 stripped

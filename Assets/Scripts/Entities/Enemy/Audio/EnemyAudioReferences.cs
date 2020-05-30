@@ -7,5 +7,7 @@ namespace Entities.Enemy
     public class EnemyAudioReferences : ScriptableObject
     {
         public CustomAudioClip onSight;
+        public CustomAudioClip damageReceive;
+        public CustomAudioClip die;
     }
 }

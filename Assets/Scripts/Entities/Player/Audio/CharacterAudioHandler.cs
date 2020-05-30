@@ -39,6 +39,7 @@ namespace Entities.Player.Audio
 			characterAnimator.OnAttackAnimation += () => PlaySound(audioReferences.attackClip);
 			player.DashAbility.OnDash += () => PlaySound(audioReferences.dash);
 			player.OnLowHealth += (isInLowHealth) => _isInLowHealth = isInLowHealth;
+			player.OnDamageReceive += () => PlaySound(audioReferences.receiveDamage);
 			playerAttacker.OnReflectBullet += () => PlaySound(audioReferences.reflectBullet);
 			grabber.OnGrab += () => PlaySound(audioReferences.batteryPickUp);
 		}

@@ -75,6 +75,11 @@ namespace Entities.Player.Abilities
 			}
 		}
 
+		public void Fill()
+		{
+			TimeAvailableToStop = maximumTime;
+		}
+
 		private void ChangeLightingIfNeeded()
 		{
 			if (_paused &&universalLight.intensity > lightIntensity)

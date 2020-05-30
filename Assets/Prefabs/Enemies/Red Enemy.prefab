@@ -368,6 +368,8 @@ MonoBehaviour:
   enemyAudioReferences: {fileID: 11400000, guid: 4b70b5cc18097374388026ef2af08de4,
     type: 2}
   enemyAi: {fileID: 8422605857765219245}
+  enemy: {fileID: 8422605857765219244}
+  timeBetweenPlayerSights: 2
 --- !u!1 &8422605858092073545
 GameObject:
   m_ObjectHideFlags: 0

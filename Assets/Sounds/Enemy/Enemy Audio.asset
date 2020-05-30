@@ -15,3 +15,9 @@ MonoBehaviour:
   onSight:
     audioClip: {fileID: 8300000, guid: b2f640ccaf5c3804d9c736a96b591938, type: 3}
     volume: 1
+  damageReceive:
+    audioClip: {fileID: 8300000, guid: 6e066343cb3b6424787a9ed7c65f0083, type: 3}
+    volume: 1
+  die:
+    audioClip: {fileID: 8300000, guid: 6e066343cb3b6424787a9ed7c65f0083, type: 3}
+    volume: 1

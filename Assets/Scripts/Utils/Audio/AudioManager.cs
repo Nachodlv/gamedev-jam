@@ -85,6 +85,12 @@ namespace Utils.Audio
             GetAudioSource(clip)?.AudioSource.UnPause();
         }
 
+        public void StopBackgroundMusic()
+        {
+            var activeObjects = _backgroundMusicPooler.ActiveObjects;
+            if(activeObjects.Count > 0) StopBackgroundMusic(activeObjects[0].AudioSource.clip);
+        }
+
         public void StopBackgroundMusic(AudioClip clip)
         {
             var audioSource = GetAudioSource(clip);

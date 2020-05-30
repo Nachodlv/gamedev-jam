@@ -51,3 +51,6 @@ MonoBehaviour:
   lowHealth:
     audioClip: {fileID: 8300000, guid: c8d4b836711585d42ad8c1fdc4e88773, type: 3}
     volume: 0.5
+  receiveDamage:
+    audioClip: {fileID: 8300000, guid: b183fc0e92f322e419c22e8c12672caa, type: 3}
+    volume: 1
