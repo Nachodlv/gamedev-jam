@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Entities;
 using Entities.Enemy;
 using Entities.Enemy.Enemies;
+using Entities.Player;
 using UnityEngine;
 
 namespace Platforms
@@ -20,6 +21,9 @@ namespace Platforms
 		private Vector2 _velocity;
 		private bool _paused;
 		private Vector2 _targetVelocity;
+		private Rigidbody2D _player;
+		private bool _hasPlayer;
+		private Vector2 _previousPosition;
 		
 		private Vector2 NextPosition => _positions[_currentPosition];
 
@@ -27,6 +31,7 @@ namespace Platforms
 		{
 			_rigidBody = GetComponent<Rigidbody2D>();
 			_positions = new Vector2[transforms.Length];
+			_previousPosition = transform.position;
 			for (var i = 0; i < transforms.Length; i++)
 			{
 				_positions[i] = transforms[i].position;
@@ -41,10 +46,27 @@ namespace Platforms
 			targetVelocity = targetVelocity.normalized * speed;
 			var velocity = Vector2.SmoothDamp(_rigidBody.velocity, targetVelocity, ref _velocity, movementSmoothing);
 			_rigidBody.velocity = velocity;
-			if (Vector3.Distance(position, NextPosition) < speed/20)
+			
+			if (_hasPlayer) _player.position += position - _previousPosition;
+			
+ 			if (Vector3.Distance(position, NextPosition) < speed/20)
 			{
 				_currentPosition = (_currentPosition + 1) % _positions.Length;
 			}
+
+            _previousPosition = position;
+		}
+
+		private void OnCollisionEnter2D(Collision2D other)
+		{
+			if (!other.collider.CompareTag("Player")) return;
+			_hasPlayer = true;
+			_player = other.gameObject.GetComponent<Rigidbody2D>();
+		}
+
+		private void OnCollisionExit2D(Collision2D other1)
+		{
+			_hasPlayer = false;
 		}
 
 		public void Pause()
