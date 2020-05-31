@@ -1,5 +1,6 @@
 ﻿using System;
 using Input;
+using Levels;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -49,6 +50,7 @@ namespace UI
             _paused = true;
             pausePanel.enabled = true;
             _image.sprite = resumeSprite;
+            Timer.Instance.Pause();
             ChangeAlphaButton(false);
         }
 
@@ -58,6 +60,7 @@ namespace UI
             _paused = false;
             pausePanel.enabled = false;
             _image.sprite = pauseSprite;
+            Timer.Instance.Resume();
             ChangeAlphaButton(true);
         }
 

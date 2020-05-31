@@ -29,6 +29,7 @@ namespace Levels
         {
             _camera = FindObjectOfType<CinemachineVirtualCamera>()
                 .GetCinemachineComponent<CinemachineFramingTransposer>();
+            Timer.Instance.Begin();
             LoadLevel();
         }
 
@@ -86,6 +87,7 @@ namespace Levels
         private void GameOver()
         {
             // yield return new WaitForSeconds(1);
+            Timer.Instance.Stop();
             SceneManager.LoadScene(gameOverSceneIndex);
         }
         
