@@ -2,6 +2,7 @@
 using Levels;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils.Audio;
 
 namespace UI
 {
@@ -10,6 +11,8 @@ namespace UI
     {
         [SerializeField] private LevelManager levelManager;
         [SerializeField] private PauseButton pauseButton;
+        [SerializeField] private AudioClip audioClip;
+        
         private void Awake()
         {
             GetComponent<Button>().onClick.AddListener(ButtonClicked);
@@ -17,6 +20,7 @@ namespace UI
 
         private void ButtonClicked()
         {
+            AudioManager.Instance.PlaySound(audioClip);
             pauseButton.UnPause();
             levelManager.ResetLevel();
         }

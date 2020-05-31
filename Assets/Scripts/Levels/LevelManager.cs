@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using Cinemachine;
 using Entities;
@@ -12,6 +13,7 @@ namespace Levels
     {
         [SerializeField] private LevelSettings[] levels;
         [SerializeField] private APlayer player;
+        [SerializeField] private int gameOverSceneIndex = 10;
 
         public event Action<LevelSettings> OnLevelChange;
 
@@ -34,13 +36,22 @@ namespace Levels
         {
             _retryQuantity = 0;
             _previousLevel = _currentLevel;
-            if (_currentLevel >= levels.Length - 1) _currentLevel = 0;
-            else _currentLevel++;
+            if (_currentLevel >= levels.Length - 1)
+            {
+                GameOver();
+                return;
+            }
+            _currentLevel++;
             LoadCurrentLevelWithFade(PreviousLevel.index);
         }
 
         public void ResetLevel()
         {
+            if (_currentLevel == levels.Length - 1)
+            {
+                GameOver();
+                return;
+            }
             _retryQuantity++;
             LoadCurrentLevelWithFade(Currentlevel.index);
         }
@@ -65,13 +76,18 @@ namespace Levels
 
         private void SetUpPlayer()
         {
-            var previousPosition = player.transform.position;
-            player.transform.position = Currentlevel.playerPosition;
+            var playerTransform = player.transform;
+            var previousPosition = playerTransform.position;
+            playerTransform.position = Currentlevel.playerPosition;
             player.StartLevel(Currentlevel.time, _retryQuantity);
-            // player.gameObject.SetActive(false);
-            // player.gameObject.SetActive(true);
             _camera.OnTargetObjectWarped(player.transform, Currentlevel.playerPosition - (Vector2) previousPosition);
-            // _camera.transform.position = player.transform.position;
         }
+
+        private void GameOver()
+        {
+            // yield return new WaitForSeconds(1);
+            SceneManager.LoadScene(gameOverSceneIndex);
+        }
+        
     }
 }

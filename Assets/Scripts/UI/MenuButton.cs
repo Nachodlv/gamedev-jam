@@ -30,14 +30,14 @@ namespace UI
         private void TriggerButtonAnimation()
         {
             _action.Dispose();
-            LevelTransition.Instance.FadeIn();
+            // LevelTransition.Instance.FadeIn();
             _animator.SetTrigger(Tap);
             AudioManager.Instance.PlaySound(clip);
         }
 
         private void FinishAnimation()
         {
-            AudioManager.Instance.StopBackgroundMusic();
+            AudioManager.Instance.StopAllBackgroundMusic();
             SceneManager.LoadScene(1);
         }
     }

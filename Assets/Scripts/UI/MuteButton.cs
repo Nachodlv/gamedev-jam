@@ -10,7 +10,8 @@ namespace UI
     {
         [SerializeField] private Sprite mutedSprite;
         [SerializeField] private Sprite unMutedSprite;
-
+        [SerializeField] private AudioClip clip;
+        
         private Image _image;
         private bool muted;
         
@@ -22,6 +23,7 @@ namespace UI
 
         private void ButtonClicked()
         {
+            AudioManager.Instance.PlaySound(clip);
             if(muted) UnMute();
             else Mute();
         }

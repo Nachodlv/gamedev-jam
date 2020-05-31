@@ -65,10 +65,13 @@ namespace Utils.Audio
             }
         }
 
-        public void StopBackgroundMusic()
+        public void StopAllBackgroundMusic()
         {
-            var activeObjects = _backgroundMusicPooler.ActiveObjects;
-            if(activeObjects.Count > 0) StopBackgroundMusic(activeObjects[0].AudioSource.clip);
+            foreach (var audioSourcePooleable in _backgroundMusicPooler.Objects)
+            {
+                audioSourcePooleable.AudioSource.Stop();
+                audioSourcePooleable.Deactivate();
+            }
         }
 
         public void StopBackgroundMusic(AudioClip clip)
