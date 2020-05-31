@@ -39,11 +39,13 @@ namespace Utils.Audio
         {
             PlaySound(clip, AudioOptions.Default());
         }
-        
-        public void PlaySound(AudioClip clip, AudioOptions audioOptions )
+
+        public void PlaySound(AudioClip clip, AudioOptions audioOptions)
         {
             audioOptions.LowPassFilter = _paused;
-            var audioSource = audioOptions.LowPassFilter? _lowPassFilterPooler.GetNextObject() :_audioClipPooler.GetNextObject();
+            var audioSource = audioOptions.LowPassFilter
+                ? _lowPassFilterPooler.GetNextObject()
+                : _audioClipPooler.GetNextObject();
             audioSource.SetClip(clip);
             audioSource.SetVolume(audioOptions.Volume);
             audioSource.StartClip();
@@ -53,8 +55,13 @@ namespace Utils.Audio
         {
             var audioSource = _backgroundMusicPooler.GetNextObject();
             audioSource.AudioSource.clip = clip;
-            audioSource.AudioSource.volume = audioOptions.Volume;
-            audioSource.AudioSource.Play();
+            if (audioOptions.WithFade)
+                StartCoroutine(AudioFades.FadeIn(audioSource.AudioSource, audioOptions.FadeSpeed, audioOptions.Volume));
+            else
+            {
+                audioSource.AudioSource.volume = audioOptions.Volume;
+                audioSource.AudioSource.Play();
+            }
         }
 
         public void PauseAllBackgroundMusic()
@@ -65,12 +72,17 @@ namespace Utils.Audio
             }
         }
 
-        public void StopAllBackgroundMusic()
+        public void StopAllBackgroundMusic(AudioOptions audioOptions)
         {
-            foreach (var audioSourcePooleable in _backgroundMusicPooler.Objects)
+            foreach (var audioSourcePooleable in _backgroundMusicPooler.ActiveObjects)
             {
-                audioSourcePooleable.AudioSource.Stop();
-                audioSourcePooleable.Deactivate();
+                if (audioOptions.WithFade)
+                    StartCoroutine(AudioFades.FadeOut(audioSourcePooleable, audioOptions.FadeSpeed));
+                else
+                {
+                    audioSourcePooleable.AudioSource.Stop();
+                    audioSourcePooleable.Deactivate();
+                }
             }
         }
 

@@ -6,7 +6,7 @@ namespace Utils.Audio
 {
     public class AudioFades
     {
- 
+
         public static IEnumerator FadeOut(AudioSourcePooleable audioSourcePooleable, float fadeTime)
         {
             var audioSource = audioSourcePooleable.AudioSource;
@@ -29,7 +29,7 @@ namespace Utils.Audio
             audioSource.volume = 0;
             audioSource.Play();
 
-            while (Math.Abs(audioSource.volume - maxVolume) < 0.01f) {
+            while (Math.Abs(audioSource.volume - maxVolume) > 0.01f) {
                 audioSource.volume += startVolume * Time.deltaTime / fadeTime;
 
                 yield return null;

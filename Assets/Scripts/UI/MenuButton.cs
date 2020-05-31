@@ -37,7 +37,7 @@ namespace UI
 
         private void FinishAnimation()
         {
-            AudioManager.Instance.StopAllBackgroundMusic();
+            AudioManager.Instance.StopAllBackgroundMusic(AudioOptions.Default());
             SceneManager.LoadScene(1);
         }
     }

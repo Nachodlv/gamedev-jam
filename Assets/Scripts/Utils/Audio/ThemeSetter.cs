@@ -9,7 +9,7 @@ namespace Utils.Audio
         
         private void Start()
         {
-            if(pauseOtherBackgroundMusic) AudioManager.Instance.StopAllBackgroundMusic();
+            if(pauseOtherBackgroundMusic) AudioManager.Instance.StopAllBackgroundMusic(AudioOptions.Default());
             AudioManager.Instance.PlayBackgroundMusic(audioClip.audioClip, new AudioOptions{Volume = audioClip.volume});
         }
     }
