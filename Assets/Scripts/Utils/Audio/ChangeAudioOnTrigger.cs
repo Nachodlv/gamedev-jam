@@ -21,7 +21,7 @@ namespace Utils.Audio
             if (!other.CompareTag("Player")) return;
             AudioManager.Instance.StopAllBackgroundMusic(new AudioOptions
                 {Volume = 1, FadeSpeed = fadeSpeed, WithFade = true});
-            AudioManager.Instance.PlayBackgroundMusic(audioClip.audioClip,
+            AudioManager.Instance.PlaySound(audioClip.audioClip,
                 new AudioOptions {Volume = audioClip.volume, FadeSpeed = fadeSpeed, WithFade = true});
             _collider.enabled = false;
         }

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2481,7 +2481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip:
-    audioClip: {fileID: 8300000, guid: 76eb4e7406e624c429e3fffc59175d80, type: 3}
+    audioClip: {fileID: 8300000, guid: 04920e08b51000000d920e08b5100000, type: 3}
     volume: 1
   fadeSpeed: 6
 --- !u!4 &292847248

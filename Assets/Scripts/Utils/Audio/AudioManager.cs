@@ -47,8 +47,12 @@ namespace Utils.Audio
                 ? _lowPassFilterPooler.GetNextObject()
                 : _audioClipPooler.GetNextObject();
             audioSource.SetClip(clip);
-            audioSource.SetVolume(audioOptions.Volume);
             audioSource.StartClip();
+            if (audioOptions.WithFade)
+            {
+                StartCoroutine(AudioFades.FadeIn(audioSource.AudioSource, audioOptions.FadeSpeed, audioOptions.Volume));
+            }
+            else audioSource.SetVolume(audioOptions.Volume);
         }
 
         public void PlayBackgroundMusic(AudioClip clip, AudioOptions audioOptions)
