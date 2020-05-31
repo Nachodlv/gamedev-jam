@@ -17,6 +17,6 @@ MonoBehaviour:
   time: 30
   playerPosition: {x: -2, y: 0.5}
   backgrounds:
-  - {fileID: -3295210017347555593, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
-  - {fileID: -2187769855553504164, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
-  - {fileID: -4666537286430064709, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
+  - {fileID: -7767013954379144877, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
+  - {fileID: 936910896086793054, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
+  - {fileID: -6250828510830093614, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}

@@ -16,4 +16,7 @@ MonoBehaviour:
   levelName: level 5
   time: 40
   playerPosition: {x: -94.2, y: -3.2}
-  backgrounds: []
+  backgrounds:
+  - {fileID: -705145818065256652, guid: 41f9d17475fcc1244b4dfc72c8f0f672, type: 3}
+  - {fileID: -4222979902134890753, guid: 41f9d17475fcc1244b4dfc72c8f0f672, type: 3}
+  - {fileID: 3992744419136187884, guid: 41f9d17475fcc1244b4dfc72c8f0f672, type: 3}

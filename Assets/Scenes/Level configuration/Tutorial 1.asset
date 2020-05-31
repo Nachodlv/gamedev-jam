@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 5
   levelName: Tutorial
-  time: 10000
+  time: 100
   playerPosition: {x: -67.73, y: -6}
-  backgrounds: []
+  backgrounds:
+  - {fileID: -3295210017347555593, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
+  - {fileID: -2187769855553504164, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}
+  - {fileID: -4666537286430064709, guid: d37c16dd63d71af468dc9a9ae642ac0d, type: 3}

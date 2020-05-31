@@ -16,4 +16,5 @@ MonoBehaviour:
   levelName: Last Level
   time: 10000
   playerPosition: {x: -8.2, y: 8.7}
-  backgrounds: []
+  backgrounds:
+  - {fileID: -4222979902134890753, guid: 41f9d17475fcc1244b4dfc72c8f0f672, type: 3}
