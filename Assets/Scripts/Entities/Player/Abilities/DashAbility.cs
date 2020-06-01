@@ -1,4 +1,5 @@
 ﻿using System;
+using Cinemachine;
 using UnityEngine;
 using Utils;
 using CharacterController = Entities.Player.Movement.CharacterController;
@@ -8,7 +9,7 @@ namespace Entities.Player.Abilities
 	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D), typeof(DamageReceiver))]
 	public class DashAbility : MonoBehaviour
 	{
-		[SerializeField] private CharacterController _characterController;
+		[SerializeField] private CharacterController characterController;
 		[SerializeField] private float distance = 2f;
 		[SerializeField] private LayerMask collisionMask;
 		[SerializeField] private float damage = 4f;
@@ -25,10 +26,12 @@ namespace Entities.Player.Abilities
 		private Rigidbody2D _rigidBody;
 		private DamageReceiver _damageReceiver;
 		private WaitSeconds _invincibleWaitTime;
+		private CinemachineFramingTransposer _camera;
 
 		private void Awake()
 		{
-			_characterController.OnJumpEvent += OnJump;
+			_camera = FindObjectOfType<CinemachineVirtualCamera>()
+				.GetCinemachineComponent<CinemachineFramingTransposer>();
 			_hits = new RaycastHit2D[10];
 			_collider = GetComponent<Collider2D>();
 			_rigidBody = GetComponent<Rigidbody2D>();
@@ -73,30 +76,26 @@ namespace Entities.Player.Abilities
 					return;
 				}
 			}
-			Debug.DrawLine(position, destination, Color.green, 5);
 
+			_camera.OnTargetObjectWarped(transform, destination - _rigidBody.position);
 			_rigidBody.position = destination;
-			_rigidBody.velocity = Vector2.zero;
+			// _rigidBody.velocity = Vector2.zero;
+
 		}
 		
  		private Vector2 GetDashDestination(Vector2 position)
 		{
 			var destination = position;
-			var facing = _characterController.FacingRight ? 1 : -1;
+			var facing = characterController.FacingRight ? 1 : -1;
 			destination.x += distance * facing;
 			return destination;
 		}
 		
 		private void HitWall(Vector2 point)
 		{
-			point.x += _collider.bounds.extents.x * (_characterController.FacingRight? -1 : 1);
+			point.x += _collider.bounds.extents.x * (characterController.FacingRight? -1 : 1);
 			transform.position = point;
 			Debug.DrawLine(transform.position, point, Color.red, 5);
-		}
-
-		private void OnJump()
-		{
-			// _hasDashed = false;
 		}
 
 		private bool CanDash()

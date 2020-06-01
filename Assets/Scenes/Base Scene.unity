@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b915d27ad84dfc90aa9580a95aca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterController: {fileID: 437799485}
+  characterController: {fileID: 437799485}
   distance: 12
   collisionMask:
     serializedVersion: 2
