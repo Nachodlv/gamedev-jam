@@ -15,21 +15,26 @@ namespace UI
 
         private Animator _animator;
         private static readonly int Tap = Animator.StringToHash("tap");
-        private InputAction _action;
+        private InputAction _spaceAction;
+        private InputAction _enterAction;
         
         private void Awake()
         {
             _animator = GetComponent<Animator>();
             GetComponent<Button>().onClick.AddListener(TriggerButtonAnimation);
-            _action = new InputAction(binding: "/*/<button>");
-            _action.performed += (_) => TriggerButtonAnimation();
-            _action.Enable();
+            _spaceAction = new InputAction(binding: "/<Keyboard>/space");
+            _enterAction = new InputAction(binding: "/<Keyboard>/enter");
+            _spaceAction.performed += (_) => TriggerButtonAnimation();
+            _enterAction.performed += (_) => TriggerButtonAnimation();
+            _spaceAction.Enable();
+            _enterAction.Enable();
         }
         
 
         private void TriggerButtonAnimation()
         {
-            _action.Dispose();
+            _spaceAction.Dispose();
+            _enterAction.Dispose();
             // LevelTransition.Instance.FadeIn();
             _animator.SetTrigger(Tap);
             AudioManager.Instance.PlaySound(clip);
