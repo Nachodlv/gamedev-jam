@@ -56,6 +56,11 @@ namespace Entities.Player.Abilities
 			IterateThroughColliders(position, destination, size);
 		}
 
+		public void RestoreDash()
+		{
+			LastDash -= timeBetweenDashes;
+		}
+
 		private void IterateThroughColliders(Vector2 position, Vector2 destination, int size)
 		{
 			for (int i = 0; i < size; i++)

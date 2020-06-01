@@ -42,6 +42,7 @@ namespace Entities.Player
         {
             Dead = false;
             TimeStopAbility.Fill();
+            DashAbility.RestoreDash();
             _maxHealth = time;
             stats.Health = time;
             healthDiplayer.SetUpMaxValue(time);
@@ -51,7 +52,7 @@ namespace Entities.Player
         public void UpdateHealth(float newHealth)
         {
             stats.Health = newHealth;
-            healthDiplayer.UpdateValue(stats.Health);
+            if(!Dead) healthDiplayer.UpdateValue(stats.Health);
             if (stats.Health <= 0)
             {
                 Dead = true;
