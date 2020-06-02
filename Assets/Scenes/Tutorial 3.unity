@@ -24166,17 +24166,17 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 51
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
@@ -24191,7 +24191,12 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_text
-      value: Press E to stop time, press it again to resume time
+      value: Press E or K to stop time, press it again to resume time
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278217215
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970966123436, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}

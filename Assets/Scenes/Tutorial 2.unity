@@ -28387,17 +28387,17 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 43
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
@@ -28412,12 +28412,17 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_text
-      value: Press Shift to dash, use it to jump further
+      value: Press Shift or L to dash, use it to jump further
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_fontSize
       value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278217215
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970966123436, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}

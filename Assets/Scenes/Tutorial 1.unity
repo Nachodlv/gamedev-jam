@@ -131,17 +131,17 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 37
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
@@ -156,12 +156,17 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_text
-      value: Press Q to draw your sword and attack
+      value: Press Q or L to draw your sword and attack
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_fontSize
       value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278217215
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097333, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
