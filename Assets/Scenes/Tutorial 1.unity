@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
       propertyPath: m_text
-      value: Press Q or L to draw your sword and attack
+      value: Press Q or J to draw your sword and attack
       objectReference: {fileID: 0}
     - target: {fileID: 3043466970481097332, guid: 7056ca3bc42826d448248727136ac47b,
         type: 3}
